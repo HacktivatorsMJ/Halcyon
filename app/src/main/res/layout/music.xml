@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#527EFF">
+
+    <TextView
+        android:id="@+id/music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relaxing Tunes"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listen to some calming tunes to reduce stress, improve sleep, enhance concentration and more.."
+        android:textSize="15dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_below="@+id/music"
+        android:layout_marginLeft="15dp"
+
+        android:textColor="@color/black"/>
+
+</RelativeLayout>

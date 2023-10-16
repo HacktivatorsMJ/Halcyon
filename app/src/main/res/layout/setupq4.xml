@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDFFEB">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you often feel excessively worried, tense, or on edge, even when there's no clear threat?"
+       android:textSize="28dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:id="@+id/question"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/no"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:background="@drawable/question_btn"
+        android:layout_below="@+id/question"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/yes"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:background="@drawable/question_btn"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/question"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"/>
+
+
+
+
+
+
+
+</RelativeLayout>

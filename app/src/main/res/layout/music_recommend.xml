@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#9cd7d4">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music for the day!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="15dp"
+        tools:text="Ultra Healing Relaxing Music for Nervous Disorders, Depression. Restores Mental Health Click to listen"
+        android:layout_below="@+id/title"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="10dp"/>
+
+
+
+</RelativeLayout>

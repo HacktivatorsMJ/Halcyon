@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#F71A1B53">
+
+    <TextView
+        android:id="@+id/sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleep Reminder"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's call it a night, here are some calming tracks to help you unwind.."
+        android:textSize="20dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_below="@+id/sleep"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LonelyActivity">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We're here for you!"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="26dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_marginTop="40dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anime"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/title"
+        app:lottie_autoPlay="true"
+        app:lottie_url="@raw/bot"
+        />
+
+    <TextView
+        android:id="@+id/motivate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click start to take first step toward better mental well-being together."
+        android:textAlignment="center"
+        android:layout_below="@+id/anime"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/motivate"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/primary_btn"
+        android:text="Start"/>
+
+
+
+
+</RelativeLayout>

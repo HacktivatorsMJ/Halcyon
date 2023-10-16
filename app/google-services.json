@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915367982754",
+    "project_id": "halcyon-21174",
+    "storage_bucket": "halcyon-21174.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915367982754:android:6eb6bb1574312651b309fb",
+        "android_client_info": {
+          "package_name": "com.hacktivators.mentalhealth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh9xshULCTEnWr9XCktcegaJLfusvCaio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

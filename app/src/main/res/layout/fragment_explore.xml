@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExploreFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            >
+
+
+
+            <include android:id="@+id/chat" android:layout_marginVertical="10dp"  layout="@layout/chat_block"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+
+            <include android:id="@+id/meditation" android:layout_marginVertical="10dp"  layout="@layout/meditation"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+            <include android:id="@+id/journal" android:layout_marginVertical="10dp"  layout="@layout/journel_block"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+            <include android:id="@+id/qstart" android:layout_marginVertical="10dp"  layout="@layout/qstart"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+            <include android:id="@+id/sleep" android:layout_marginVertical="10dp"  layout="@layout/sleepreminder"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"/>
+
+            <include android:id="@+id/music" android:layout_marginVertical="10dp"  layout="@layout/music"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_height="120dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

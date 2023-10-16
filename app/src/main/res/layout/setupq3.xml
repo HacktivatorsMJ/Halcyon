@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDFFED">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you find it challenging to control your impulses, leading to impulsive behaviours that you regret later?"
+        android:textSize="26dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/no"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:background="@drawable/question_btn"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:layout_below="@+id/question"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/yes"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:padding="10dp"
+        android:background="@drawable/question_btn"
+
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:layout_below="@+id/question"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"/>
+
+</RelativeLayout>

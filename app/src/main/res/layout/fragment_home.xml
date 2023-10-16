@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <TextView
+        android:id="@+id/greet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        tools:text="Good Morning\nAbid Nafi"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <include layout="@layout/chat_block"
+        android:id="@+id/chat_block"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/greet"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/for_youTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For you"
+        android:layout_below="@+id/chat_block"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="20dp"/>
+
+
+    <TextView
+        android:id="@+id/featuredTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_block"
+        android:layout_marginTop="25dp"
+        android:textSize="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Featured"/>
+
+
+
+    <ScrollView
+        android:id="@+id/blockView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@+id/for_youTXT"
+       >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <LinearLayout
+                android:id="@+id/featured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/article_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginVertical="10dp"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="#FFBCBC">
+
+                <TextView
+                    android:id="@+id/art_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Article for the day!"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+
+                    android:id="@+id/article_recom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Article for the day!"
+                    android:textSize="15dp"
+                    tools:text="Healthy Sleep Schedule Helps with Sleep? Click to read more!!"
+                    android:layout_below="@+id/art_title"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/book_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginVertical="10dp"
+                    android:backgroundTint="#B9D6D3">
+
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book for the day!"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/book_recom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="15dp"
+                        tools:text="Unf*ck Your Brain by Dr Faith G Harper"
+                        android:layout_below="@+id/title"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"/>
+
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/video_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="#9cd7d4">
+
+                    <TextView
+                        android:id="@+id/Video_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video for the day!"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/video_recom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        tools:text="Ultra Healing Relaxing Music for Nervous Disorders, Depression. Restores Mental Health Click to listen"
+                        android:layout_below="@+id/Video_title"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginStart="10dp"/>
+
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/morning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+
+                >
+
+                <include layout="@layout/journel_block"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/meditation"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/affirmation"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/noon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+
+                >
+
+                <include layout="@layout/journel_block"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/music"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/night"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+
+                >
+
+                <include layout="@layout/sleepreminder"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/music"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/journel_block"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
