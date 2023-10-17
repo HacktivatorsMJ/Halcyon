@@ -2,13 +2,13 @@ package com.hacktivators.mentalhealth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.hacktivators.mentalhealth.OnBoarding.LoginActivity;
 import com.hacktivators.mentalhealth.OnBoarding.StartActivity;
 
 public class SplashActivity extends AppCompatActivity {

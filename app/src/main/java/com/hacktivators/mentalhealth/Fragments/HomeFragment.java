@@ -107,7 +107,10 @@ public class HomeFragment extends Fragment {
 
         chat_block = view.findViewById(R.id.chat_block);
 
-        foryouTXT.setTextColor(getContext().getResources().getColor(R.color.primary));
+        foryouTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
+        foryouTXT.setBackground(getContext().getResources().getDrawable(R.drawable.accent_back));
+
+
 
 
         foryouTXT.setOnClickListener(new View.OnClickListener() {
@@ -125,8 +128,10 @@ public class HomeFragment extends Fragment {
                     night.setVisibility(View.VISIBLE);
                 }
 
-                foryouTXT.setTextColor(getContext().getResources().getColor(R.color.primary));
-                featuredTXT.setTextColor(getContext().getResources().getColor(R.color.black));
+                foryouTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
+                foryouTXT.setBackground(getContext().getResources().getDrawable(R.drawable.accent_back));
+                featuredTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
+                featuredTXT.setBackground(null);
             }
 
         });
@@ -150,8 +155,10 @@ public class HomeFragment extends Fragment {
 
                     night.setVisibility(View.GONE);
 
-                foryouTXT.setTextColor(getContext().getResources().getColor(R.color.black));
-                featuredTXT.setTextColor(getContext().getResources().getColor(R.color.primary));
+                foryouTXT.setBackground(null);
+                foryouTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
+                featuredTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
+                featuredTXT.setBackground(getContext().getResources().getDrawable(R.drawable.accent_back));
 
             }
         });

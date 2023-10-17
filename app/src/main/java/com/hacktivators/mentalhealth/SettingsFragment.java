@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.hacktivators.mentalhealth.OnBoarding.StartActivity;
+import com.hacktivators.mentalhealth.OnBoarding.LoginActivity;
 
 
 public class SettingsFragment extends Fragment {
@@ -34,7 +34,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getActivity(), StartActivity.class));
+                startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
 

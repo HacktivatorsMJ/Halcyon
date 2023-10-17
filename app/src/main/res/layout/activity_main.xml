@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -59,8 +60,10 @@
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="@color/primary"
             android:layout_alignParentBottom="true"
+            app:itemIconTint="@color/secondary"
+            app:itemTextColor="@color/secondary"
             app:elevation="10dp"
             app:menu="@menu/bottom_navigation_menu"
             />

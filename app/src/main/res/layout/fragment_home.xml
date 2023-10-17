@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     xmlns:tools="http://schemas.android.com/tools">
 
 
@@ -12,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:textSize="25dp"
         android:textStyle="bold"
         tools:text="Good Morning\nAbid Nafi" />
@@ -40,8 +41,9 @@
         android:text="For you"
         android:layout_below="@+id/chat_block"
         android:textSize="25dp"
+        android:padding="10dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:fontFamily="@font/nunito_sans"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"/>
@@ -54,10 +56,11 @@
         android:layout_below="@+id/chat_block"
         android:layout_marginTop="25dp"
         android:textSize="25dp"
+        android:padding="10dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:fontFamily="@font/nunito_sans"
         android:text="Featured"/>
 
@@ -67,6 +70,7 @@
         android:id="@+id/blockView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:visibility="visible"
         android:layout_below="@+id/for_youTXT"
        >

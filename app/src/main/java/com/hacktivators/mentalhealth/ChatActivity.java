@@ -1,18 +1,16 @@
 package com.hacktivators.mentalhealth;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.hacktivators.mentalhealth.BackEnd.Service;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,13 +21,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 
 public class ChatActivity extends Activity {
 
@@ -52,6 +53,8 @@ public class ChatActivity extends Activity {
             .writeTimeout(5, TimeUnit.MINUTES) // write timeout
             .readTimeout(5, TimeUnit.MINUTES) // read timeout
             .build();
+
+    Service service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +81,53 @@ public class ChatActivity extends Activity {
             String question = messageEditText.getText().toString().trim();
             addToChat(question,Message.SENT_BY_USER);
             messageEditText.setText("");
-            try {
-                callAPI(question);
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
+            //callAPI(question);
+
+
+            callAI(question);
             welcomeTextView.setVisibility(View.GONE);
         });
+
+
+    }
+
+    private void callAI(String question) {
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
+        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:5000").client(client).build().create(Service.class);
+
+        //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
+
+        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.postMessage(question);
+
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                String responseBody = null;
+                JSONObject jsonObject = null;
+                try {
+                    responseBody = response.body().string();
+                    jsonObject = new JSONObject(responseBody);
+                    String message = jsonObject.getString("Sarora");
+                    addToChat(message,Message.SENT_BY_BOT);
+
+                } catch (IOException | JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+
 
 
     }
@@ -100,11 +143,15 @@ public class ChatActivity extends Activity {
         });
     }
 
+
+    /*
     void addResponse(String response){
         messageList.remove(messageList.size()-1);
         addToChat(response,Message.SENT_BY_BOT);
     }
 
+
+    /*
     private void callAPI(String question) throws JSONException {
         //okhttp
         messageList.add(new Message("Typing... ",Message.SENT_BY_BOT));
@@ -177,6 +224,10 @@ public class ChatActivity extends Activity {
         });
 
 
+
+
         }
+
+     */
 
 }
