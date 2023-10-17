@@ -12,7 +12,28 @@
           "package_name": "com.hacktivators.mentalhealth"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "915367982754-56hgd14bi3qhrho19v9sn85048uisorn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hacktivators.mentalhealth",
+            "certificate_hash": "17b28d6191c110a0d679f9acf7a1f593fd10882b"
+          }
+        },
+        {
+          "client_id": "915367982754-o4711rf3knb2j4lblcprg48cnpj0gbht.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hacktivators.mentalhealth",
+            "certificate_hash": "aa3406afbe2d0526e445e39c87f955d491d69e28"
+          }
+        },
+        {
+          "client_id": "915367982754-3p9feldbpp3dt3gvtckojovd34e4p7pl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBh9xshULCTEnWr9XCktcegaJLfusvCaio"
@@ -20,7 +41,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915367982754-3p9feldbpp3dt3gvtckojovd34e4p7pl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
 
 
     View chat_block;
-    LinearLayout foryou, featured;
+    LinearLayout featured;
 
     TextView foryouTXT,featuredTXT;
 
@@ -114,11 +114,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 featured.setVisibility(View.GONE);
+                if(hour < 6){
+                    night.setVisibility(View.VISIBLE);
+                }
                 if (hour >= 6 && hour < 12) {
                     morning.setVisibility(View.VISIBLE);
-                } else if (hour >= 12 && hour < 20) {
+                } else if (hour >= 12 && hour <= 20) {
                     noon.setVisibility(View.VISIBLE);
-                } else if (hour >= 21 && hour < 24) {
+                } else if (hour >= 21) {
                     night.setVisibility(View.VISIBLE);
                 }
 
@@ -156,6 +159,10 @@ public class HomeFragment extends Fragment {
        // loadData();
         //Set greeting
 
+
+        if(hour > 0){
+            greeting = "You should be sleeping..";
+        }
         if(hour>=6 && hour<12){
             greeting = "Good Morning";
         } else if(hour>= 12 && hour < 17){
