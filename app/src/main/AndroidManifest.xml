@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -18,23 +18,32 @@
         android:theme="@style/Theme.AppCompat.MentalHealth"
         tools:targetApi="31">
         <activity
+            android:name=".JournalAddActivity"
+            android:exported="false" />
+        <activity
             android:name=".OnBoarding.InfoActivity"
             android:exported="false" />
         <activity
             android:name=".LonelyActivity"
             android:exported="false" />
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestionActivity"
-            android:exported="false"/>
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestion1Activity"
-            android:exported="false"/>
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestion2Activity"
-            android:exported="false"/>
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestion3Activity"
-            android:exported="false"/>
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestion4Activity"
-            android:exported="false"/>
-        <activity android:name=".OnBoarding.Questtionaire.SetupQuestion5Activity"
-            android:exported="false"/>
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestion1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestion2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestion3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestion4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding.Questtionaire.SetupQuestion5Activity"
+            android:exported="false" />
         <activity
             android:name=".OnBoarding.StartActivity"
             android:exported="false" />
