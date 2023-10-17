@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#f5f5dc">
+
+    <TextView
+        android:id="@+id/meditation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podcast for the day!"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listen for coping strategies, practising mindfulness and more.."
+        android:textSize="20dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_below="@+id/meditation"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>
