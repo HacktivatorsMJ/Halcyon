@@ -13,7 +13,7 @@
         android:textSize="29dp"
         android:fontFamily="@font/nunito_sans"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"/>
 
@@ -26,6 +26,6 @@
         android:layout_below="@+id/music"
         android:layout_marginLeft="15dp"
 
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
 </RelativeLayout>
