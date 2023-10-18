@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -72,16 +73,16 @@
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
-
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/black"
+        android:fitsSystemWindows="true"
         app:menu="@menu/navigation_view"
-
+        tools:showIn = "navigation_view"
+        style="@style/Widget.App.NavigationView"
         app:headerLayout="@layout/navigation_header"
-        android:layout_above="@+id/bottom_navigation" />
+        android:layout_above="@+id/bottom_navigation"/>
 
 
 

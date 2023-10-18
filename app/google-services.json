@@ -30,6 +30,14 @@
           }
         },
         {
+          "client_id": "915367982754-rne388oqm56tjfmva8shig3sh5tnqhau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hacktivators.mentalhealth",
+            "certificate_hash": "7f14d98162dde37e09e67879dabd3e1f3276c767"
+          }
+        },
+        {
           "client_id": "915367982754-3p9feldbpp3dt3gvtckojovd34e4p7pl.apps.googleusercontent.com",
           "client_type": 3
         }

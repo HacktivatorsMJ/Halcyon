@@ -14,7 +14,7 @@
         android:layout_height="250dp"
         android:src="@drawable/halcyon"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"/>
 
 
     <TextView
@@ -27,7 +27,7 @@
         android:fontFamily="@font/nunito_sans"
         android:layout_centerHorizontal="true"
         android:textSize="30dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/email"
@@ -35,7 +35,7 @@
         android:layout_height="50dp"
         android:background="@drawable/edit_text"
         android:layout_below="@+id/title"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColorHint="#DADADA"
         android:paddingStart="20dp"
         android:layout_marginHorizontal="30dp"
@@ -65,7 +65,7 @@
         android:textColor="@color/white"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/back"
@@ -77,6 +77,30 @@
         android:fontFamily="@font/nunito_sans"
         android:layout_centerHorizontal="true"
         android:textSize="15dp"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_below="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or"
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
         android:layout_marginTop="30dp"/>
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signin"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/or"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        app:colorScheme="light"
+        />
 
 </RelativeLayout>

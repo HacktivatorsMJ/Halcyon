@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.AppCompat.MentalHealth" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.AppCompat.MentalHealth" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/secondary</item>
@@ -20,6 +20,21 @@
     <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/pop_up_slideup</item>
         <item name="android:windowExitAnimation">@anim/pop_up_slidedown</item>
+    </style>
+
+    <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.NavigationView</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemTextColor">@color/black</item>
+        <item name="itemShapeFillColor">@color/black</item>
+    </style>
+
+    <style name="ThemeOverlay.App.NavigationView" parent="">
+        <item name="navigationViewStyle">@style/Widget.App.NavigationView</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/primary</item>
+
     </style>
 
 
