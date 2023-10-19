@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/left_chat_view"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#1E88E5"
+        android:backgroundTint="@color/accent"
         android:padding="8dp"
         android:layout_marginEnd="80dp"
         >

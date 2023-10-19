@@ -2,16 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="140dp"
-    android:background="#D2B48C">
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="@color/primary">
 
     <TextView
-        android:id="@+id/music"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Affirmation For The Day"
         android:textSize="29dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="@color/secondary"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"/>
 
@@ -20,9 +22,10 @@
         android:layout_height="wrap_content"
         android:text="Repeat these positive phrases for a positive mindset.."
         android:textSize="20dp"
-        android:layout_below="@+id/music"
-        android:layout_marginLeft="15dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:layout_below="@+id/title"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/secondary"/>
 
 </RelativeLayout>

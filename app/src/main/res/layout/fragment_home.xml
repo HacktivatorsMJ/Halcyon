@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="10dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_marginHorizontal="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
@@ -93,59 +93,74 @@
                 >
 
                 <RelativeLayout
-                    android:id="@+id/article_layout"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
+                    android:id="@+id/article_layout"
                     android:layout_marginVertical="10dp"
-                    xmlns:tools="http://schemas.android.com/tools"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:background="@drawable/rounded_corner"
-                    android:backgroundTint="#FFBCBC">
+                    android:backgroundTint="@color/primary">
 
-                <TextView
-                    android:id="@+id/art_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Article for the day!"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nunito_sans"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/art_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Article of the day!"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/secondary"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"/>
 
-                <TextView
+                    <TextView
+                        android:id="@+id/article_recom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        tools:text="Healthy Sleep Schedule Helps with Sleep? Click to read more!!"
+                        android:layout_below="@+id/art_title"
+                        android:textStyle="bold"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        android:textColor="@color/secondary"
+                        android:fontFamily="@font/nunito_sans"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginStart="10dp"/>
 
-                    android:id="@+id/article_recom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Article for the day!"
-                    android:textSize="15dp"
-                    tools:text="Healthy Sleep Schedule Helps with Sleep? Click to read more!!"
-                    android:layout_below="@+id/art_title"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nunito_sans"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="10dp"/>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentEnd="true"
+                        app:lottie_rawRes="@raw/article"
+                        app:lottie_autoPlay="true"
+                        android:layout_centerVertical="true"
+                        app:lottie_loop="true"
+                        android:layout_marginRight="20dp"/>
+
 
                 </RelativeLayout>
+
+
                 <RelativeLayout
                     android:id="@+id/book_layout"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:background="@drawable/rounded_corner"
                     android:layout_marginVertical="10dp"
-                    android:backgroundTint="#B9D6D3">
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/primary">
 
 
                     <TextView
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Book for the day!"
+                        android:text="Book of the day!"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary"
                         android:fontFamily="@font/nunito_sans"
                         android:layout_marginTop="15dp"
                         android:layout_marginStart="10dp"/>
@@ -157,17 +172,29 @@
 
                         android:textSize="15dp"
                         tools:text="Unf*ck Your Brain by Dr Faith G Harper"
+                        android:ellipsize="end"
+                        android:lines="2"
                         android:layout_below="@+id/title"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary"
                         android:fontFamily="@font/nunito_sans"
                         android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="140dp"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentEnd="true"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
+
 
 
 
 
                 </RelativeLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/video_layout"
@@ -175,7 +202,7 @@
                     android:layout_height="120dp"
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/rounded_corner"
-                    android:backgroundTint="#9cd7d4">
+                    android:backgroundTint="@color/primary">
 
                     <TextView
                         android:id="@+id/Video_title"
@@ -184,7 +211,7 @@
                         android:text="Video for the day!"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary"
                         android:fontFamily="@font/nunito_sans"
                         android:layout_marginTop="15dp"
                         android:layout_marginStart="10dp"/>
@@ -197,7 +224,7 @@
                         tools:text="Ultra Healing Relaxing Music for Nervous Disorders, Depression. Restores Mental Health Click to listen"
                         android:layout_below="@+id/Video_title"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary"
                         android:fontFamily="@font/nunito_sans"
                         android:layout_marginTop="13dp"
                         android:layout_marginStart="10dp"/>
@@ -212,7 +239,7 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded_corner"
-                    android:backgroundTint="#f5f5dc">
+                    android:backgroundTint="@color/primary">
 
                     <TextView
                         android:id="@+id/podcast_title"
@@ -222,7 +249,7 @@
                         android:textSize="29dp"
                         android:fontFamily="@font/nunito_sans"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
+                        android:textColor="@color/secondary"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="20dp"/>
 
@@ -236,7 +263,7 @@
                         android:layout_below="@+id/podcast_title"
                         android:layout_marginLeft="15dp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/secondary"/>
 
                 </RelativeLayout>
             </LinearLayout>

@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/profile_image"
@@ -62,7 +62,6 @@
             app:boxCornerRadiusBottomStart="15dp"
             app:boxCornerRadiusTopEnd="15dp"
             app:boxCornerRadiusTopStart="15dp"
-
             app:boxBackgroundMode="outline"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="35dp"
@@ -180,7 +179,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/primary_btn"
-            android:textColor="@color/black"/>
+            android:textColor="@color/secondary"/>
 
     </RelativeLayout>
 
