@@ -11,7 +11,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content">
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Our Values:\n 'Compassion, Inclusivity, Privacy, Innovation, and Continuos Improvement."
+            android:text="Our Values:\n 'Compassion, Inclusivity, Privacy, Innovation, and Continuous Improvement."
             android:textColor="#F1F1F1"
             android:textSize="23dp"
             android:layout_marginTop="490dp"
@@ -56,14 +58,15 @@
 
         </TextView>
 
-    </RelativeLayout>
-
-
-
-
+        </RelativeLayout>
     </ScrollView>
-
-
-
-
 </RelativeLayout>
+
+
+
+
+
+
+
+
+

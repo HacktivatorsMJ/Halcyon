@@ -44,18 +44,16 @@ public class HomeFragment extends Fragment {
     CircleImageView profile;
     String greeting = null;
 
-
-
     View chat_block;
     LinearLayout featured;
 
     TextView foryouTXT,featuredTXT;
 
 
-    TextView art_recom,book_recom,vid_recom;
-    String articleUrl,bookUrl,videoUrl;
+    TextView art_recom,book_recom,vid_recom,podcast_recom;
+    String articleUrl,bookUrl,videoUrl,podcastUrl;
 
-    RelativeLayout article,book,video;
+    RelativeLayout article,book,video,podcast;
 
 
     LinearLayout morning,noon,night;
@@ -80,6 +78,8 @@ public class HomeFragment extends Fragment {
         article = view.findViewById(R.id.article_layout);
         book = view.findViewById(R.id.book_layout);
         video = view.findViewById(R.id.video_layout);
+        podcast = view.findViewById(R.id.podcast_layout);
+
         Date date = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
@@ -104,6 +104,7 @@ public class HomeFragment extends Fragment {
         art_recom = view.findViewById(R.id.article_recom);
         book_recom = view.findViewById(R.id.book_recom);
         vid_recom = view.findViewById(R.id.video_recom);
+        podcast_recom = view.findViewById(R.id.podcast_recom);
 
         chat_block = view.findViewById(R.id.chat_block);
 
@@ -215,6 +216,15 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        podcast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse(podcastUrl);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
         loadData();
 
 
@@ -255,18 +265,23 @@ public class HomeFragment extends Fragment {
                         String bookTitle = document.getString("bookTitle");
                         String articleTitle = document.getString("articleTitle");
                         String videoTitle = document.getString("videoTitle");
+                        String podcastTitle = document.getString("podcastTitle");
 
                         String bookUrl_ = document.getString("bookUrl");
                         String articleUrl_ = document.getString("articleUrl");
                         String videoUrl_ = document.getString("videoUrl");
+                        String podcastUrl_ = document.getString("podcastUrl");
 
                         art_recom.setText(articleTitle);
                         book_recom.setText(bookTitle);
                         vid_recom.setText(videoTitle);
+                        podcast_recom.setText(podcastTitle);
 
                         bookUrl = bookUrl_;
                         articleUrl = articleUrl_;
                         videoUrl = videoUrl_;
+                        podcastUrl = podcastUrl_;
+
 
 
                     }

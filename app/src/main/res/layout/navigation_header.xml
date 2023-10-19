@@ -1,11 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
 
     <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/new_logo"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/helpline"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/halcyon"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="20dp"
+            android:background="#565656"/>
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:tint="@color/secondary"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_support_agent_24"/>
+
+
+
+        <TextView
+            android:id="@+id/crisis_title"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary"
+            android:layout_toRightOf="@+id/icon"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="Crisis Helpine"/>
+
+        <TextView
+            android:id="@+id/crisis_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+919491951924"
+            android:autoLink="phone"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_below="@+id/crisis_title"
+            android:layout_toRightOf="@+id/icon"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="20dp"
+        android:background="#565656"
+        android:layout_below="@+id/helpline"/>
 
 </RelativeLayout>
