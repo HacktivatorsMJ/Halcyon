@@ -72,7 +72,8 @@
         android:layout_marginStart="5dp"
         android:textSize="14dp"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito_sans"/>
 
     <TextView
         android:id="@+id/generatedQuestion"
@@ -85,7 +86,8 @@
         android:layout_marginStart="5dp"
         android:textSize="14dp"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito_sans"/>
 
 
     <LinearLayout
@@ -204,7 +206,8 @@
         android:textColor="@color/black"
         android:layout_below="@+id/color"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/journal_box"

@@ -63,6 +63,7 @@
                 android:textColor="#FF2424"
                 android:textSize="20sp"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/nunito_sans"
                 />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

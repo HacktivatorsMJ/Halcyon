@@ -38,7 +38,8 @@
         android:layout_marginStart="30dp"
         android:textColor="@color/secondary"
         android:textSize="19dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_sans"/>
 
 
 

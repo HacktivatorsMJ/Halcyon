@@ -14,7 +14,8 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="120dp"/>
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/no"

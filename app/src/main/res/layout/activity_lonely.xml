@@ -39,7 +39,8 @@
         android:layout_below="@+id/anime"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/secondary"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:fontFamily="@font/nunito_sans"/>
 
 
     <androidx.appcompat.widget.AppCompatButton

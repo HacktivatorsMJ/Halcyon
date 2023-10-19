@@ -16,7 +16,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/no"

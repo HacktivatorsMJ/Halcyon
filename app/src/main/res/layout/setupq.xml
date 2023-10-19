@@ -15,7 +15,8 @@
         android:textStyle="bold"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_sans"/>
 
 
     <androidx.appcompat.widget.AppCompatEditText
