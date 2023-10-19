@@ -19,47 +19,101 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ABOUT US"
-            android:textColor="#F1F1F1"
-            android:textSize="30dp"
+            android:textColor="@color/secondary"
+            android:textSize="35dp"
             android:textStyle="bold"
+            android:id="@+id/title"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="30dp">
         </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Our Vision: \n'A mentally healthier world, where our app empowers individuals to thrive.'"
-            android:textColor="#F1F1F1"
-            android:textSize="23dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="180dp">
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Our Mission: \n'To provide accessible, evidence-based mental health support, fostering a community of resilience and well-being.'"
-            android:textColor="#F1F1F1"
-            android:textSize="23dp"
-            android:layout_marginTop="280dp"
-            android:layout_marginLeft="160dp"
-            android:layout_marginRight="20dp">
 
-        </TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Our Values:\n 'Compassion, Inclusivity, Privacy, Innovation, and Continuous Improvement."
-            android:textColor="#F1F1F1"
-            android:textSize="23dp"
-            android:layout_marginTop="490dp"
-            android:layout_marginRight="170dp"
-            android:layout_marginLeft="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="40dp"
+                android:id="@+id/visiontxt">
 
-        </TextView>
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Our Vision: \n'A mentally healthier world, where our app empowers individuals to thrive.'"
+                    android:textColor="@color/secondary"
+                    android:textSize="23dp"
+                    android:layout_marginLeft="20dp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/vision"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp">
+
+                </ImageView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/visiontxt"
+                android:layout_marginTop="30dp"
+                android:id="@+id/mission">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/mission"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="25dp"
+                    >
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Our Mission: \n'To provide accessible, evidence-based mental health support, fostering a community of resilience and well-being.'"
+                    android:textColor="@color/secondary"
+                    android:textSize="23dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mission"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:text="Our Values:\n 'Compassion, Inclusivity, Privacy, Innovation, and Continuous Improvement."
+                    android:textColor="@color/secondary"
+                    android:textSize="23dp"
+                    android:layout_marginLeft="20dp">
+
+                </TextView>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/value"
+                    android:layout_gravity="center_vertical">
+
+                </ImageView>
+
+
+            </LinearLayout>
 
         </RelativeLayout>
+
     </ScrollView>
+
 </RelativeLayout>
 
 

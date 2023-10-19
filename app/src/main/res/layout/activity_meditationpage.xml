@@ -13,14 +13,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="What kind of wellness are you into?"
                 android:textColor="@color/secondary"
-                android:textSize="30sp"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 android:id="@+id/wellnesstxt"
                 android:layout_marginRight="20dp"
@@ -32,21 +32,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:layout_below="@+id/wellnesstxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
                 android:id="@+id/breathingtxt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Deep Breathing"
-                    android:layout_marginStart="10dp"
-                    android:layout_centerVertical="true"
+                    android:text=" \n Deep Breathing \n "
                     android:textColor="@color/secondary"
                     android:textSize="28dp"
                     >
@@ -57,21 +55,20 @@
 
             <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:layout_below="@id/breathingtxt"
                     android:backgroundTint="@color/primary"
                     android:background="@drawable/rounded_corner"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:id="@+id/relaxationtxt">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Progressive muscle relaxation"
+                        android:text="\n Progressive muscle relaxation  \n"
                         android:textSize="28dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="10dp"
                         android:textColor="@color/secondary"
                         >
 
@@ -81,11 +78,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_below="@id/relaxationtxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/meditationtxt">
@@ -93,10 +90,8 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mindfulness meditation"
+                    android:text="\n Mindfulness meditation \n"
                     android:textSize="28dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
                 android:textColor="@color/secondary"
                     >
 
@@ -105,10 +100,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_below="@id/meditationtxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/yogatxt">
@@ -116,10 +112,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yoga"
+                    android:text="\n Yoga \n"
                     android:textSize="28dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/secondary">
 
                 </TextView>
@@ -127,10 +121,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/yogatxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/journalingtxt">
@@ -139,10 +134,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Journaling"
+                    android:text="\n Journaling \n"
                     android:textSize="28dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
                     android:textColor="@color/secondary"
                     >
 
@@ -151,10 +144,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/journalingtxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/coloringtxt">
@@ -162,10 +156,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Coloring and art therapy"
+                    android:text="\n Coloring and art therapy \n"
                     android:textSize="28dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_centerVertical="true"
                     android:textColor="@color/secondary">
 
                 </TextView>
@@ -174,10 +166,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/coloringtxt"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/walkstxt">
@@ -185,10 +178,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nature walks"
+                    android:text="\n Nature walks \n"
                     android:textColor="@color/secondary"
-                    android:layout_marginStart="10dp"
-                    android:layout_centerVertical="true"
                     android:textSize="28dp">
 
                 </TextView>
@@ -197,10 +188,11 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/walkstxt"
-               android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
                 android:id="@+id/musictxt">
@@ -208,9 +200,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Music therapy"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
+                    android:text="\n Music therapy \n"
                     android:textSize="28dp"
                     android:textColor="@color/secondary">
 
@@ -219,25 +209,26 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/musictxt"
-                android:layout_margin="20dp"
-
-
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Self-Compassion practices"
+                    android:text="\n Self-Compassion practices \n"
                     android:textSize="28dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_centerVertical="true"
                     android:textColor="@color/secondary">
 
                 </TextView>
+
+
             </RelativeLayout>
+
 
         </RelativeLayout>
 
