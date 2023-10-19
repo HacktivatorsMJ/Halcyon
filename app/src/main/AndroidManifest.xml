@@ -70,6 +70,9 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".Deep_Breathing_Activity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/app_name">
