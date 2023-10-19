@@ -21,9 +21,9 @@
         android:theme="@style/Theme.AppCompat.MentalHealth"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".ProfilePageActivity"
-            android:exported="false" />
+
+        <activity android:name=".AboutUsActivity"
+            android:exported="false"/>
         <activity
             android:name=".OnBoarding.StartActivity"
             android:exported="false" />

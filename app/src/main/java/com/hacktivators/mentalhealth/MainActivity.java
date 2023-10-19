@@ -97,7 +97,7 @@ public class MainActivity extends FragmentActivity {
 
                 if (itemId == R.id.about_us) {
                     drawerLayout.closeDrawer(GravityCompat.START);
-                    startActivity(new Intent(MainActivity.this, aboutus.class));
+                    startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
                     // TO BE ADDED
                 } else if (itemId == R.id.feedback) {
                     drawerLayout.closeDrawer(GravityCompat.START);

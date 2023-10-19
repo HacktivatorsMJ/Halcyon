@@ -47,27 +47,29 @@
 
 
             <TextView
-                android:id="@+id/full"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Username"
-                android:textSize="16dp"
+                android:textSize="18dp"
+                android:fontFamily="@font/nunito_sans"
+
                 android:textColor="@color/secondary"
                 android:layout_below="@+id/profile"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"/>
+                android:layout_marginStart="40dp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/things"
-                android:layout_below="@+id/full"
+            <TextView
+                android:id="@+id/nameBox"
+                android:layout_below="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:layout_marginHorizontal="25sp"
-                android:hint="username"
+
                 android:background="@drawable/edit_text"
 
-                android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:backgroundTint="#F6F6F6"/>
 
             <TextView
@@ -75,44 +77,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
-                android:textSize="16sp"
+                android:textSize="18dp"
+                android:fontFamily="@font/nunito_sans"
                 android:textColor="@color/secondary"
-                android:layout_below="@+id/things"
+                android:layout_below="@+id/nameBox"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"/>
+                android:layout_marginStart="40dp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/email_box"
+            <TextView
+                android:id="@+id/emailBox"
                 android:layout_below="@+id/Email_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:layout_marginHorizontal="25sp"
-                android:hint="e-mail"
+                android:textColor="@color/black"
+                android:clickable="false"
                 android:background="@drawable/edit_text"
 
                 android:inputType="textPersonName"
                 android:backgroundTint="#F6F6F6"/>
 
             <TextView
-                android:id="@+id/phoneNoTxt"
+                android:id="@+id/dobTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone"
-                android:textSize="16dp"
-                android:textColor="@color/secondary"
-                android:layout_below="@+id/email_box"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"/>
+                android:text="Date of Birth"
+                android:textSize="18dp"
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/phoneNoBox"
-                android:layout_below="@+id/phoneNoTxt"
+                android:textColor="@color/secondary"
+                android:layout_below="@+id/emailBox"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginStart="40dp"/>
+
+            <TextView
+                android:id="@+id/dobBox"
+                android:layout_below="@+id/dobTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:layout_marginHorizontal="25sp"
-                android:hint="Notes"
+                android:textColor="@color/black"
+                android:clickable="false"
                 android:background="@drawable/edit_text"
 
                 android:inputType="textPersonName"
@@ -123,10 +130,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Depression Status"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/secondary"
-                android:layout_below="@+id/phoneNoBox"
+                android:layout_below="@+id/dobBox"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/nunito_sans"
                 android:layout_marginStart="30dp"/>
 
 
@@ -136,11 +144,54 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dep_txt"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="30dp"
-                    android:layout_height="5dp"/>
+                    android:id="@+id/ds1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ds2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ds3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/yellow"/>
+
+                <View
+                    android:id="@+id/ds4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
+
+                <View
+                    android:id="@+id/ds5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
 
 
             </LinearLayout>
@@ -150,22 +201,74 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Stress Status"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
                 android:layout_below="@+id/depressionStatusLayout"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="30dp"/>
 
+            <LinearLayout
+                android:id="@+id/stressStatusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stressTxt"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/ss1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ss2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ss3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/yellow"/>
+
+                <View
+                    android:id="@+id/ss4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
+
+                <View
+                    android:id="@+id/ss5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
     </ScrollView>
-
-
-
-
-
-
-
 
 </RelativeLayout>
