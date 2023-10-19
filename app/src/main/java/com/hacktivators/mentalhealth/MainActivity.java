@@ -1,14 +1,17 @@
 package com.hacktivators.mentalhealth;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -24,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hacktivators.mentalhealth.Fragments.ExploreFragment;
 import com.hacktivators.mentalhealth.Fragments.HomeFragment;
 
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +46,8 @@ public class MainActivity extends FragmentActivity {
 
     CircleImageView call,profile;
 
+    ImageView hamburger;
+
 
 
     @Override
@@ -54,6 +60,8 @@ public class MainActivity extends FragmentActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
 
         navigationView = findViewById(R.id.navigation_view);
+
+        hamburger = findViewById(R.id.hamburger);
 
 
         call = findViewById(R.id.call);
@@ -69,7 +77,48 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        hamburger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
         loadFragment(new HomeFragment());
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
+
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.about_us) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity(new Intent(MainActivity.this, aboutus.class));
+                    // TO BE ADDED
+                } else if (itemId == R.id.feedback) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    // TO BE ADDED
+                } else if (itemId == R.id.profess_help) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity(new Intent(MainActivity.this, ProfessionalHelpActivity.class));
+                } else if (itemId == R.id.t_c) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    // TO BE ADDED
+                } else if (itemId == R.id.p_p) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    // TO BE ADDED
+                }
+
+                return false;
+
+            }
+        });
+
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override

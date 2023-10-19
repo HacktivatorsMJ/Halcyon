@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExploreFragment">
+    tools:context=".Fragments.ExploreFragment">
 
 
 
@@ -32,9 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
-            <include android:id="@+id/journal" android:layout_marginVertical="10dp"  layout="@layout/journel_block"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"/>
 
             <include android:id="@+id/qstart" android:layout_marginVertical="10dp"  layout="@layout/qstart"
                 android:layout_width="match_parent"
@@ -49,6 +46,11 @@
                 android:layout_marginBottom="30dp"
                 android:layout_height="120dp"/>
 
+            <include android:id="@+id/journal"
+                layout="@layout/journal1" android:layout_marginVertical="10dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_height="120dp"/>
         </LinearLayout>
 
     </ScrollView>
