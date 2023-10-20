@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-    android:background="#EDFFEB">
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="@color/primary">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="YOUR JOURNAL.."
+        android:text="Your Journal"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"/>
@@ -18,12 +20,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(Your personal structured space for recording your thoughts and experiences)"
+        android:text="Your personal space for recording your thoughts"
         android:textSize="18dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="48dp"
-        android:layout_marginLeft="15dp"
+        android:textColor="@color/secondary"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/nunito_sans"
         />
 

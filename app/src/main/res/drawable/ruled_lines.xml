@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color for the entire EditText -->
+
+
+    <!-- Horizontal lines -->
+
+
+        <solid android:color="@android:color/transparent" /> <!-- Line color -->
+
+
+
+</shape>
