@@ -375,7 +375,7 @@ public class JournalAddActivity extends AppCompatActivity {
 
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         HashMap hashMap = new HashMap();
-        hashMap.put("ID",JournalID);
+        hashMap.put("id",JournalID);
         hashMap.put("journal",Journal);
         hashMap.put("date",date_);
         if(QuestionBol){

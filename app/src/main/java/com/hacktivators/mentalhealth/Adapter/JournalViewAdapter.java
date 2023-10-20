@@ -1,6 +1,8 @@
 package com.hacktivators.mentalhealth.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hacktivators.mentalhealth.JournalReadActivity;
 import com.hacktivators.mentalhealth.Model.Journal;
 import com.hacktivators.mentalhealth.R;
 
@@ -52,6 +55,16 @@ public class JournalViewAdapter extends RecyclerView.Adapter<JournalViewAdapter.
         String date = DateFormat.getDateInstance(DateFormat.FULL).format(time);
         holder.date.setText(date);
 
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, JournalReadActivity.class);
+                intent.putExtra("JournalID",journal.getId());
+                Log.d("JournalID",journal.getId());
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 

@@ -75,6 +75,10 @@
 
         <activity android:name=".JournalViewActivity"
             android:exported="false"/>
+
+       <activity android:name=".JournalReadActivity"
+           android:exported="false"/>
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
