@@ -97,7 +97,7 @@ public class ChatActivity extends Activity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:5000").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://136.185.156.218:13000/sarora/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 
