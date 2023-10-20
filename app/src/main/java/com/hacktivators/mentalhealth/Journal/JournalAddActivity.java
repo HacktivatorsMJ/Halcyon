@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -394,7 +395,7 @@ public class JournalAddActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Journal saved!",Toast.LENGTH_SHORT).show();
-                    finish();
+                    startActivity(new Intent(JournalAddActivity.this, JournalViewActivity.class));
                 }else {
                     Toast.makeText(getApplicationContext(),"Something went wrong!",Toast.LENGTH_SHORT).show();
                 }

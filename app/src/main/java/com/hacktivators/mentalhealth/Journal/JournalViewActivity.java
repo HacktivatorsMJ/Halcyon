@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.hacktivators.mentalhealth.Adapter.JournalViewAdapter;
+import com.hacktivators.mentalhealth.MainActivity;
 import com.hacktivators.mentalhealth.Model.Journal;
 import com.hacktivators.mentalhealth.R;
 
@@ -276,5 +277,12 @@ public class JournalViewActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(JournalViewActivity.this, MainActivity.class));
     }
 }

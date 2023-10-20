@@ -40,11 +40,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/time"
         android:text="today was challenging but i managed to overcome ..."
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/secondary"
         android:textSize="19dp"
         android:ellipsize="end"
         android:lines="2"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"/>
 

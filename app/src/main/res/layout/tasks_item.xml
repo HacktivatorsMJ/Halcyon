@@ -2,38 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:animateLayoutChanges="true"
     android:background="@color/background">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
         android:textSize="25dp"
-        android:textColor="#F1F1F1"
-        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/checkbox"
+        android:textColor="@color/secondary"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+
+        android:fontFamily="@font/nunito_sans">
+
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18dp"
+        android:layout_toRightOf="@+id/checkbox"
+        android:layout_below="@+id/title"
+        android:textColor="@color/secondary"
+        android:layout_marginStart="15dp"
+        android:layout_centerVertical="true"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/nunito_sans">
 
     </TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title description"
-        android:textColor="#F1F1F1"
-        android:layout_marginTop="35dp"
-        android:textSize="20dp"
-        android:layout_marginLeft="15dp"
-        android:fontFamily="@font/nunito_sans">
 
-    </TextView>
-    <CheckBox
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkbox"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
         android:buttonTint="@color/white"
         android:fontFamily="@font/nunito_sans">
 
-    </CheckBox>
+    </androidx.appcompat.widget.AppCompatCheckBox>
 </RelativeLayout>

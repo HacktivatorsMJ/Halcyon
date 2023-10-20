@@ -38,7 +38,8 @@
             android:exported="false" />
         <activity
             android:name=".OnBoarding.InfoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Calendar"/>
         <activity
             android:name=".LonelyActivity"
             android:exported="false" />
@@ -101,6 +102,14 @@
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.MentalHealth" />
+
+        <activity
+            android:name=".TaskActivity"
+            android:exported="false" />
+
+        <activity android:name=".NewTaskActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Calendar"/>
 
         <meta-data
             android:name="preloaded_fonts"

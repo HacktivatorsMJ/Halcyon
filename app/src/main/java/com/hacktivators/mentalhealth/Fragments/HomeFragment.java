@@ -26,6 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.ChatActivity;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.TaskActivity;
 
 import org.w3c.dom.Text;
 
@@ -58,6 +59,8 @@ public class HomeFragment extends Fragment {
 
     LinearLayout morning,noon,night;
 
+    View tasks;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,6 +76,8 @@ public class HomeFragment extends Fragment {
         morning = view.findViewById(R.id.morning);
         noon = view.findViewById(R.id.noon);
         night = view.findViewById(R.id.night);
+
+        tasks = view.findViewById(R.id.tasks_night);
 
 
         article = view.findViewById(R.id.article_layout);
@@ -92,13 +97,21 @@ public class HomeFragment extends Fragment {
         featured.setVisibility(View.GONE);
         if(hour < 6){
             night.setVisibility(View.VISIBLE);
+            morning.setVisibility(View.GONE);
+            noon.setVisibility(View.GONE);
         }
         if (hour >= 6 && hour < 12) {
             morning.setVisibility(View.VISIBLE);
+            noon.setVisibility(View.GONE);
+            night.setVisibility(View.GONE);
         } else if (hour >= 12 && hour <= 20) {
             noon.setVisibility(View.VISIBLE);
+            morning.setVisibility(View.GONE);
+            night.setVisibility(View.GONE);
         } else if (hour >= 21) {
             night.setVisibility(View.VISIBLE);
+            morning.setVisibility(View.GONE);
+            noon.setVisibility(View.GONE);
         }
 
         art_recom = view.findViewById(R.id.article_recom);
@@ -137,6 +150,13 @@ public class HomeFragment extends Fragment {
 
         });
 
+        tasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), TaskActivity.class));
+            }
+        });
+
         chat_block.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,11 +184,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-       // loadData();
-        //Set greeting
 
-
-        if(hour > 0){
+        if(hour >= 0){
             greeting = "You should be sleeping..";
         }
         if(hour>=6 && hour<12){
