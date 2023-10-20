@@ -1,4 +1,4 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Journal;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.hacktivators.mentalhealth.Adapter.JournalViewAdapter;
 import com.hacktivators.mentalhealth.Model.Journal;
+import com.hacktivators.mentalhealth.R;
 
 import java.util.ArrayList;
 

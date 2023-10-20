@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hacktivators.mentalhealth.JournalReadActivity;
+import com.hacktivators.mentalhealth.Journal.JournalReadActivity;
 import com.hacktivators.mentalhealth.Model.Journal;
 import com.hacktivators.mentalhealth.R;
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7E5E2">
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,8 +13,9 @@
         android:id="@+id/title"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="68dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/nunito_sans">
@@ -25,10 +26,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="enter tasks you wanna do today"
+            android:text="Enter tasks you wanna do today"
             android:id="@+id/tasks"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/secondary"
             android:layout_marginStart="15dp"
             android:layout_below="@id/title"
             android:layout_marginTop="40dp"
@@ -40,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recycler_view"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/tasks">
 
     </androidx.recyclerview.widget.RecyclerView>

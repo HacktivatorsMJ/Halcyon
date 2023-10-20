@@ -1,4 +1,4 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Journal;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hacktivators.mentalhealth.R;
 
 import java.util.ArrayList;
 import java.util.Date;

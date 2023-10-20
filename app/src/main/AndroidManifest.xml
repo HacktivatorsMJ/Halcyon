@@ -31,7 +31,7 @@
             android:name=".OnBoarding.CreateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".JournalAddActivity"
+            android:name=".Journal.JournalAddActivity"
             android:exported="false" />
         <activity
             android:name=".OnBoarding.InfoActivity"
@@ -73,10 +73,10 @@
             android:name=".Deep_Breathing_Activity"
             android:exported="false" />
 
-        <activity android:name=".JournalViewActivity"
+        <activity android:name=".Journal.JournalViewActivity"
             android:exported="false"/>
 
-       <activity android:name=".JournalReadActivity"
+       <activity android:name=".Journal.JournalReadActivity"
            android:exported="false"/>
 
         <activity
@@ -92,6 +92,8 @@
         <activity
             android:name=".ChatActivity"
             android:exported="false" />
+        <activity android:name=".MeditationPageActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false"

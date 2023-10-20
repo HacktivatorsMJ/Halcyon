@@ -44,7 +44,7 @@ public class MainActivity extends FragmentActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    CircleImageView call,profile;
+    CircleImageView profile;
 
     ImageView hamburger;
 
@@ -64,18 +64,13 @@ public class MainActivity extends FragmentActivity {
         hamburger = findViewById(R.id.hamburger);
 
 
-        call = findViewById(R.id.call);
+
 
         profile = findViewById(R.id.profile);
 
         loadData();
 
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,CrisisActivity.class));
-            }
-        });
+
 
         hamburger.setOnClickListener(new View.OnClickListener() {
             @Override

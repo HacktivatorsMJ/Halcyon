@@ -1,4 +1,4 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Journal;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +19,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.hacktivators.mentalhealth.R;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
