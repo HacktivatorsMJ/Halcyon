@@ -8,28 +8,26 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Depression Test"
+        android:text="Stress Test"
         android:textColor="@color/secondary"
-        android:id="@+id/maintext"
+        android:id="@+id/maintextt"
         android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold">
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/maintext"
         android:textColor="@color/secondary"
-        android:text="Assess your mood with our quick, confidential test."
+        android:text="Evaluate your stress levels with this brief, confidential test."
         android:textSize="17dp"
+        android:layout_below="@+id/maintextt"
         android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:textAlignment="center">
+        android:layout_marginEnd="20dp">
     </TextView>
 
 </RelativeLayout>
-
-
