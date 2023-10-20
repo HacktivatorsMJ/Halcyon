@@ -23,6 +23,8 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/anime"
         android:layout_width="match_parent"
+        app:lottie_rawRes="@raw/startpage"
+        app:lottie_loop="true"
         android:layout_height="400dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/title"
@@ -38,6 +40,7 @@
         android:textAlignment="center"
         android:layout_below="@+id/anime"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/secondary"
         android:textSize="20dp"
         android:fontFamily="@font/nunito_sans"/>
@@ -52,7 +55,8 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/primary_btn"
         android:textColor="@color/secondary"
-        android:text="Start"/>
+        android:text="Start"
+        android:textSize="20dp"/>
 
 
 
