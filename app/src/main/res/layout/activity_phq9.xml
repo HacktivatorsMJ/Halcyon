@@ -948,7 +948,9 @@
 
                 android:textColor="@color/secondary"
                 android:layout_centerHorizontal="true"
+                android:textAlignment="center"
                 android:textSize="40dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_below="@+id/title"
                 android:layout_marginTop="100dp"
                 />
@@ -971,7 +973,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:background="@color/green"/>
+                    android:background="@color/primary"/>
 
                 <View
                     android:id="@+id/ds2"
@@ -980,7 +982,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:background="@color/green"/>
+                    android:background="@color/primary"/>
 
                 <View
                     android:id="@+id/ds3"
@@ -989,7 +991,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:background="@color/yellow"/>
+                    android:background="@color/primary"/>
 
                 <View
                     android:id="@+id/ds4"
@@ -998,7 +1000,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:background="@color/red"/>
+                    android:background="@color/primary"/>
 
                 <View
                     android:id="@+id/ds5"
@@ -1007,7 +1009,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginHorizontal="5dp"
-                    android:background="@color/red"/>
+                    android:background="@color/primary"/>
 
 
             </LinearLayout>
