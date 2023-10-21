@@ -106,7 +106,7 @@ public class MeditationPageActivity extends AppCompatActivity {
                     reset();
 
 
-                        mediaPlayer.start();
+                        mediaPlayer.stop();
                 }
             }.start();
         }else{
@@ -121,6 +121,7 @@ public class MeditationPageActivity extends AppCompatActivity {
         seekBar.setProgress(1800);
         countDownTimer.cancel();
         start.setText("Start");
+        mediaPlayer.stop();
         seekBar.setEnabled(true);
         counterIsActive = false;
     }
