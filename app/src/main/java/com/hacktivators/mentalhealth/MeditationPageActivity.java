@@ -90,6 +90,7 @@ public class MeditationPageActivity extends AppCompatActivity {
             counterIsActive = true;
             seekBar.setEnabled(false);
             start.setText("Stop");
+            mediaPlayer.start();
 
             countDownTimer = new CountDownTimer(seekBar.getProgress() * 1000, 1000) {
 
@@ -104,7 +105,7 @@ public class MeditationPageActivity extends AppCompatActivity {
 
                     reset();
 
-                    if (mediaPlayer != null)
+
                         mediaPlayer.start();
                 }
             }.start();
