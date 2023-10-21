@@ -2,14 +2,9 @@ package com.hacktivators.mentalhealth.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,13 +25,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.ChatActivity;
 import com.hacktivators.mentalhealth.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.StressTestActivity;
 import com.hacktivators.mentalhealth.TaskActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -52,13 +48,16 @@ public class HomeFragment extends Fragment {
     TextView foryouTXT,featuredTXT;
 
 
+    public static final String TIME = "";
+
+
     TextView art_recom,book_recom,vid_recom,podcast_recom;
     String articleUrl,bookUrl,videoUrl,podcastUrl;
 
     RelativeLayout article,book,video,podcast;
 
 
-    LinearLayout morning,noon,night;
+    LinearLayout morning,noon,night,tests;
 
     View tasks,depressionTest,stressTest;
 
@@ -75,6 +74,7 @@ public class HomeFragment extends Fragment {
         featured = view.findViewById(R.id.featured);
         depressionTest = view.findViewById(R.id.depressionTest);
         stressTest = view.findViewById(R.id.stressTest);
+        tests = view.findViewById(R.id.tests);
 
         morning = view.findViewById(R.id.morning);
         noon = view.findViewById(R.id.noon);
@@ -98,6 +98,29 @@ public class HomeFragment extends Fragment {
         featuredTXT = view.findViewById(R.id.featuredTXT);
 
         featured.setVisibility(View.GONE);
+
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("tests",0);
+        long DPtime = sharedPreferences.getLong(TIME, 0);
+        long SStime = sharedPreferences.getLong(TIME, 0);
+
+
+        if(isMoreThanAWeek(DPtime)){
+            tests.setVisibility(View.VISIBLE);
+
+            depressionTest.setVisibility(View.VISIBLE);
+        }else {
+            depressionTest.setVisibility(View.GONE);
+        }
+
+        if(isMoreThanAWeek(SStime)){
+
+            tests.setVisibility(View.VISIBLE);
+
+            stressTest.setVisibility(View.VISIBLE);
+        }else {
+            stressTest.setVisibility(View.GONE);
+        }
+
         if(hour < 6){
             night.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
@@ -145,6 +168,8 @@ public class HomeFragment extends Fragment {
                     night.setVisibility(View.VISIBLE);
                 }
 
+
+
                 foryouTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
                 foryouTXT.setBackground(getContext().getResources().getDrawable(R.drawable.accent_back));
                 featuredTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
@@ -179,6 +204,7 @@ public class HomeFragment extends Fragment {
 
                     night.setVisibility(View.GONE);
 
+                    tests.setVisibility(View.GONE);
                 foryouTXT.setBackground(null);
                 foryouTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
                 featuredTXT.setTextColor(getContext().getResources().getColor(R.color.secondary));
@@ -252,6 +278,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        stressTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), StressTestActivity.class));
+            }
+        });
+
 
 
         loadData();
@@ -317,6 +350,15 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+    }
+
+
+    private boolean isMoreThanAWeek(long time){
+
+        long oneWeekAgo = System.currentTimeMillis() - 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+
+        return time < oneWeekAgo;
 
     }
 

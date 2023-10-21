@@ -1,20 +1,37 @@
 package com.hacktivators.mentalhealth;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PHQ9Activity extends AppCompatActivity {
 
-    RelativeLayout q1,q2,q3,q4,q5,q6,q7,q8,q9;
+    RelativeLayout q1,q2,q3,q4,q5,q6,q7,q8,q9,loading,prof_help,result;
 
     AppCompatButton naa1,naa2,naa3,naa4,naa5,naa6,naa7,naa8,naa9;
     AppCompatButton sd1,sd2,sd3,sd4,sd5,sd6,sd7,sd8,sd9;
     AppCompatButton mth1,mth2,mth3,mth4,mth5,mth6,mth7,mth8,mth9;
     AppCompatButton ne1,ne2,ne3,ne4,ne5,ne6,ne7,ne8,ne9;
+
+    AppCompatButton done;
+
+    TextView scoreTxt,DescTxt;
+
+    View ds1,ds2,ds3,ds4,ds5;
 
     int score = 0;
 
@@ -77,10 +94,40 @@ public class PHQ9Activity extends AppCompatActivity {
         ne8 = findViewById(R.id.ne8);
         ne9 = findViewById(R.id.ne9);
 
+        prof_help = findViewById(R.id.help_btn);
+        done = findViewById(R.id.done);
+        ds1 = findViewById(R.id.ds1);
+        ds2 = findViewById(R.id.ds2);
+        ds3 = findViewById(R.id.ds3);
+        ds4 = findViewById(R.id.ds4);
+        ds5 = findViewById(R.id.ds5);
+
+        DescTxt = findViewById(R.id.depression_status);
+
+
+        result = findViewById(R.id.result);
+
+        loading = findViewById(R.id.loading);
+
+
+        scoreTxt = findViewById(R.id.desc);
 
 
 
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PHQ9Activity.this,MainActivity.class));
+            }
+        });
 
+
+        prof_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PHQ9Activity.this, ProfessionalHelpActivity.class));
+            }
+        });
 
 
         naa1.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +138,7 @@ public class PHQ9Activity extends AppCompatActivity {
                 q2.setVisibility(View.VISIBLE);
             }
         });
+
 
         naa2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,6 +300,9 @@ public class PHQ9Activity extends AppCompatActivity {
             public void onClick(View v) {
                 // Handle click for sd9
                 q9.setVisibility(View.GONE);
+
+
+                CalculateResult();
                 // Handle the last question, as there's no q10 in your example
                 score += 1;
                 shaded += 1;
@@ -356,6 +407,7 @@ public class PHQ9Activity extends AppCompatActivity {
             public void onClick(View v) {
                 // Handle click for mth9
                 q9.setVisibility(View.GONE);
+                CalculateResult();
                 // Handle the last question, as there's no q10 in your example
                 score += 2;
                 shaded += 1;
@@ -459,6 +511,7 @@ public class PHQ9Activity extends AppCompatActivity {
             public void onClick(View v) {
                 // Handle click for ne9
                 q9.setVisibility(View.GONE);
+                CalculateResult();
                 // Handle the last question, as there's no q10 in your example
                 shaded += 1;
                 score += 3;
@@ -470,6 +523,55 @@ public class PHQ9Activity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    private void CalculateResult() {
+
+
+        loading.setVisibility(View.VISIBLE);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loading.setVisibility(View.GONE);
+                result.setVisibility(View.VISIBLE);
+            }
+        },5000);
+
+
+        scoreTxt.setText(score + "/" + "27");
+
+
+        if( score == 0){
+            DescTxt.setText("You have no depression!!!!");
+            prof_help.setVisibility(View.GONE);
+        } else if (score >= 1 && score <= 4) {
+
+            DescTxt.setText("There are chances that you might have minimal depression");
+            prof_help.setVisibility(View.GONE);
+
+        } else if (score > 4 && score <= 9) {
+
+            DescTxt.setText("There are chances that you might have mild depression");
+            prof_help.setVisibility(View.GONE);
+            
+        } else if (score > 9 && score <=14) {
+
+            DescTxt.setText("There are chances that you might have moderate depression");
+        } else if (score > 14 && score <= 19) {
+            DescTxt.setText("There are chances that you might have moderately severe depression");
+        } else if (score > 20 && score <= 27) {
+            DescTxt.setText("There are chances that you might have severe depression");
+        }
+
+
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        assert firebaseUser != null;
+        firebaseFirestore.collection("users").document(firebaseUser.getUid()).update("DepressionScore",score);
 
 
     }

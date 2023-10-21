@@ -75,9 +75,11 @@
         android:layout_below="@+id/for_youTXT">
 
         <LinearLayout
+            android:id="@+id/tests"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
+            android:visibility="gone"
             android:orientation="vertical">
 
 

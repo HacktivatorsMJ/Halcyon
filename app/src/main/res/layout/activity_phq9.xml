@@ -887,6 +887,186 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingAnim"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            app:lottie_rawRes="@raw/moon"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculating"
+            android:layout_below="@+id/loadingAnim"
+            android:textColor="@color/secondary"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textSize="50dp"
+                android:layout_marginTop="20dp"
+                />
+
+
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="13/27"
+
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textSize="40dp"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="100dp"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/depressionStatusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desc"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/ds1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ds2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/green"/>
+
+                <View
+                    android:id="@+id/ds3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/yellow"/>
+
+                <View
+                    android:id="@+id/ds4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
+
+                <View
+                    android:id="@+id/ds5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/red"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/depression_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/depressionStatusLayout"
+                tools:text="You have moderate depression"
+                android:textColor="@color/secondary"
+                android:textSize="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/depression_status"
+                android:layout_marginTop="80dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Click to Seek for professional help now!"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/done"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textAllCaps="false"
+
+                android:background="@drawable/primary_btn"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+
 
 
 

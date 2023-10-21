@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:background="@drawable/rounded_corner"
-    android:backgroundTint="#EDFFEB">
+    android:background="@drawable/ques_back"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +11,7 @@
         android:text="Tasks for the day"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_sans"/>
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Enter the tasks you want to do today..."
         android:textSize="18dp"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="15dp"
         android:fontFamily="@font/nunito_sans"/>
