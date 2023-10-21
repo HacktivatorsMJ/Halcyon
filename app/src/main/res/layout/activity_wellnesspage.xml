@@ -72,8 +72,7 @@
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
                     android:layout_below="@id/breathing_layout"
-                    android:backgroundTint="@color/primary"
-                    android:background="@drawable/rounded_corner"
+                    android:background="@drawable/ques_back"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:id="@+id/relaxation_layout">
@@ -114,9 +113,7 @@
                 android:layout_below="@id/relaxation_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/meditation_layout">
 
 
@@ -152,8 +149,7 @@
                 android:layout_below="@id/meditation_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/yoga_layout">
 
                 <RelativeLayout
@@ -194,8 +190,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/journaling_layout">
 
                     <TextView
@@ -230,8 +225,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/coloring_layout">
 
                 <RelativeLayout
@@ -270,8 +264,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/walks_layout">
 
                 <RelativeLayout
@@ -311,8 +304,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:id="@+id/music_layout">
 
                 <RelativeLayout
@@ -350,8 +342,7 @@
                 android:layout_below="@id/music_layout"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner">
+                android:background="@drawable/ques_back">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

@@ -31,7 +31,7 @@
                 android:text="Log Out"
                 android:paddingStart="15dp"
                 android:fontFamily="@font/nunito_sans"
-                android:textColor="@color/black"
+                android:textColor="@color/secondary"
                 android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:textSize="28dp"/>
