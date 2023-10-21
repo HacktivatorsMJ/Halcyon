@@ -40,7 +40,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/info"
-                android:src="@drawable/model"
+                tools:src="@drawable/model"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"/>
 

@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.ChatActivity;
+import com.hacktivators.mentalhealth.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.TaskActivity;
 
@@ -59,7 +60,7 @@ public class HomeFragment extends Fragment {
 
     LinearLayout morning,noon,night;
 
-    View tasks;
+    View tasks,depressionTest,stressTest;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,6 +73,8 @@ public class HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
 
         featured = view.findViewById(R.id.featured);
+        depressionTest = view.findViewById(R.id.depressionTest);
+        stressTest = view.findViewById(R.id.stressTest);
 
         morning = view.findViewById(R.id.morning);
         noon = view.findViewById(R.id.noon);
@@ -241,6 +244,15 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        depressionTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PHQ9Activity.class));
+            }
+        });
+
+
 
         loadData();
 

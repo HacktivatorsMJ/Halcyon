@@ -4,13 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/journal_background"
     tools:context=".ChatActivity">
 
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/primary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true"
+                    android:src="@color/accent"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profile"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:layout_marginStart="10dp"
+                    android:textSize="23dp"
+                    android:text="Taylor"
+                    />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view"
+
         android:layout_above="@id/editor_layout"
         />
     <TextView
@@ -48,7 +84,7 @@
             android:layout_height="40dp"
             android:background="@drawable/edit_text"
             android:ems="10"
-            android:hint="Send Message"
+            android:hint="Send Message to start"
             android:imeOptions="flagNoExtractUi|actionSend"
             android:inputType="textMultiLine|textCapSentences|textShortMessage"
             android:maxLength="2000"
@@ -66,8 +102,6 @@
             android:scrollHorizontally="false"
 
             android:layout_toStartOf="@+id/send_btn"
-
-
             tools:text="Enter Message" >
 
 
@@ -81,7 +115,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="4dp"
-            android:background="@drawable/send"
+            android:background="@drawable/baseline_send_24"
+            android:backgroundTint="@color/secondary"
             android:visibility="visible"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>

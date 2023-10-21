@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PHQ9Activity"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/q1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Little interest or pleasure in doing things"
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+
+           android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/nunito_sans"
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAllCaps="false"
+            android:background="@drawable/ques_back"
+            android:padding="10dp"
+            android:layout_below="@+id/question1"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several Days"
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa1"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+            android:padding="10dp"
+            android:layout_below="@+id/sd1"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth1"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/q2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Feeling down, depressed, or hopeless"
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question2"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa2"
+
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd2"
+
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth2"
+
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Trouble falling asleep, staying asleep, or sleeping too much"
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question3"
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+            android:padding="10dp"
+            android:layout_below="@+id/naa3"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd3"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+
+
+            android:textSize="26dp"
+            android:padding="10dp"
+            android:layout_below="@+id/mth3"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Feeling tired or having little energy."
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+            android:layout_alignParentStart="true"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question4"
+
+            android:layout_marginTop="50dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa4"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days"
+
+            android:textSize="26dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd4"
+
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+            android:padding="10dp"
+            android:layout_below="@+id/mth4"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Poor appetite or overeating. "
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question5"
+
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa5"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd5"
+
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth5"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. Feeling bad about yourself, that you are a failure or have let yourself or your family down."
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question6"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa6"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd6"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nearly everyday"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth6"
+
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7. Trouble concentrating on things such as reading the newspaper or watching television."
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question7"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa7"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd7"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth7"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8. Moving or speaking so slowly that others notice. Or being too figety or restless."
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/question8"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa8"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd8"
+
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth8"
+
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/q9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/question9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9. Thoughts that you would be better off dead, or of hurting yourself."
+            android:textSize="26dp"
+            android:textColor="@color/secondary"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/nunito_sans"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/naa9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not at all"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@+id/question9"
+
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Several days"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/naa9"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mth9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More than half the days  "
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/sd9"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ne9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearly everyday"
+
+            android:textSize="26dp"
+
+            android:padding="10dp"
+            android:layout_below="@+id/mth9"
+            android:background="@drawable/ques_back"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>
