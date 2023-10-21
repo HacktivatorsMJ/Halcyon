@@ -39,16 +39,14 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
-                android:id="@+id/breathingtxt">
+                android:id="@+id/breathing_layout">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" Deep Breathing  "
+                        android:text=" Deep Breathing"
+                        android:layout_centerVertical="true"
                         android:textColor="@color/secondary"
                         android:textSize="28dp"
                         android:layout_marginStart="10dp"
@@ -60,12 +58,13 @@
                         android:layout_width="100dp"
                         android:layout_height="70dp"
                         android:src="@drawable/lungs"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="30dp">
+                        android:layout_marginEnd="20dp">
 
                     </ImageView>
 
-                </LinearLayout>
 
             </RelativeLayout>
 
@@ -73,37 +72,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
-                    android:layout_below="@id/breathingtxt"
+                    android:layout_below="@id/breathing_layout"
                     android:backgroundTint="@color/primary"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:id="@+id/relaxationtxt">
+                    android:id="@+id/relaxation_layout">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+
 
                     <TextView
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:text="Progressive muscle relaxation"
                         android:textSize="28dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/pmr_icon"
+                        android:layout_marginEnd="10dp"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="20dp">
                     </TextView>
 
                     <ImageView
+                        android:id="@+id/pmr_icon"
                         android:layout_width="90dp"
                         android:layout_height="80dp"
                         android:src="@drawable/man"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="15dp">
+                        android:layout_marginEnd="20dp">
 
                     </ImageView>
 
-                </LinearLayout>
 
             </RelativeLayout>
 
@@ -111,22 +112,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/relaxationtxt"
+                android:layout_below="@id/relaxation_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
+
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/meditationtxt">
+                android:id="@+id/meditation_layout">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mindfulness \n meditation"
                         android:textSize="28dp"
+                        android:layout_centerVertical="true"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="25dp">
@@ -139,11 +139,10 @@
                         android:layout_marginTop="20dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginEnd="30dp">
+                        android:layout_marginEnd="20dp">
 
                     </ImageView>
 
-                </RelativeLayout>
 
             </RelativeLayout>
 
@@ -151,16 +150,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/meditationtxt"
+                android:layout_below="@id/meditation_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/yogatxt">
+                android:id="@+id/yoga_layout">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +168,7 @@
                         android:textSize="28dp"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="35dp"
-                        android:layout_marginTop="35dp">
+                        android:layout_centerVertical="true">
 
                     </TextView>
 
@@ -192,26 +191,23 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_below="@+id/yogatxt"
+                android:layout_below="@+id/yoga_layout"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/journalingtxt">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:id="@+id/journaling_layout">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Journaling "
                         android:textSize="28dp"
+                        android:layout_centerVertical="true"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="30dp">
+                        >
                     </TextView>
 
                     <ImageView
@@ -221,28 +217,27 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="20dp"
-                        android:layout_marginEnd="30dp">
+                        android:layout_marginEnd="20dp">
 
                     </ImageView>
 
-                </RelativeLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_below="@id/journalingtxt"
+                android:layout_below="@id/journaling_layout"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/coloringtxt">
+                android:id="@+id/coloring_layout">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -272,17 +267,17 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_below="@id/coloringtxt"
+                android:layout_below="@id/coloring_layout"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/walkstxt">
+                android:id="@+id/walks_layout">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -290,8 +285,9 @@
                         android:text="Nature walks"
                         android:textColor="@color/secondary"
                         android:textSize="28dp"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="30dp">
+                       >
                     </TextView>
 
                     <ImageView
@@ -301,7 +297,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="40dp"
-                        android:layout_marginEnd="30dp">
+                        android:layout_marginEnd="20dp">
 
                     </ImageView>
 
@@ -312,26 +308,27 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_below="@id/walkstxt"
+                android:layout_below="@id/walks_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner"
-                android:id="@+id/musictxt">
+                android:id="@+id/music_layout">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Music therapy"
                         android:textSize="28dp"
+                        android:layout_centerVertical="true"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="30dp">
+                        >
                     </TextView>
 
                     <ImageView
@@ -340,8 +337,8 @@
                         android:src="@drawable/music"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginEnd="30dp"
-                        android:layout_marginTop="40dp">
+                        android:layout_marginEnd="20dp"
+                        >
                     </ImageView>
 
                 </RelativeLayout>
@@ -351,16 +348,15 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_below="@id/musictxt"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_below="@id/music_layout"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary"
                 android:background="@drawable/rounded_corner">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -369,7 +365,7 @@
                         android:textSize="28dp"
                         android:textColor="@color/secondary"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="25dp">
+                       android:layout_centerVertical="true">
                     </TextView>
 
                     <ImageView

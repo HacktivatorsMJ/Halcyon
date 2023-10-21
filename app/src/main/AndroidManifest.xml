@@ -116,6 +116,9 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Calendar" />
 
+        <activity android:name=".WellnessPagesActivity"
+            android:exported="false"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
