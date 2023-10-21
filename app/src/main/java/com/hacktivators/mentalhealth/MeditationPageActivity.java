@@ -30,6 +30,10 @@ public class MeditationPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_meditation_page);
 
         how_to_btn = findViewById(R.id.how_to_btn);
+        start = findViewById(R.id.start_btn);
+        seekBar = findViewById(R.id.seekbar);
+        timerTxt = findViewById(R.id.timer);
+        timerTxt.setText("30:00");
 
         how_to_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +50,8 @@ public class MeditationPageActivity extends AppCompatActivity {
             }
         });
 
-        seekBar = findViewById(R.id.seekbar);
-        timerTxt = findViewById(R.id.timer);
-        start = findViewById(R.id.start);
+
+
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song);
         // I am setting the upper range of the SeekBar with 300, since I
         // want the max limit to be 5 minutes or 300 seconds. Change
