@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDFFED">
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/question"
@@ -10,9 +10,8 @@
         android:layout_height="wrap_content"
         android:text="Have you lost interest in activities you once enjoyed, such as hobbies,socializing, or work?"
         android:textSize="26dp"
-        android:textColor="@color/black"
+        android:textColor="@color/secondary"
         android:textAlignment="center"
-        android:textStyle="bold"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -22,12 +21,13 @@
         android:id="@+id/no"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="NO"
+        android:text="No"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary"
         android:layout_alignParentStart="true"
-        android:textStyle="bold"
         android:textSize="26dp"
         android:padding="10dp"
-        android:background="@drawable/question_btn"
+        android:background="@drawable/ques_back"
         android:layout_below="@+id/question"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"/>
@@ -36,9 +36,11 @@
         android:id="@+id/yes"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="YES"
-        android:background="@drawable/question_btn"
+        android:text="Yes"
+        android:textAllCaps="false"
+        android:background="@drawable/ques_back"
         android:padding="10dp"
+        android:textColor="@color/secondary"
 
         android:layout_alignParentEnd="true"
         android:textStyle="bold"

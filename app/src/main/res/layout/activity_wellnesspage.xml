@@ -33,8 +33,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:backgroundTint="@color/primary"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/ques_back"
                 android:layout_below="@+id/wellnesstxt"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
