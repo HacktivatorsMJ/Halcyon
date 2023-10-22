@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 public class WellnessPagesActivity extends AppCompatActivity {
 
 
-    RelativeLayout meditation_layout,deepBreathing,yoga;
+    RelativeLayout meditation_layout,deepBreathing,yoga,journal,music_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,9 @@ public class WellnessPagesActivity extends AppCompatActivity {
         yoga = findViewById(R.id.yoga_layout);
 
 
+        journal = findViewById(R.id.journaling_layout);
+
+        music_layout = findViewById(R.id.music_layout);
 
 
 
@@ -32,7 +35,7 @@ public class WellnessPagesActivity extends AppCompatActivity {
 
 
 
-
+        music_layout = findViewById(R.id.music_layout);
 
         meditation_layout.setOnClickListener(new View.OnClickListener() {
             @Override
