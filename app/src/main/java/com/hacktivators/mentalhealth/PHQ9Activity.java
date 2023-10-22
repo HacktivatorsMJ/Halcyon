@@ -1,25 +1,24 @@
 package com.hacktivators.mentalhealth;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PHQ9Activity extends AppCompatActivity {
 
+    private static final String DPTIME = "DPTIME";
     RelativeLayout q1,q2,q3,q4,q5,q6,q7,q8,q9,loading,prof_help,result;
 
     AppCompatButton naa1,naa2,naa3,naa4,naa5,naa6,naa7,naa8,naa9;
@@ -540,6 +539,12 @@ public class PHQ9Activity extends AppCompatActivity {
             }
         },5000);
 
+        long currentDateInMillis = System.currentTimeMillis();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("tests", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putLong(DPTIME, currentDateInMillis);
+        editor.apply();
 
         scoreTxt.setText(score + "/" + "27");
 
@@ -547,23 +552,46 @@ public class PHQ9Activity extends AppCompatActivity {
         if( score == 0){
             DescTxt.setText("You have no depression!!!!");
             prof_help.setVisibility(View.GONE);
+
+
         } else if (score >= 1 && score <= 4) {
 
             DescTxt.setText("There are chances that you might have minimal depression");
             prof_help.setVisibility(View.GONE);
+            ds1.setBackgroundColor(getColor(R.color.green));
+
 
         } else if (score > 4 && score <= 9) {
 
             DescTxt.setText("There are chances that you might have mild depression");
             prof_help.setVisibility(View.GONE);
+
+            ds1.setBackgroundColor(getColor(R.color.green));
+            ds2.setBackgroundColor(getColor(R.color.green));
+
             
         } else if (score > 9 && score <=14) {
 
             DescTxt.setText("There are chances that you might have moderate depression");
+            ds1.setBackgroundColor(getColor(R.color.green));
+            ds2.setBackgroundColor(getColor(R.color.green));
+            ds3.setBackgroundColor(getColor(R.color.yellow));
+
         } else if (score > 14 && score <= 19) {
             DescTxt.setText("There are chances that you might have moderately severe depression");
+            ds1.setBackgroundColor(getColor(R.color.green));
+            ds2.setBackgroundColor(getColor(R.color.green));
+            ds3.setBackgroundColor(getColor(R.color.yellow));
+            ds4.setBackgroundColor(getColor(R.color.red));
         } else if (score > 20 && score <= 27) {
             DescTxt.setText("There are chances that you might have severe depression");
+            ds1.setBackgroundColor(getColor(R.color.green));
+            ds2.setBackgroundColor(getColor(R.color.green));
+            ds3.setBackgroundColor(getColor(R.color.yellow));
+            ds4.setBackgroundColor(getColor(R.color.red));
+            ds5.setBackgroundColor(getColor(R.color.red));
+
+
         }
 
 

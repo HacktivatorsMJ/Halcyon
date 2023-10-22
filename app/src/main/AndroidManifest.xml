@@ -119,6 +119,17 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Calendar" />
 
+        <activity android:name=".WellnessPagesActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.Memorium.Crop"/>
+
+        <activity android:name=".YogaPageActivity"
+            android:theme="@style/Theme.Halcyon.Yoga"
+            android:exported="false"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -11,12 +11,15 @@ import android.view.ViewGroup;
 
 import com.hacktivators.mentalhealth.Journal.JournalViewActivity;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.WellnessPagesActivity;
 
 
 public class ExploreFragment extends Fragment {
 
 
-    View journal;
+    View journal,wellness;
+
+
 
 
 
@@ -29,12 +32,22 @@ public class ExploreFragment extends Fragment {
 
 
         journal = view.findViewById(R.id.journal);
+        wellness = view.findViewById(R.id.wellness);
+
+
 
 
         journal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), JournalViewActivity.class));
+            }
+        });
+
+        wellness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), WellnessPagesActivity.class));
             }
         });
 

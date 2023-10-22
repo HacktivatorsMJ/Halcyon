@@ -1,362 +1,494 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_corner"
-    android:backgroundTint="@color/background">
+    android:background="@color/background"
+    tools:context=".YogaPageActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/questionsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yoga"
+                        android:textColor="@color/secondary"
+                        android:textSize="35dp"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:id="@+id/titlee">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personalize your yoga plan"
+                        android:textColor="@color/secondary"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_below="@id/titlee"
+                        android:layout_centerHorizontal="true">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="How often can you commit to practicing yoga?"
+                        android:textColor="@color/secondary"
+                        android:textSize="20dp"
+                        android:layout_below="@+id/titlee"
+                        android:id="@+id/q1"
+                        android:textAlignment="center"
+                        android:layout_marginTop="50dp">
+                    </TextView>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputTime"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/q1"
+                        android:padding="15dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:hint="input time"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rounded_corner"
+                        android:inputType="textPersonName"
+                        android:backgroundTint="#F6F6F6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Do you have any injuries, medical conditions, or physical limitations that I should be aware of?"
+                        android:textColor="@color/secondary"
+                        android:textSize="20dp"
+                        android:id="@+id/q2"
+                        android:layout_below="@id/inputTime"
+                        android:textAlignment="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="12dp">
+                    </TextView>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputInjury"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/q2"
+                        android:padding="15dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:hint="input text"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rounded_corner"
+                        android:inputType="textPersonName"
+                        android:backgroundTint="#F6F6F6"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Are you open to incorporating meditation or breathing exercises into your yoga practice?"
+                        android:textColor="@color/secondary"
+                        android:textSize="20dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:id="@+id/q3"
+                        android:layout_below="@id/inputInjury"
+                        android:layout_marginTop="20dp"
+                        android:textAlignment="center">
+                    </TextView>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/q3"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/yesno">
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yes"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What is your current fitness level?"
+                        android:textColor="@color/secondary"
+                        android:textSize="20dp"
+                        android:id="@+id/q4"
+                        android:layout_below="@id/yesno"
+                        android:layout_marginTop="20dp"
+                        android:layout_centerHorizontal="true">
+                    </TextView>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/q4"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/fitness_group">
+
+                        <RadioButton
+                            android:id="@+id/beginner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Beginner"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/intermediate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Intermediate"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/advanced"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Advance"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What are you hoping to achieve through yoga?"
+                        android:textSize="20dp"
+                        android:textColor="@color/secondary"
+                        android:layout_below="@id/fitness_group"
+                        android:layout_marginTop="20dp"
+                        android:textAlignment="center"
+                        android:id="@+id/q5"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp">
+                    </TextView>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/q5"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/goal_group"
+                        android:layout_marginBottom="30dp">
+
+                        <RadioButton
+                            android:id="@+id/mental_clarity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mental Clarity"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/improve_flexibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Improved Flexibility"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/strength_building"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stength building"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/stress_reduction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stress Reduction"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/balance_stability"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance and Stability"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/enhanced_sleep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enhanced Sleep"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/enhanced_mood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enhanced Mood"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/mindfulness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mindfulness"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/cardiovascular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cardiovascular Health"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/better_posture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Better Posture"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/digestive_health"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Digestive Health"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/spiritual_growth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Spiritual Growth"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/improved_breathing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Improved Breathing"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/weight_management"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weight Management"
+                            android:textColor="@color/secondary"
+                            android:padding="10dp"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/increased_energy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Increased Energy"
+                            android:padding="10dp"
+                            android:textColor="@color/secondary"
+                            android:textSize="20dp">
+                        </RadioButton>
+
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/start_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:background="@drawable/question_btn"
+                        android:text="Make Plan"
+                        android:padding="15dp"
+                        android:textSize="26dp"
+                        android:layout_below="@+id/goal_group"
+                        android:layout_marginBottom="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginHorizontal="30dp"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/resultLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/secondary"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="23dp"
+                        android:layout_marginTop="20dp"
+                        android:textAlignment="center"
+                        android:text="Your custom yoga plan is ready!"
+                        android:layout_marginHorizontal="20dp"/>
+
+
+                    <TextView
+                        android:id="@+id/output"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title"
+                        android:textColor="@color/secondary"
+                        android:text=""
+                        android:textSize="23dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginStart="30dp"
+                        />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </ScrollView>
+
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:visibility="gone">
 
-            <TextView
+
+
+            <ImageView
+                android:id="@+id/loadingTaylor"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/bot_lap"
+                android:layout_centerInParent="true"/>
+
+            <ProgressBar
+                android:id="@+id/loader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yoga"
-                android:textColor="@color/secondary"
-                android:textSize="35dp"
-                android:textStyle="bold"
+                app:indicatorColor="@color/secondary"
+                android:layout_below="@+id/loadingTaylor"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:id="@+id/titlee">
-            </TextView>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personalize your yoga plan"
+                android:layout_below="@+id/loader"
                 android:textColor="@color/secondary"
-                android:textSize="18dp"
-                android:textStyle="italic"
-                android:layout_below="@id/titlee"
-                android:layout_centerHorizontal="true">
-            </TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="How often can you commit to practicing yoga?"
-                android:textColor="@color/secondary"
-                android:textSize="20dp"
-                android:layout_below="@+id/titlee"
-                android:id="@+id/q1"
+                android:layout_centerHorizontal="true"
+                android:textSize="25dp"
                 android:textAlignment="center"
-                android:layout_marginTop="50dp">
-            </TextView>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/inputtext"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@+id/q1"
-                android:padding="15dp"
-                android:layout_marginHorizontal="20dp"
-                android:hint="input time"
-                android:textColor="@color/black"
-                android:layout_centerVertical="true"
-                android:background="@drawable/rounded_corner"
-                android:inputType="textPersonName"
-                android:backgroundTint="#F6F6F6"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Do you have any injuries, medical conditions, or physical limitations that I should be aware of?"
-                android:textColor="@color/secondary"
-                android:textSize="20dp"
-                android:id="@+id/q2"
-                android:layout_below="@id/inputtext"
-                android:textAlignment="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="12dp">
-            </TextView>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/inputtext2"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@+id/q2"
-                android:padding="15dp"
-                android:layout_marginHorizontal="20dp"
-                android:hint="input text"
-                android:textColor="@color/black"
-                android:layout_centerVertical="true"
-                android:background="@drawable/rounded_corner"
-                android:inputType="textPersonName"
-                android:backgroundTint="#F6F6F6"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Are you open to incorporating meditation or breathing exercises into your yoga practice?"
-                android:textColor="@color/secondary"
-                android:textSize="20dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:id="@+id/q3"
-                android:layout_below="@id/inputtext2"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center">
-            </TextView>
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/q3"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/yesno">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Yes"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What is your current fitness level?"
-                android:textColor="@color/secondary"
-                android:textSize="20dp"
-                android:id="@+id/q4"
-                android:layout_below="@id/yesno"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true">
-            </TextView>
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/q4"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/radiogroup2">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beginner"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Intermediate"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Advance"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What are you hoping to achieve through yoga?"
-                android:textSize="20dp"
-                android:textColor="@color/secondary"
-                android:layout_below="@id/radiogroup2"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
-                android:id="@+id/q5"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp">
-            </TextView>
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/q5"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/radiogroup3"
-                android:layout_marginBottom="30dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mental Clarity"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Improved Flexibility"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stength building"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stress Reduction"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Balance and Stability"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enhanced Sleep"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Enhanced Mood"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mindfulness"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cardiovascular Health"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Better Posture"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Digestive Health"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Spiritual Growth"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Improved Breathing"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Weight Management"
-                    android:textColor="@color/secondary"
-                    android:padding="10dp"
-                    android:textSize="20dp">
-                </RadioButton>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Increased Energy"
-                    android:padding="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="20dp">
-                </RadioButton>
-
-            </RadioGroup>
+                android:text="Taylor is tailoring a perfect plan just for you!"
+                android:layout_marginHorizontal="40dp"/>
 
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
 
-        </RelativeLayout>
+
+
+
 
 
     </RelativeLayout>
 
-</ScrollView>
+</RelativeLayout>

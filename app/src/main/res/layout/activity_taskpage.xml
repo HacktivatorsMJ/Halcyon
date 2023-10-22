@@ -25,9 +25,10 @@
 
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter tasks you wanna do today"
+            tools:text="You have 0 tasks left Enjoy!!"
             android:id="@+id/tasks"
             android:textSize="20dp"
             android:textColor="@color/secondary"

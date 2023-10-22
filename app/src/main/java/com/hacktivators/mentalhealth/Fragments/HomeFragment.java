@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends Fragment {
 
+    private static final String DPTIME = "DPTIME";
+    private static final String SSTIME = "SSTIME";
     RecyclerView recyclerView;
 
     TextView greet;
@@ -100,9 +103,12 @@ public class HomeFragment extends Fragment {
         featured.setVisibility(View.GONE);
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("tests",0);
-        long DPtime = sharedPreferences.getLong(TIME, 0);
-        long SStime = sharedPreferences.getLong(TIME, 0);
+        long DPtime = sharedPreferences.getLong(DPTIME, 0);
+        long SStime = sharedPreferences.getLong(SSTIME, 0);
 
+        tests.setVisibility(View.VISIBLE);
+        depressionTest.setVisibility(View.GONE);
+        stressTest.setVisibility(View.GONE);
 
         if(isMoreThanAWeek(DPtime)){
             tests.setVisibility(View.VISIBLE);
@@ -167,6 +173,25 @@ public class HomeFragment extends Fragment {
                 } else if (hour >= 21) {
                     night.setVisibility(View.VISIBLE);
                 }
+
+
+                if(isMoreThanAWeek(DPtime)){
+                    tests.setVisibility(View.VISIBLE);
+
+                    depressionTest.setVisibility(View.VISIBLE);
+                }else {
+                    depressionTest.setVisibility(View.GONE);
+                }
+
+                if(isMoreThanAWeek(SStime)){
+
+                    tests.setVisibility(View.VISIBLE);
+
+                    stressTest.setVisibility(View.VISIBLE);
+                }else {
+                    stressTest.setVisibility(View.GONE);
+                }
+
 
 
 

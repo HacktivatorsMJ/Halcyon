@@ -40,6 +40,7 @@
         android:layout_height="600dp"
         android:layout_below="@id/titletxt"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp">
 
         <TextView

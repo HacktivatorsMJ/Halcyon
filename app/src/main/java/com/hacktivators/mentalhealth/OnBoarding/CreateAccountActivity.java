@@ -190,6 +190,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         HashMap<String, String> user = new HashMap<>();
         user.put("username", firebaseUser.getDisplayName());
+        user.put("email",firebaseUser.getEmail());
         user.put("uid",firebaseUser.getUid());
 
 
