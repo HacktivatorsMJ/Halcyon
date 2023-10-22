@@ -14,7 +14,7 @@ public class SleepReminderActivity extends AppCompatActivity {
 
     AppCompatButton music1Play,music2Play,music3Play,music4Play,music1Stop,music2Stop,music3Stop,music4Stop;
 
-    MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer1,mediaPlayer2,mediaPlayer3,mediaPlayer4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +32,33 @@ public class SleepReminderActivity extends AppCompatActivity {
         music4Stop = findViewById(R.id.music4Stop);
 
 
+        mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.song);
+        mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
+        mediaPlayer3 = MediaPlayer.create(getApplicationContext(), R.raw.song);
+        mediaPlayer4 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
+
 
 
 
         music1Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.song);
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song);
-                mediaPlayer.start();
+
+                mediaPlayer1.start();
+                mediaPlayer2.stop();
+                mediaPlayer3.stop();
+                mediaPlayer4.stop();
+
                 music1Play.setVisibility(View.GONE);
                 music1Stop.setVisibility(View.VISIBLE);
+                music2Play.setVisibility(View.VISIBLE);
+                music2Stop.setVisibility(View.GONE);
+                music3Play.setVisibility(View.VISIBLE);
+                music3Stop.setVisibility(View.GONE);
+                music4Play.setVisibility(View.VISIBLE);
+                music4Stop.setVisibility(View.GONE);
             }
         });
 
@@ -50,21 +66,40 @@ public class SleepReminderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song2);
-                mediaPlayer.start();
+                mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
+                mediaPlayer2.start();
+                mediaPlayer1.stop();
+                mediaPlayer3.stop();
+                mediaPlayer4.stop();
                 music2Play.setVisibility(View.GONE);
                 music2Stop.setVisibility(View.VISIBLE);
+                music1Play.setVisibility(View.VISIBLE);
+                music1Stop.setVisibility(View.GONE);
+                music3Play.setVisibility(View.VISIBLE);
+                music3Stop.setVisibility(View.GONE);
+                music4Play.setVisibility(View.VISIBLE);
+                music4Stop.setVisibility(View.GONE);
             }
         });
 
         music3Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer3 = MediaPlayer.create(getApplicationContext(), R.raw.song);
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song);
-                mediaPlayer.start();
+                mediaPlayer3.start();
+                mediaPlayer1.stop();
+                mediaPlayer2.stop();
+                mediaPlayer4.stop();
                 music3Play.setVisibility(View.GONE);
                 music3Stop.setVisibility(View.VISIBLE);
+                music1Play.setVisibility(View.VISIBLE);
+                music1Stop.setVisibility(View.GONE);
+                music2Play.setVisibility(View.VISIBLE);
+                music2Stop.setVisibility(View.GONE);
+                music4Play.setVisibility(View.VISIBLE);
+                music4Stop.setVisibility(View.GONE);
+
             }
         });
 
@@ -72,11 +107,20 @@ public class SleepReminderActivity extends AppCompatActivity {
         music4Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer4 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song2);
-                mediaPlayer.start();
+                mediaPlayer4.start();
+                mediaPlayer1.stop();
+                mediaPlayer2.stop();
+                mediaPlayer3.stop();
                 music4Play.setVisibility(View.GONE);
                 music4Stop.setVisibility(View.VISIBLE);
+                music1Play.setVisibility(View.VISIBLE);
+                music1Stop.setVisibility(View.GONE);
+                music2Play.setVisibility(View.VISIBLE);
+                music2Stop.setVisibility(View.GONE);
+                music3Play.setVisibility(View.VISIBLE);
+                music3Stop.setVisibility(View.GONE);
             }
         });
 
@@ -84,7 +128,7 @@ public class SleepReminderActivity extends AppCompatActivity {
         music1Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.stop();
+                mediaPlayer1.stop();
                 music1Play.setVisibility(View.VISIBLE);
                 music1Stop.setVisibility(View.GONE);
             }
@@ -93,7 +137,7 @@ public class SleepReminderActivity extends AppCompatActivity {
         music2Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.stop();
+                mediaPlayer2.stop();
                 music2Play.setVisibility(View.VISIBLE);
                 music2Stop.setVisibility(View.GONE);
             }
@@ -102,7 +146,7 @@ public class SleepReminderActivity extends AppCompatActivity {
         music3Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.stop();
+                mediaPlayer3.stop();
                 music3Play.setVisibility(View.VISIBLE);
                 music3Stop.setVisibility(View.GONE);
             }
@@ -111,7 +155,7 @@ public class SleepReminderActivity extends AppCompatActivity {
         music4Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.stop();
+                mediaPlayer4.stop();
                 music4Play.setVisibility(View.VISIBLE);
                 music4Stop.setVisibility(View.GONE);
             }

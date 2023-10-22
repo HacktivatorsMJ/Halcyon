@@ -30,7 +30,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/model"
+            tools:src="@drawable/model"
             android:layout_alignParentEnd="true"/>
 
 
