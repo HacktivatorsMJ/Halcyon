@@ -272,7 +272,7 @@ public class YogaPageActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer [API KEY GOES HERE]")
+                .header("Authorization","Bearer [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]")
                 .post(body)
                 .build();
 

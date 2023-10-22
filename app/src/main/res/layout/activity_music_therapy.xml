@@ -14,9 +14,9 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="130dp"
-            android:src="@drawable/sleeping"
+            android:src="@drawable/musical"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="20dp"
             android:id="@+id/sleepimage">
         </ImageView>
 
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/sleepimage"
-            android:text="Time to recharge! \n Your sleep awaits. "
+            android:text="Calming Music. \n  Relax and unwind"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textmain"
-        android:text="Set your bedtime routine, unwind with calming music, and drift into peaceful thoughts"
+        android:text="Listen to some relaxing tunes to reduce your stress and calm your anxiety."
         android:textColor="@color/secondary"
         android:textSize="18dp"
         android:textStyle="italic"
