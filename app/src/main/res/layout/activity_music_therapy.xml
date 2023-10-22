@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textmain"
-        android:text="Listen to some relaxing tunes to reduce your stress and calm your anxiety."
+        android:text="Listen to some relaxing sounds of nature to reduce your stress and calm your anxiety."
         android:textColor="@color/secondary"
         android:textSize="18dp"
         android:textStyle="italic"
