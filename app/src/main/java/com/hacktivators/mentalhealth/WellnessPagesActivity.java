@@ -54,7 +54,7 @@ public class WellnessPagesActivity extends AppCompatActivity {
         yoga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WellnessPagesActivity.this, YogaPageActivity.class));
+                startActivity(new Intent(WellnessPagesActivity.this, YogaViewActivity.class));
             }
         });
     }

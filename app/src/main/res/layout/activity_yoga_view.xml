@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task for the day!"
+        android:text="Your yoga plans"
         android:id="@+id/title"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -24,20 +24,6 @@
     </TextView>
 
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="You have 0 tasks left Enjoy!!"
-            android:id="@+id/tasks"
-            android:textSize="20dp"
-            android:textColor="@color/secondary"
-            android:layout_marginStart="20dp"
-            android:layout_below="@id/title"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/nunito_sans">
-
-        </TextView>
 
 
 
@@ -47,14 +33,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recycler_view"
-        android:layout_below="@+id/tasks"
+        android:layout_below="@+id/title"
         android:layout_marginTop="20dp"
-       >
+        >
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_task"
+        android:id="@+id/add_yoga"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"

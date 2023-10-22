@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -29,6 +30,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -57,7 +60,7 @@ public class YogaPageActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseFirestore firebaseFirestore;
 
-    AppCompatButton start_btn;
+    AppCompatButton start_btn,save;
 
     RelativeLayout questionsLayout,loadingLayout,resultsLayout;
 
@@ -70,6 +73,8 @@ public class YogaPageActivity extends AppCompatActivity {
     JSONArray messagesArray = new JSONArray();
     JSONObject userMessage = new JSONObject();
     JSONObject systemMessage = new JSONObject();
+
+    AppCompatEditText yogaTitle;
 
     OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(5, TimeUnit.MINUTES) // connect timeout
@@ -103,6 +108,7 @@ public class YogaPageActivity extends AppCompatActivity {
         fitness_group = findViewById(R.id.fitness_group);
         goal_group = findViewById(R.id.goal_group);
 
+        save = findViewById(R.id.save);
 
         time = inputTime.getText().toString();
         injury = inputInjury.getText().toString();
@@ -132,6 +138,8 @@ public class YogaPageActivity extends AppCompatActivity {
         weightManagement = findViewById(R.id.weight_management);
         increasedEnergy = findViewById(R.id.increased_energy);
 
+        yogaTitle = findViewById(R.id.yogaTitle);
+
 
 
 
@@ -155,7 +163,44 @@ public class YogaPageActivity extends AppCompatActivity {
         });
 
 
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveYoga();
+            }
+        });
+
     }
+
+    private void saveYoga() {
+
+        String YogaID = GenYogaID();
+
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        HashMap hashMap = new HashMap();
+        hashMap.put("id",YogaID);
+        hashMap.put("title",yogaTitle.getText().toString());
+        hashMap.put("plan",output.getText().toString());
+
+
+
+        firebaseFirestore.collection("users").document(firebaseUser.getUid()).collection("yoga").document(YogaID).set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull com.google.android.gms.tasks.Task<Void> task) {
+                if(task.isSuccessful()){
+
+                    startActivity(new Intent(YogaPageActivity.this, YogaViewActivity.class));
+
+
+                }else {
+                    Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+        });
+    }
+
 
 
     private void loadData() {
@@ -272,14 +317,14 @@ public class YogaPageActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer [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]")
+                .header("Authorization","Bearer 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")
                 .post(body)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
 
@@ -316,7 +361,7 @@ public class YogaPageActivity extends AppCompatActivity {
                     String errorBody = response.body().string();
                     System.out.println("Error Response Body: " + errorBody);
 
-                    Toast.makeText(getApplicationContext(),errorBody,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),errorBody,Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -368,6 +413,18 @@ public class YogaPageActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    private String GenYogaID(){
+        Random random = new Random();
+        String letters = "abcdefghijklmnopqrstuvwxyz1234567890";
+        String result = "";
+        for (int i = 0; i < 8; i++) {
+            result += letters.charAt(random.nextInt(letters.length()));
+        }
+
+        return result;
 
     }
 }

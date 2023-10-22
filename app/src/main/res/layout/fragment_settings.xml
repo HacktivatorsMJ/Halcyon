@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:paddingEnd="10dp"
-                android:tint="@color/secondary"
+                app:tint="@color/secondary"
                 android:src="@drawable/baseline_arrow_forward_ios_24"
                 android:layout_alignParentRight="true"/>
 
