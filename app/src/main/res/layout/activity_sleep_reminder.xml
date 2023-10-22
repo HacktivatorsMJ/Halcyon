@@ -37,6 +37,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textmain"
@@ -50,7 +51,206 @@
         android:layout_marginTop="10dp">
     </TextView>
 
-    
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/music1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/ques_back"
+
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music 1"
+                    android:textColor="@color/secondary"
+                    android:layout_centerVertical="true"
+                    android:textSize="25dp"
+
+                    android:layout_marginStart="20dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music1play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="Play"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music1Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Stop"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:textAllCaps="false"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/music2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/music1"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music 2"
+                    android:textColor="@color/secondary"
+                    android:layout_centerVertical="true"
+                    android:textSize="25dp"
+                    android:layout_marginStart="20dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music2play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="Play"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music2Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Stop"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:textAllCaps="false"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/music3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/music2"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music 3"
+                    android:textColor="@color/secondary"
+                    android:layout_centerVertical="true"
+                    android:textSize="25dp"
+                    android:layout_marginStart="20dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music3play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:text="Play"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music3Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Stop"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:textAllCaps="false"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/music4"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/music3"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music 4"
+                    android:textColor="@color/secondary"
+                    android:layout_centerVertical="true"
+                    android:textSize="25dp"
+                    android:layout_marginStart="20dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music4play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Play"
+                    android:layout_marginEnd="10dp"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/music4Stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_btn"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:text="Stop"
+                    android:visibility="gone"
+                    android:textAllCaps="false"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
 
 
 </RelativeLayout>

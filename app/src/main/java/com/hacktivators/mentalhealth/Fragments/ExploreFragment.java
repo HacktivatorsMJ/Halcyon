@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.hacktivators.mentalhealth.ChatActivity;
 import com.hacktivators.mentalhealth.Journal.JournalViewActivity;
 import com.hacktivators.mentalhealth.MeditationPageActivity;
+import com.hacktivators.mentalhealth.MusicTherapyActivity;
 import com.hacktivators.mentalhealth.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.SleepReminderActivity;
@@ -23,7 +24,7 @@ import com.hacktivators.mentalhealth.WellnessPagesActivity;
 public class ExploreFragment extends Fragment {
 
 
-    View journal,wellness,chat,meditation,dst,sst,tasks,sleep;
+    View journal,wellness,chat,meditation,dst,sst,tasks,sleep,music;
 
 
 
@@ -45,6 +46,7 @@ public class ExploreFragment extends Fragment {
         sst = view.findViewById(R.id.sst);
         tasks = view.findViewById(R.id.tasks);
         sleep = view.findViewById(R.id.sleep);
+        music = view.findViewById(R.id.music);
 
 
         chat.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +102,13 @@ public class ExploreFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), WellnessPagesActivity.class));
+            }
+        });
+
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MusicTherapyActivity.class));
             }
         });
 
