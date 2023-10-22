@@ -3,6 +3,7 @@ package com.hacktivators.mentalhealth.OnBoarding.Questtionaire;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -18,6 +19,8 @@ public class SetupQuestionActivity extends AppCompatActivity {
 
     TextView sleep_no;
     AppCompatButton next;
+
+    ImageView imageView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setupq);
@@ -27,6 +30,8 @@ public class SetupQuestionActivity extends AppCompatActivity {
         sleep_no = findViewById(R.id.sleep_no);
         seekBar.setMax(16);
         seekBar.setProgress(8);
+
+        imageView = findViewById(R.id.imageView);
 
         seekBar.setOnSeekBarChangeListener(new AppCompatSeekBar.OnSeekBarChangeListener() {
 
@@ -62,6 +67,27 @@ public class SetupQuestionActivity extends AppCompatActivity {
     private void update(int progress) {
 
         // Update the SeekBar and TextView
+
+        if(progress < 3){
+
+            imageView.setImageDrawable(getDrawable(R.drawable.exausted));
+
+        }else if(progress >=3 && progress < 6){
+
+            imageView.setImageDrawable(getDrawable(R.drawable.not_normal));
+
+        } else if (progress >= 6 && progress <= 8){
+
+            imageView.setImageDrawable(getDrawable(R.drawable.normal));
+
+        }else if(progress > 8 && progress < 12){
+
+            imageView.setImageDrawable(getDrawable(R.drawable.not_normal));
+
+        } else if (progress >= 12) {
+            imageView.setImageDrawable(getDrawable(R.drawable.exausted));
+
+        }
         seekBar.setProgress(progress);
         sleep_no.setText(String.valueOf(progress));
 

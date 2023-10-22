@@ -313,13 +313,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
 
                 >
+
+                <include android:id="@+id/journal"
+                    layout="@layout/journal1"
+                    android:layout_marginVertical="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"/>
+
 
                 <include
                     android:id="@+id/tasks"

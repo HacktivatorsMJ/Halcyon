@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.ChatActivity;
+import com.hacktivators.mentalhealth.Journal.JournalViewActivity;
+import com.hacktivators.mentalhealth.MusicTherapyActivity;
 import com.hacktivators.mentalhealth.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.StressTestActivity;
@@ -45,7 +47,7 @@ public class HomeFragment extends Fragment {
     CircleImageView profile;
     String greeting = null;
 
-    View chat_block;
+    View chat_block,journal,tasks_,music;
     LinearLayout featured;
 
     TextView foryouTXT,featuredTXT;
@@ -84,6 +86,11 @@ public class HomeFragment extends Fragment {
         night = view.findViewById(R.id.night);
 
         tasks = view.findViewById(R.id.tasks_night);
+
+
+        journal = view.findViewById(R.id.journal);
+        tasks_ = view.findViewById(R.id.tasks);
+        music = view.findViewById(R.id.music);
 
 
         article = view.findViewById(R.id.article_layout);
@@ -136,11 +143,11 @@ public class HomeFragment extends Fragment {
             morning.setVisibility(View.VISIBLE);
             noon.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
-        } else if (hour >= 12 && hour <= 20) {
+        } else if (hour >= 12 && hour <= 21) {
             noon.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
-        } else if (hour >= 21) {
+        } else if (hour >= 22) {
             night.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
             noon.setVisibility(View.GONE);
@@ -157,6 +164,27 @@ public class HomeFragment extends Fragment {
         foryouTXT.setBackground(getContext().getResources().getDrawable(R.drawable.accent_back));
 
 
+
+        journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), JournalViewActivity.class));
+            }
+        });
+
+        tasks_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), TaskActivity.class));
+            }
+        });
+
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MusicTherapyActivity.class));
+            }
+        });
 
 
         foryouTXT.setOnClickListener(new View.OnClickListener() {

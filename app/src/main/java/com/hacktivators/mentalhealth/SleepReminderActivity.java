@@ -32,10 +32,10 @@ public class SleepReminderActivity extends AppCompatActivity {
         music4Stop = findViewById(R.id.music4Stop);
 
 
-        mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.song);
-        mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
-        mediaPlayer3 = MediaPlayer.create(getApplicationContext(), R.raw.song);
-        mediaPlayer4 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
+        mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.song5);
+        mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song6);
+        mediaPlayer3 = MediaPlayer.create(getApplicationContext(), R.raw.song3);
+        mediaPlayer4 = MediaPlayer.create(getApplicationContext(), R.raw.song4);
 
 
 
