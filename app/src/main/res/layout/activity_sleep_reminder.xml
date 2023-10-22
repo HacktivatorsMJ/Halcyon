@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textmain">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:src="@drawable/sleeping"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/sleepimage">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sleepimage"
+            android:text="Time to recharge! \n Your sleep awaits. "
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:textColor="@color/secondary"
+            android:layout_marginStart="20dp">
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textmain"
+        android:text="Set your bedtime routine, unwind with calming music, and drift into peaceful thoughts"
+        android:textColor="@color/secondary"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    
+
+
+</RelativeLayout>
