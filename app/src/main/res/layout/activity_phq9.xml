@@ -8,6 +8,7 @@
     android:background="@color/background">
 
     <RelativeLayout
+        android:id="@+id/start_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible">
@@ -61,7 +62,7 @@
             android:layout_centerHorizontal="true"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
+            android:id="@+id/start_btn"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
@@ -964,19 +965,29 @@
         android:visibility="gone">
 
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/loadingAnim"
+        <ImageView
+            android:id="@+id/loadingTaylor"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_centerInParent="true"
-            app:lottie_rawRes="@raw/moon"/>
+            android:src="@drawable/bot_lap"/>
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorColor="@color/secondary"
+            android:layout_below="@+id/loadingTaylor"
+            android:layout_centerHorizontal="true"
+            />
+
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculating"
-            android:layout_below="@+id/loadingAnim"
+            android:text="Taylor analysing data and evaluating the result"
+            android:layout_below="@+id/loader"
+            android:textAlignment="center"
             android:textColor="@color/secondary"
             android:layout_centerHorizontal="true"
             android:textSize="30dp"
@@ -1091,7 +1102,9 @@
                 android:layout_below="@+id/depressionStatusLayout"
                 tools:text="You have moderate depression"
                 android:textColor="@color/secondary"
+                android:textAlignment="center"
                 android:textSize="25dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 />

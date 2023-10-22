@@ -39,6 +39,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -173,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
                                                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                                                     }else {
-                                                        submit_Data();
+                                                        startActivity(new Intent(LoginActivity.this,InfoActivity.class));
 
                                                     }
                                                 }
@@ -196,36 +197,4 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    private void submit_Data() {
-
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        HashMap<String, String> user = new HashMap<>();
-        user.put("username", firebaseUser.getDisplayName());
-        user.put("email",firebaseUser.getEmail());
-        user.put("uid",firebaseUser.getUid());
-
-
-        user.put("imageURL", String.valueOf(firebaseUser.getPhotoUrl()));
-
-        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-
-        assert firebaseUser != null;
-        firebaseFirestore.collection("users").document(firebaseUser.getUid())
-                .set(user)
-                .addOnSuccessListener(new OnSuccessListener() {
-                    @Override
-                    public void onSuccess(Object o) {
-                        startActivity(new Intent(LoginActivity.this,InfoActivity.class));
-                    }
-
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Error adding document", e);
-                    }
-                });
-
-    }
 }

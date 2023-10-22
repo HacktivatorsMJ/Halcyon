@@ -19,14 +19,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PHQ9Activity extends AppCompatActivity {
 
     private static final String DPTIME = "DPTIME";
-    RelativeLayout q1,q2,q3,q4,q5,q6,q7,q8,q9,loading,prof_help,result;
+    RelativeLayout q1,q2,q3,q4,q5,q6,q7,q8,q9,loading,prof_help,result,start_layout;
 
     AppCompatButton naa1,naa2,naa3,naa4,naa5,naa6,naa7,naa8,naa9;
     AppCompatButton sd1,sd2,sd3,sd4,sd5,sd6,sd7,sd8,sd9;
     AppCompatButton mth1,mth2,mth3,mth4,mth5,mth6,mth7,mth8,mth9;
     AppCompatButton ne1,ne2,ne3,ne4,ne5,ne6,ne7,ne8,ne9;
 
-    AppCompatButton done;
+    AppCompatButton done,start_btn;
 
     TextView scoreTxt,DescTxt;
 
@@ -103,6 +103,9 @@ public class PHQ9Activity extends AppCompatActivity {
 
         DescTxt = findViewById(R.id.depression_status);
 
+        start_layout = findViewById(R.id.start_layout);
+
+        start_btn = findViewById(R.id.start_btn);
 
         result = findViewById(R.id.result);
 
@@ -112,6 +115,14 @@ public class PHQ9Activity extends AppCompatActivity {
         scoreTxt = findViewById(R.id.desc);
 
 
+
+        start_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                start_layout.setVisibility(View.GONE);
+                q1.setVisibility(View.VISIBLE);
+            }
+        });
 
         done.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,7 +217,7 @@ public class PHQ9Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle click for naa9
-
+                CalculateResult();
                 // Handle the last question, as there's no q10 in your example
             }
         });
@@ -599,7 +610,7 @@ public class PHQ9Activity extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         assert firebaseUser != null;
-        firebaseFirestore.collection("users").document(firebaseUser.getUid()).update("DepressionScore",score);
+        firebaseFirestore.collection("users").document(firebaseUser.getUid()).update("depression_score",score);
 
 
     }

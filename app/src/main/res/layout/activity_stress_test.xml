@@ -7,1301 +7,1514 @@
     android:background="@color/background"
     tools:context=".StressTestActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/stress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stress Tracker"
-            android:textSize="32dp"
-            android:fontFamily="@font/nunito_sans"
-            android:textStyle="bold"
-            android:textColor="@color/secondary"
-            android:layout_below="@+id/stressq"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="40dp"
-            android:layout_centerHorizontal="true"/>
 
         <RelativeLayout
+            android:id="@+id/start_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/stressq"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/primary"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="40dp"
-            android:padding="10dp"
-            >
+            android:layout_height="match_parent"
+            android:visibility="visible">
 
             <TextView
-                android:id="@+id/quote"
+                android:id="@+id/stress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="&quot;The greatest weapon against stress is our ability to choose one thought over another.&quot;\n -William James"
-                android:textSize="16dp"
-                android:lineHeight="23dp"
+                android:text="Stress Tracker"
+                android:textSize="32dp"
                 android:fontFamily="@font/nunito_sans"
+                android:textStyle="bold"
                 android:textColor="@color/secondary"
-                android:textAlignment="center"/>
+                android:layout_below="@+id/stressq"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/stressq"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/primary"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&quot;The greatest weapon against stress is our ability to choose one thought over another.&quot;\n -William James"
+                    android:textSize="16dp"
+                    android:lineHeight="23dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="@color/secondary"
+                    android:textAlignment="center"/>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/brain"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/brain2"
+                android:layout_below="@+id/stress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="95dp"/>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/start_btn"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:background="@drawable/question_btn"
+                android:text="Start Test"
+                android:layout_below="@+id/brain"
+                android:padding="15dp"
+                android:textSize="26dp"
+
+                android:layout_marginBottom="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"/>
+
+
 
 
         </RelativeLayout>
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/brain2"
-            android:layout_below="@+id/stress"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="95dp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/st1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. In the last month how often have you been upset because of something that happened unexpectedly?"
+                android:textSize="24dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que1"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev1"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm1"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som1"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair1"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
 
 
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:background="@drawable/question_btn"
-            android:text="Start Test"
-            android:padding="15dp"
-            android:textSize="26dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. In the last month, how often have you felt that you were unable to control the important things in your life?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que2"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev2"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm2"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som2"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair2"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. In the last month, how often have you felt nervous and stressed?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que3"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev3"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm3"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som3"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair3"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. In the last month how, often have you felt confident about your ability to handle your personal problems?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que4"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev4"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm4"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som4"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair4"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. In the last month, how often have you felt that things were going your way?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que5"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev5"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm5"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som5"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair5"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. In the last month, how often have you found that you could not cope with all the things that you had to do?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que6"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev6"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm6"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som6"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair6"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7. In the last month, how often have you been able to control irritations in your life?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que7"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev7"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm7"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som7"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair7"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8. In the last month, how often have you felt that you were on top of things?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que8"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev8"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm8"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som8"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair8"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9. In the last month, how often have you been angered because of things that happened that were outside of your control?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que9"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev9"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm9"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som9"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair9"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/st10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/que10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10. In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/nunito_sans"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nev10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Never"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="26dp"
+                android:textColor="@color/secondary"
+                android:textAllCaps="false"
+                android:background="@drawable/ques_back"
+                android:padding="10dp"
+                android:layout_below="@+id/que10"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="50dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/alm10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almost never"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/nev10"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/som10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sometimes"
+                android:layout_alignParentStart="true"
+
+                android:textSize="26dp"
+                android:padding="10dp"
+                android:layout_below="@+id/alm10"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fair10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fairly Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/som10"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/oft10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Very Often"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="26dp"
+
+                android:padding="10dp"
+                android:layout_below="@+id/fair10"
+
+                android:layout_marginTop="50dp"
+
+                android:background="@drawable/ques_back"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/nunito_sans"
+                android:layout_marginHorizontal="20dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+
+            <ImageView
+                android:id="@+id/loadingTaylor"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/bot_lap"/>
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorColor="@color/secondary"
+                android:layout_below="@+id/loadingTaylor"
+                android:layout_centerHorizontal="true"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taylor analysing data and evaluating the result"
+                android:layout_below="@+id/loader"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textSize="30dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textSize="50dp"
+                android:layout_marginTop="20dp"
+                />
+
+
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="13/40"
+
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="100dp"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/depressionStatusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desc"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/ds1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/primary"/>
+
+                <View
+                    android:id="@+id/ds2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/primary"/>
+
+                <View
+                    android:id="@+id/ds3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/primary"/>
+
+                <View
+                    android:id="@+id/ds4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/primary"/>
+
+                <View
+                    android:id="@+id/ds5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@color/primary"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/depression_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/depressionStatusLayout"
+                tools:text="You have moderate stress"
+                android:textColor="@color/secondary"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/help_btn"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/depression_status"
+                android:layout_marginTop="80dp"
+                android:layout_marginHorizontal="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Click to Seek for professional help now!"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/done"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:layout_below="@+id/help_btn"
+                android:background="@drawable/primary_btn"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+
 
 
 
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/st1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
 
-        <TextView
-            android:id="@+id/que1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1. In the last month how often have you been upset because of something that happened unexpectedly?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que1"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev1"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm1"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som1"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair1"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2. In the last month, how often have you felt that you were unable to control the important things in your life?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que2"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev2"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm2"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som2"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair2"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3. In the last month, how often have you felt nervous and stressed?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que3"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev3"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm3"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som3"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair3"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4. In the last month how, often have you felt confident about your ability to handle your personal problems?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que4"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev4"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm4"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som4"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair4"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5. In the last month, how often have you felt that things were going your way?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que5"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev5"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm5"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som5"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair5"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6. In the last month, how often have you found that you could not cope with all the things that you had to do?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que6"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev6"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm6"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som6"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair6"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st7"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="7. In the last month, how often have you been able to control irritations in your life?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que7"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev7"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm7"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som7"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair7"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st8"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8. In the last month, how often have you felt that you were on top of things?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que8"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev8"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm8"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som8"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair8"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st9"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="9. In the last month, how often have you been angered because of things that happened that were outside of your control?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que9"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev9"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm9"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som9"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair9"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/st10"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/que10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10. In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/nunito_sans"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nev10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Never"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/nunito_sans"
-            android:textSize="26dp"
-            android:textColor="@color/secondary"
-            android:textAllCaps="false"
-            android:background="@drawable/ques_back"
-            android:padding="10dp"
-            android:layout_below="@+id/que10"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/alm10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Almost never"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/nev10"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/som10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sometimes"
-            android:layout_alignParentStart="true"
-
-            android:textSize="26dp"
-            android:padding="10dp"
-            android:layout_below="@+id/alm10"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fair10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fairly Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/som10"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oft10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Very Often"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textSize="26dp"
-
-            android:padding="10dp"
-            android:layout_below="@+id/fair10"
-
-            android:layout_marginTop="50dp"
-
-            android:background="@drawable/ques_back"
-            android:textAllCaps="false"
-            android:textColor="@color/secondary"
-            android:fontFamily="@font/nunito_sans"
-            android:layout_marginHorizontal="20dp"/>
-
-
-
-    </RelativeLayout>
 
 
 </RelativeLayout>

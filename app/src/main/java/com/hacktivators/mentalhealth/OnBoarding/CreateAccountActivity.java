@@ -161,7 +161,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                                                         startActivity(new Intent(CreateAccountActivity.this, MainActivity.class));
 
                                                     }else {
-                                                        submit_Data();
+                                                        startActivity(new Intent(CreateAccountActivity.this,InfoActivity.class));
 
                                                     }
                                                 }
@@ -184,36 +184,5 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
 
-    private void submit_Data() {
 
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        HashMap<String, String> user = new HashMap<>();
-        user.put("username", firebaseUser.getDisplayName());
-        user.put("email",firebaseUser.getEmail());
-        user.put("uid",firebaseUser.getUid());
-
-
-        user.put("imageURL", String.valueOf(firebaseUser.getPhotoUrl()));
-
-        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-
-        assert firebaseUser != null;
-        firebaseFirestore.collection("users").document(firebaseUser.getUid())
-                .set(user)
-                .addOnSuccessListener(new OnSuccessListener() {
-                    @Override
-                    public void onSuccess(Object o) {
-                        startActivity(new Intent(CreateAccountActivity.this,InfoActivity.class));
-                    }
-
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Error adding document", e);
-                    }
-                });
-
-    }
 }

@@ -85,9 +85,75 @@ public class ProfileFragment extends Fragment {
                         String email_ = document.getString("email");
                         String dob_ = document.getString("age");
 
+
+                        int dsr = document.getLong("depression_score").intValue();
+                        int str = document.getLong("stress_score").intValue();
+
                         name.setText(username_);
                         email.setText(email_);
                         dob.setText(dob_);
+
+                        if (dsr >= 1 && dsr <= 4) {
+
+
+                            ds1.setBackgroundColor(getActivity().getColor(R.color.green));
+
+
+                        } else if (dsr > 4 && dsr <= 9) {
+
+
+                            ds1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds2.setBackgroundColor(getActivity().getColor(R.color.green));
+
+
+                        } else if (dsr > 9 && dsr <=14) {
+
+
+                            ds1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds2.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds3.setBackgroundColor(getActivity().getColor(R.color.yellow));
+
+                        } else if (dsr > 14 && dsr <= 19) {
+
+                            ds1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds2.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds3.setBackgroundColor(getActivity().getColor(R.color.yellow));
+                            ds4.setBackgroundColor(getActivity().getColor(R.color.red));
+                        } else if (dsr > 20 && dsr <= 27) {
+
+                            ds1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds2.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ds3.setBackgroundColor(getActivity().getColor(R.color.yellow));
+                            ds4.setBackgroundColor(getActivity().getColor(R.color.red));
+                            ds5.setBackgroundColor(getActivity().getColor(R.color.red));
+
+
+                        }
+
+                        if (str >= 1 && str <= 13) {
+
+                            ss1.setBackgroundColor(getActivity().getColor(R.color.green));
+
+
+                        } else if (str > 13 && str <= 26) {
+
+
+                            ss1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ss2.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ss3.setBackgroundColor(getActivity().getColor(R.color.yellow));
+
+
+                        } else if (str > 26 && str <=40) {
+
+
+                            ss1.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ss2.setBackgroundColor(getActivity().getColor(R.color.green));
+                            ss3.setBackgroundColor(getActivity().getColor(R.color.yellow));
+                            ss4.setBackgroundColor(getActivity().getColor(R.color.red));
+                            ss5.setBackgroundColor(getActivity().getColor(R.color.red));
+
+
+                        }
 
 
                         Glide.with(requireActivity()).load(Imageurl).into(profile);
