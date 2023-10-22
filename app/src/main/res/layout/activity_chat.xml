@@ -4,9 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/journal_background"
+    android:background="@color/background"
     tools:context=".ChatActivity">
 
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bot_lap"
+        android:alpha="0.1"/>
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -23,7 +29,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_centerVertical="true"
-                    android:src="@color/accent"/>
+
+                    android:src="@drawable/bot_profile"/>
 
                 <TextView
                     android:id="@+id/name"

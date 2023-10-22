@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background">
 
     <TextView
@@ -19,13 +20,15 @@
         android:fontFamily="@font/nunito_sans"/>
 
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/number_picker"
-        android:layout_width="240dp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/ques_back"
-        android:layout_height="60dp"
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/sleep_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:thumbTint="@color/secondary"
+
         android:layout_below="@+id/question"/>
 
 
@@ -39,7 +42,7 @@
         android:padding="10dp"
         android:textSize="26dp"
         android:textColor="@color/secondary"
-        android:layout_below="@+id/number_picker"
+        android:layout_below="@+id/sleep_bar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"/>
 

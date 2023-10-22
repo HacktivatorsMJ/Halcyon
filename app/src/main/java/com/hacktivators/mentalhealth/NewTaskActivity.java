@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointBackward;
+import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.timepicker.MaterialTimePicker;
@@ -77,7 +78,7 @@ public class NewTaskActivity extends AppCompatActivity {
         materialDateBuilder.setInputMode(MaterialDatePicker.INPUT_MODE_CALENDAR);
 
         CalendarConstraints.Builder calendarConstraintsBuilder = new CalendarConstraints.Builder();
-        calendarConstraintsBuilder.setValidator(DateValidatorPointBackward.now());
+        calendarConstraintsBuilder.setValidator(DateValidatorPointForward.now());
 
         materialDateBuilder.setCalendarConstraints(calendarConstraintsBuilder.build());
         final MaterialDatePicker<Long> materialDatePicker = materialDateBuilder.build();

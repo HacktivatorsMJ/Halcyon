@@ -42,6 +42,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
+import com.hacktivators.mentalhealth.LonelyActivity;
 import com.hacktivators.mentalhealth.Model.User;
 import com.hacktivators.mentalhealth.OnBoarding.Questtionaire.SetupQuestionActivity;
 import com.hacktivators.mentalhealth.R;
@@ -369,7 +370,7 @@ public class InfoActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener() {
                     @Override
                     public void onSuccess(Object o) {
-                        startActivity(new Intent(InfoActivity.this, SetupQuestionActivity.class));
+                        startActivity(new Intent(InfoActivity.this, LonelyActivity.class));
                     }
 
                 })

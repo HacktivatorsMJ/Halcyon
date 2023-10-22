@@ -7,14 +7,14 @@
     tools:context=".Deep_Breathing_Activity"
     android:background="@color/background">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/write"
@@ -30,7 +30,7 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/quote_layout"
                 android:layout_below="@+id/write"
                 android:background="@drawable/rounded_corner"
@@ -55,7 +55,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/timer"
+                android:id="@+id/timerTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/quote_layout"
@@ -67,8 +67,43 @@
                 android:fontFamily="@font/nunito_sans"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timerTxt"
+                android:text="00:00"
+                android:textColor="@color/secondary"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="24dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textStyle="bold"/>
+
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar"
+                android:layout_below="@+id/timer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:thumbTint="@color/secondary"
+                android:progressBackgroundTint="@color/secondary"
+                android:layout_marginHorizontal="40dp"
+                />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/seekbar"
+
+                android:layout_centerHorizontal="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/start"
+                android:id="@+id/start_btn"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
@@ -76,31 +111,15 @@
                 android:text="Start"
                 android:padding="15dp"
                 android:textSize="26dp"
-                android:layout_below="@+id/timer"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="200dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/stop"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:background="@drawable/question_btn"
-                android:text="Stop"
-                android:padding="15dp"
-                android:textSize="26dp"
-                android:layout_below="@+id/timer"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="200dp"
-                android:visibility="gone"/>
-
-
+                />
 
 
         </RelativeLayout>
 
-    </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>

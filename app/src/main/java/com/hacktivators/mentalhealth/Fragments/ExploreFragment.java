@@ -35,6 +35,8 @@ public class ExploreFragment extends Fragment {
         wellness = view.findViewById(R.id.wellness);
 
 
+
+
         journal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

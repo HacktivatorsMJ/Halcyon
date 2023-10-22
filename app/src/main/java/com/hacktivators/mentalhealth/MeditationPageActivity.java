@@ -20,7 +20,7 @@ public class MeditationPageActivity extends AppCompatActivity {
     AppCompatSeekBar seekBar;
     TextView timerTxt;
     CountDownTimer countDownTimer;
-    AppCompatButton start,stop;
+    AppCompatButton start;
     MediaPlayer mediaPlayer;
     Boolean counterIsActive = false;
 

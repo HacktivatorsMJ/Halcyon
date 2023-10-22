@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,9 +37,9 @@ import java.util.Random;
 
 public class TaskActivity extends AppCompatActivity implements TaskViewAdapter.EventListener{
 
-    AppCompatEditText taskBox;
 
-    AppCompatButton add;
+
+    TextView tasks;
 
     RecyclerView recyclerView;
 
@@ -52,6 +53,8 @@ public class TaskActivity extends AppCompatActivity implements TaskViewAdapter.E
 
     FirebaseFirestore firebaseFirestore;
 
+    int no_of_tasks = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,7 @@ public class TaskActivity extends AppCompatActivity implements TaskViewAdapter.E
 
 
         add_task = findViewById(R.id.add_task);
+        tasks = findViewById(R.id.tasks);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -101,12 +105,15 @@ public class TaskActivity extends AppCompatActivity implements TaskViewAdapter.E
                 for (DocumentChange documentChange : value.getDocumentChanges()) {
                     if (documentChange.getType() == DocumentChange.Type.ADDED) {
                         taskArrayList.add(documentChange.getDocument().toObject(Task.class));
+                        no_of_tasks += 1;
                     }
 
                     taskViewAdapter.notifyDataSetChanged();
 
 
                 }
+
+                tasks.setText("You have " + no_of_tasks + " tasks left to do!");
             }
         });
 
