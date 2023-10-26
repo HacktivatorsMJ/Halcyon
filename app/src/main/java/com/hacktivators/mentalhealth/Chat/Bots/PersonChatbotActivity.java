@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 
 import com.hacktivators.mentalhealth.CheerfulActivity;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.SarcasticActivity;
 
 public class PersonChatbotActivity extends AppCompatActivity {
 
@@ -29,5 +30,15 @@ public class PersonChatbotActivity extends AppCompatActivity {
         });
 
 
+        RelativeLayout sarcastic;
+
+        sarcastic = findViewById(R.id.sarcastic_layout);
+        sarcastic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PersonChatbotActivity.this, SarcasticActivity.class));
+            }
+        });
     }
+
 }
