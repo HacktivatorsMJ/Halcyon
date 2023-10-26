@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/write"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nature Walk"
+                android:textSize="29dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/quotation"
+                android:layout_below="@+id/write"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/primary"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&quot;In every walk with nature, one receives far more than he seeks; nature's peace will flow into you as sunshine flows into trees.&quot;\n -John Muir"
+                    android:textSize="16dp"
+                    android:lineHeight="23dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="@color/secondary"
+                    android:textAlignment="center"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="timer"
+                android:textSize="25dp"
+                android:textColor="@color/secondary"
+                android:layout_below="@id/quotation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/timer">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timer"
+                android:layout_marginTop="20dp"
+                android:thumbTint="@color/secondary"
+                android:progressBackgroundTint="@color/secondary"
+                android:layout_marginHorizontal="40dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/start_btn"
+                android:text="Start"
+                android:textSize="26dp"
+                android:layout_below="@id/seekbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/secondary"
+                android:background="@drawable/primary_btn"
+                android:padding="15dp"/>
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
