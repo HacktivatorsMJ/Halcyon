@@ -38,7 +38,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
-                android:id="@+id/breathing_layout">
+                android:id="@+id/cheerful_layout">
 
 
                 <TextView
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/breathing_layout"
+                android:layout_below="@id/cheerful_layout"
                 android:background="@drawable/ques_back"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"

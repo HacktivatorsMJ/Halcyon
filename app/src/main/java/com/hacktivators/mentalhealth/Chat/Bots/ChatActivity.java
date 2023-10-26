@@ -99,11 +99,11 @@ public class ChatActivity extends Activity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://122.171.44.211:13000/sarora/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://122.174.134.253:13000/taylor/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 
-        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.postMessage(question);
+        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.postTaylorMessage(question);
 
         responseBodyCall.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -113,7 +113,7 @@ public class ChatActivity extends Activity {
                 try {
                     responseBody = response.body().string();
                     jsonObject = new JSONObject(responseBody);
-                    String message = jsonObject.getString("Sarora");
+                    String message = jsonObject.getString("Taylor");
                     addToChat(message,Message.SENT_BY_BOT);
 
                 } catch (IOException | JSONException e) {

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,8 @@ import com.hacktivators.mentalhealth.Model.Chat;
 import com.hacktivators.mentalhealth.Model.ChatItem;
 import com.hacktivators.mentalhealth.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHolder> {
@@ -31,6 +34,8 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
     private Context mContext;
 
     private ArrayList<ChatItem> mChatItemArrayList;
+
+    String latestmessageStr;
 
     FirebaseUser firebaseUser;
 
@@ -65,31 +70,30 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
 
 
 
-        latestMessage(chatItem.getId());
+        latestMessage(chatItem.getId(),holder.latestmessage);
 
 
     }
 
-    private void latestMessage(String chatId) {
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    private void latestMessage(String chatId, TextView textView) {
+
+        latestmessageStr = "default";
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatId).child("chats");
 
         reference.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Chat chat = dataSnapshot.getValue(Chat.class);
 
-                    if(snapshot.exists()){
+                    assert chat != null;
+                    latestmessageStr = chat.getMessage();
 
-                        latestMessage(chat.getMessage());
-
-                    }else {
-                        latestMessage("Waiting for response");
-                    }
 
                 }
+
+
 
             }
 
@@ -98,6 +102,11 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
 
             }
         });
+
+        Toast.makeText(mContext, latestmessageStr, Toast.LENGTH_SHORT).show();
+
+
+        textView.setText(latestmessageStr);
     }
 
     @Override

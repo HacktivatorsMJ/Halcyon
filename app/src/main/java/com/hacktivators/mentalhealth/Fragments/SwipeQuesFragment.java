@@ -240,7 +240,7 @@ public class SwipeQuesFragment extends Fragment {
                     Stack stack = dataSnapshot.getValue(Stack.class);
 
                     assert stack != null;
-                    if(!stack.getCreatedby().equals(firebaseUser.getUid())){
+                    if(!stack.getCreatedby().equals(firebaseUser.getUid())&& !stack.isStatus()){
                         stackArrayList.add(stack);
 
                     }

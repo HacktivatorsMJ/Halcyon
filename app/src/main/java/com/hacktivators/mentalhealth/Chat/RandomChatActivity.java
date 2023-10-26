@@ -43,6 +43,8 @@ public class RandomChatActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
 
+    ImageView delete;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,8 @@ public class RandomChatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         messageBox = findViewById(R.id.message_edit_text);
 
+        delete = findViewById(R.id.delete);
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
@@ -75,6 +79,13 @@ public class RandomChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMessage();
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

@@ -12,7 +12,17 @@ public interface Service {
 
 
     @FormUrlEncoded
-    @POST("/sarora")
-    Call<ResponseBody> postMessage(@Field("chatInput") String message);
+    @POST("/taylor")
+    Call<ResponseBody> postTaylorMessage(@Field("chatInput") String message);
+
+    @FormUrlEncoded
+    @POST("/cheerful")
+    Call<ResponseBody> postCheerfulMessage(@Field("chatInput") String message);
+
+    @FormUrlEncoded
+    @POST("/sarcastic")
+    Call<ResponseBody> postSarcasticMessage(@Field("chatInput") String message);
+
+
 
 }

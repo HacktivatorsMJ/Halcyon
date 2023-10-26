@@ -4,15 +4,25 @@ public class Stack {
 
     String statement,createdby,id;
 
-    public Stack(String statement, String createdby,String id) {
+    boolean status;
+
+    public Stack(String statement, String createdby,String id,boolean status) {
         this.statement = statement;
         this.createdby = createdby;
         this.id = id;
+        this.status = status;
     }
 
     public Stack() {
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 
     public String getId() {
         return id;
