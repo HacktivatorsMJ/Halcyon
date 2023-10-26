@@ -42,9 +42,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
-import com.hacktivators.mentalhealth.LonelyActivity;
 import com.hacktivators.mentalhealth.Model.User;
-import com.hacktivators.mentalhealth.OnBoarding.Questtionaire.SetupQuestionActivity;
 import com.hacktivators.mentalhealth.R;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -56,7 +54,6 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 
 public class InfoActivity extends AppCompatActivity {
 

@@ -22,31 +22,34 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PersonChatbotActivity"
+            android:name=".Chat.RandomChatActivity"
             android:exported="false" />
         <activity
-            android:name=".YogaReadActivity"
+            android:name=".Chat.Bots.PersonChatbotActivity"
             android:exported="false" />
         <activity
-            android:name=".YogaViewActivity"
+            android:name=".Wellness.Yoga.YogaReadActivity"
             android:exported="false" />
         <activity
-            android:name=".MusicTherapyActivity"
+            android:name=".Wellness.Yoga.YogaViewActivity"
             android:exported="false" />
         <activity
-            android:name=".SleepReminderActivity"
+            android:name=".Wellness.MusicTherapyActivity"
             android:exported="false" />
         <activity
-            android:name=".StressTestActivity"
+            android:name=".Wellness.SleepReminderActivity"
             android:exported="false" />
         <activity
-            android:name=".PHQ9Activity"
+            android:name=".Tests.StressTestActivity"
             android:exported="false" />
         <activity
-            android:name=".MeditationGuideActivity"
+            android:name=".Tests.PHQ9Activity"
             android:exported="false" />
         <activity
-            android:name=".AboutUsActivity"
+            android:name=".Wellness.Meditation.MeditationGuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Hamburger.AboutUsActivity"
             android:exported="false" />
         <activity
             android:name=".OnBoarding.StartActivity"
@@ -55,17 +58,20 @@
             android:name=".OnBoarding.CreateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".Journal.JournalAddActivity"
+            android:name=".Wellness.Journal.JournalAddActivity"
             android:exported="false" />
         <activity
             android:name=".OnBoarding.InfoActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Calendar" />
         <activity
-            android:name=".LonelyActivity"
+            android:name=".OnBoarding.LonelyActivity"
             android:exported="false" />
         <activity
             android:name=".OnBoarding.Questtionaire.SetupQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Hamburger.SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".OnBoarding.Questtionaire.SetupQuestion1Activity"
@@ -86,25 +92,19 @@
             android:name=".OnBoarding.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".CrisisActivity"
+            android:name=".Hamburger.ProfessionalHelpActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfessionalHelpActivity"
+            android:name=".Wellness.Deep_Breathing_Activity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Wellness.Journal.JournalViewActivity"
             android:exported="false" />
         <activity
-            android:name=".Deep_Breathing_Activity"
+            android:name=".Wellness.Journal.JournalReadActivity"
             android:exported="false" />
         <activity
-            android:name=".Journal.JournalViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Journal.JournalReadActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".OnBoarding.SplashActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -114,30 +114,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChatActivity"
+            android:name=".Chat.Bots.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".MeditationPageActivity"
+            android:name=".Wellness.Meditation.MeditationPageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.MentalHealth" />
         <activity
-            android:name=".TaskActivity"
+            android:name=".Tasks.TaskActivity"
             android:exported="false" />
         <activity
-            android:name=".NewTaskActivity"
+            android:name=".Tasks.NewTaskActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Calendar" />
         <activity
-            android:name=".WellnessPagesActivity"
+            android:name=".Wellness.WellnessPagesActivity"
             android:exported="false" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.Memorium.Crop" />
         <activity
-            android:name=".YogaPageActivity"
+            android:name=".Wellness.Yoga.YogaPageActivity"
             android:exported="false"
             android:theme="@style/Theme.Halcyon.Yoga" />
 

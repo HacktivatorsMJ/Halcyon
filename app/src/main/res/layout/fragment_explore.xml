@@ -33,12 +33,12 @@
                 android:layout_height="120dp"/>
 
             <include android:id="@+id/journal"
-                layout="@layout/journal1" android:layout_marginVertical="10dp"
+                layout="@layout/journal_block" android:layout_marginVertical="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
             <include android:id="@+id/tasks"
-                layout="@layout/journel_block" android:layout_marginVertical="10dp"
+                layout="@layout/tasks_block" android:layout_marginVertical="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
-            <include android:id="@+id/music" android:layout_marginVertical="10dp"  layout="@layout/music"
+            <include android:id="@+id/music" android:layout_marginVertical="10dp"  layout="@layout/nature_sounds_block"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="30dp"
                 android:layout_height="120dp"/>

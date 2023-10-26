@@ -36,5 +36,12 @@
             android:title="Privacy &amp; Policy "/>
     </group>
 
+    <item android:id="@+id/settings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Settings"
+        android:enabled="true"
+        android:checkableBehavior="single"
+        />
+
 
 </menu>

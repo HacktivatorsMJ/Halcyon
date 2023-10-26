@@ -1,16 +1,10 @@
 package com.hacktivators.mentalhealth.Adapter;
 
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,10 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hacktivators.mentalhealth.R;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.EventListener;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
@@ -49,7 +41,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public HomeAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == JOURNAL) {
 
-            ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(mContext).inflate(R.layout.journel_block, parent, false);
+            ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(mContext).inflate(R.layout.tasks_block, parent, false);
             return new HomeAdapter.ViewHolder(viewGroup);
         }
         if (viewType == MUSIC) {

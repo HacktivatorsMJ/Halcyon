@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hacktivators.mentalhealth.Model.Yoga;
 import com.hacktivators.mentalhealth.R;
-import com.hacktivators.mentalhealth.YogaReadActivity;
-import com.hacktivators.mentalhealth.YogaViewActivity;
+import com.hacktivators.mentalhealth.Wellness.Yoga.YogaReadActivity;
 
 import java.util.ArrayList;
 

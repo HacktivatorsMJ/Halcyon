@@ -4,54 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SettingsFragment">
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/logout_card"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="25dp"
-        android:elevation="25dp"
-        app:cardBackgroundColor="@color/primary"
-        android:layout_below="@+id/bar_layout"
-        app:cardCornerRadius="15dp"
-        android:visibility="visible"
-        android:layout_marginTop="20dp"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Log Out"
-                android:paddingStart="15dp"
-                android:fontFamily="@font/nunito_sans"
-                android:textColor="@color/secondary"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:textSize="28dp"/>
-
-            <ImageView
-                android:id="@+id/arrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingEnd="10dp"
-                app:tint="@color/secondary"
-                android:src="@drawable/baseline_arrow_forward_ios_24"
-                android:layout_alignParentRight="true"/>
+    tools:context=".Fragments.SettingsFragment">
 
 
 
 
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
 
 
 </FrameLayout>

@@ -27,8 +27,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hacktivators.mentalhealth.Fragments.ChatConnectFragment;
 import com.hacktivators.mentalhealth.Fragments.ExploreFragment;
 import com.hacktivators.mentalhealth.Fragments.HomeFragment;
+import com.hacktivators.mentalhealth.Fragments.ProfileFragment;
+import com.hacktivators.mentalhealth.Fragments.SwipeQuesFragment;
+import com.hacktivators.mentalhealth.Hamburger.AboutUsActivity;
+import com.hacktivators.mentalhealth.Hamburger.ProfessionalHelpActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -82,6 +87,14 @@ public class MainActivity extends FragmentActivity {
 
         loadFragment(new HomeFragment());
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new ProfileFragment());
+            }
+        });
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @SuppressLint("NonConstantResourceId")
@@ -106,6 +119,8 @@ public class MainActivity extends FragmentActivity {
                 } else if (itemId == R.id.p_p) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     // TO BE ADDED
+                }else if (itemId == R.id.settings){
+                    drawerLayout.closeDrawer(GravityCompat.START);
                 }
 
                 return false;
@@ -126,10 +141,10 @@ public class MainActivity extends FragmentActivity {
                     fragment = new HomeFragment();
                 } else if (itemId == R.id.explore) {
                     fragment = new ExploreFragment();
-                } else if (itemId == R.id.profile) {
-                    fragment = new ProfileFragment();
-                } else if (itemId == R.id.settings) {
-                    fragment = new SettingsFragment();
+                } else if (itemId == R.id.connect) {
+                    fragment = new SwipeQuesFragment();
+                } else if (itemId == R.id.chat) {
+                    fragment = new ChatConnectFragment();
                 } else {
                     return false;
                 }

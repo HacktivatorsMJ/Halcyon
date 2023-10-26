@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "915367982754",
     "project_id": "halcyon-21174",
+    "firebase_url": "https://halcyon-21174-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storage_bucket": "halcyon-21174.appspot.com"
   },
   "client": [

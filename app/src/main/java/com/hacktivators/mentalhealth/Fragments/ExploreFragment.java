@@ -9,16 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hacktivators.mentalhealth.ChatActivity;
-import com.hacktivators.mentalhealth.Journal.JournalViewActivity;
-import com.hacktivators.mentalhealth.MeditationPageActivity;
-import com.hacktivators.mentalhealth.MusicTherapyActivity;
-import com.hacktivators.mentalhealth.PHQ9Activity;
+import com.hacktivators.mentalhealth.Chat.Bots.ChatActivity;
+import com.hacktivators.mentalhealth.Wellness.Journal.JournalViewActivity;
+import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
+import com.hacktivators.mentalhealth.Wellness.MusicTherapyActivity;
+import com.hacktivators.mentalhealth.Tests.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
-import com.hacktivators.mentalhealth.SleepReminderActivity;
-import com.hacktivators.mentalhealth.StressTestActivity;
-import com.hacktivators.mentalhealth.TaskActivity;
-import com.hacktivators.mentalhealth.WellnessPagesActivity;
+import com.hacktivators.mentalhealth.Wellness.SleepReminderActivity;
+import com.hacktivators.mentalhealth.Tests.StressTestActivity;
+import com.hacktivators.mentalhealth.Tasks.TaskActivity;
+import com.hacktivators.mentalhealth.Wellness.WellnessPagesActivity;
 
 
 public class ExploreFragment extends Fragment {

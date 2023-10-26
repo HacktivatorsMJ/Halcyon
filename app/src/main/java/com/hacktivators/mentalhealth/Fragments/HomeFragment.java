@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,13 +22,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.hacktivators.mentalhealth.ChatActivity;
-import com.hacktivators.mentalhealth.Journal.JournalViewActivity;
-import com.hacktivators.mentalhealth.MusicTherapyActivity;
-import com.hacktivators.mentalhealth.PHQ9Activity;
+import com.hacktivators.mentalhealth.Chat.Bots.ChatActivity;
+import com.hacktivators.mentalhealth.Wellness.Journal.JournalViewActivity;
+import com.hacktivators.mentalhealth.Wellness.MusicTherapyActivity;
+import com.hacktivators.mentalhealth.Tests.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
-import com.hacktivators.mentalhealth.StressTestActivity;
-import com.hacktivators.mentalhealth.TaskActivity;
+import com.hacktivators.mentalhealth.Tests.StressTestActivity;
+import com.hacktivators.mentalhealth.Tasks.TaskActivity;
 
 import java.util.Calendar;
 import java.util.Date;
