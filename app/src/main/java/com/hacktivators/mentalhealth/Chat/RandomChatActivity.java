@@ -102,16 +102,13 @@ public class RandomChatActivity extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatID).child("chats");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mChatArrayList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Chat chat = dataSnapshot.getValue(Chat.class);
-
-
                     mChatArrayList.add(chat);
-
-
-
 
                 }
 

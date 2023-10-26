@@ -1,5 +1,6 @@
 package com.hacktivators.mentalhealth.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,7 +12,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hacktivators.mentalhealth.Chat.RandomChatActivity;
 import com.hacktivators.mentalhealth.Model.Chat;
 import com.hacktivators.mentalhealth.Model.ChatItem;
@@ -46,11 +53,6 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
 
         holder.statement.setText(chatItem.getStatement());
 
-        if(chatItem.isStatus()){
-            holder.latestmessage.setText("active");
-        }else {
-            holder.latestmessage.setText("waiting");
-        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +64,40 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
         });
 
 
+
+        latestMessage(chatItem.getId());
+
+
+    }
+
+    private void latestMessage(String chatId) {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatId).child("chats");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Chat chat = dataSnapshot.getValue(Chat.class);
+
+                    if(snapshot.exists()){
+
+                        latestMessage(chat.getMessage());
+
+                    }else {
+                        latestMessage("Waiting for response");
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
