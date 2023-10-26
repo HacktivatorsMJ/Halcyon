@@ -27,11 +27,11 @@ import java.util.ArrayList;
 public class ChatConnectFragment extends Fragment {
 
     FirebaseUser firebaseUser;
-    ArrayList<ChatItem> chatItemArrayList;
+    ArrayList<ChatItem> chatItemArrayList,chatItemArrayList2;
 
     ChatItemAdapter chatItemAdapter;
 
-    RecyclerView recyclerView;
+    RecyclerView recyclerView1,recyclerView2;
 
 
     @Override
@@ -42,12 +42,16 @@ public class ChatConnectFragment extends Fragment {
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        recyclerView = view.findViewById(R.id.recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
+        recyclerView1 = view.findViewById(R.id.recycler_view1);
+        recyclerView2 = view.findViewById(R.id.recycler_view2);
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(requireActivity());
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(requireActivity());
 
         chatItemArrayList = new ArrayList<>();
+        chatItemArrayList2 = new ArrayList<>();
 
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView2.setLayoutManager(layoutManager2);
+        recyclerView1.setLayoutManager(layoutManager1);
 
         loadData();
 
@@ -73,7 +77,35 @@ public class ChatConnectFragment extends Fragment {
 
 
                     chatItemAdapter = new ChatItemAdapter(getContext(),chatItemArrayList,firebaseUser);
-                    recyclerView.setAdapter(chatItemAdapter);
+                    recyclerView1.setAdapter(chatItemAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference("chatlist");
+
+        databaseReference2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    ChatItem chatItem = dataSnapshot.getValue(ChatItem.class);
+
+
+                    assert chatItem != null;
+                    if(chatItem.getAcceptedby().equals(firebaseUser.getUid())){
+                        chatItemArrayList2.add(chatItem);
+                    }
+
+
+
+                    chatItemAdapter = new ChatItemAdapter(getContext(),chatItemArrayList2,firebaseUser);
+                    recyclerView2.setAdapter(chatItemAdapter);
                 }
             }
 

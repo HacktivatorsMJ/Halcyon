@@ -90,6 +90,7 @@ public class SwipeQuesFragment extends Fragment {
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chatlist").child(selectedStack.getId());
 
                         HashMap<String,Object> hashMap1 = new HashMap<String,Object>();
+                        hashMap1.put("acceptedby",firebaseUser.getUid());
                         hashMap1.put("status",true);
                         reference.updateChildren(hashMap1);
 
@@ -207,6 +208,7 @@ public class SwipeQuesFragment extends Fragment {
                 hashMap.put("statement", statement);
                 hashMap.put("status",false);
                 hashMap.put("createdby",firebaseUser.getUid());
+                hashMap.put("acceptedby","");
 
                 databaseReference1.child(stackID).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

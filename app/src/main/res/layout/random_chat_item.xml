@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginVertical="5dp"
     android:background="@color/primary">
 
@@ -10,7 +11,7 @@
         android:id="@+id/statement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your statement goes here if lets say my statement keeps on going"
+        tools:text="Your statement goes here if lets say my statement keeps on going"
         android:textColor="@color/secondary"
         android:layout_marginEnd="45dp"
         android:maxLines="2"
@@ -27,12 +28,13 @@
         android:textColor="@color/secondary"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
-        android:text="Some random message which they send"/>
+        tools:text="Some random message which they send"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@color/green"
+        android:visibility="invisible"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"/>
