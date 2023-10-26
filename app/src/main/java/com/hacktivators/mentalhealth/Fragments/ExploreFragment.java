@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hacktivators.mentalhealth.Chat.Bots.ChatActivity;
+import com.hacktivators.mentalhealth.Chat.Bots.PersonChatbotActivity;
 import com.hacktivators.mentalhealth.Wellness.Journal.JournalViewActivity;
 import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.Wellness.MusicTherapyActivity;
@@ -52,7 +53,7 @@ public class ExploreFragment extends Fragment {
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ChatActivity.class));
+                startActivity(new Intent(getActivity(), PersonChatbotActivity.class));
             }
         });
 

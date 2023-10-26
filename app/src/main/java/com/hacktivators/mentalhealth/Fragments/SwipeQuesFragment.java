@@ -209,6 +209,7 @@ public class SwipeQuesFragment extends Fragment {
                 hashMap.put("status",false);
                 hashMap.put("createdby",firebaseUser.getUid());
                 hashMap.put("acceptedby","");
+                hashMap.put("deleted",false);
 
                 databaseReference1.child(stackID).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

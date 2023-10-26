@@ -23,7 +23,7 @@
 
 
 
-            <include android:id="@+id/chat" android:layout_marginVertical="10dp"  layout="@layout/chat_block"
+            <include android:id="@+id/chat" android:layout_marginVertical="10dp"  layout="@layout/multichat_item"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
