@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/ques_back"
+    android:layout_centerVertical="true">
+
+    <TextView
+        android:id="@+id/music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Self-Compassion"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Self-affirmation can boost mental health by enhancing self-esteem leading to improved resilience and well-being.."
+        android:textSize="15dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_below="@+id/music"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

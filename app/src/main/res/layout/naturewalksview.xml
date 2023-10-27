@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/ques_back"
+    android:layout_centerVertical="true">
+
+    <TextView
+        android:id="@+id/music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nature Walk"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A walk in nature can improve mental health by reducing stress and increasing a sense of well-being through the restorative qualities of natural environments.."
+        android:textSize="15dp"
+        android:fontFamily="@font/nunito_sans"
+        android:layout_below="@+id/music"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
