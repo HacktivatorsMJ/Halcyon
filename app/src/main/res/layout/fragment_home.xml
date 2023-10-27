@@ -283,21 +283,24 @@
 
                 >
 
-                <include layout="@layout/tasks_block"
-                    android:layout_height="120dp"
-                    android:layout_width="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginVertical="10dp"
-                    />
-
                 <include layout="@layout/meditation"
+                    android:id="@+id/morning_meditation"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginVertical="10dp"
                     />
 
-                <include layout="@layout/affirmation"
+                <include layout="@layout/nature_sounds_block"
+                    android:id="@+id/morning_nature_walk"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+                <include layout="@layout/tasks_block"
+                    android:id="@+id/morning_tasks"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -321,16 +324,16 @@
 
                 >
 
-                <include android:id="@+id/journal"
-                    layout="@layout/journal_block"
+                <include android:id="@+id/noon_nature_sounds"
+                    layout="@layout/nature_sounds_block"
                     android:layout_marginVertical="10dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_width="match_parent"/>
 
 
                 <include
-                    android:id="@+id/tasks"
+                    android:id="@+id/noon_tasks"
                     layout="@layout/tasks_block"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
@@ -338,7 +341,34 @@
                     android:layout_marginVertical="10dp"
                     />
 
-                <include layout="@layout/nature_sounds_block"
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/evening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+
+                >
+
+                <include android:id="@+id/noon_nature_sounds"
+                    layout="@layout/nature_sounds_block"
+                    android:layout_marginVertical="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"/>
+
+
+                <include
+                    android:id="@+id/evening_multi"
+                    layout="@layout/multichat_item"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -355,7 +385,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
                 android:gravity="center_horizontal"
@@ -378,8 +408,8 @@
                     />
 
                 <include
-                    android:id="@+id/tasks_night"
-                    layout="@layout/tasks_block"
+                    android:id="@+id/night_journal"
+                    layout="@layout/journal_block"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
