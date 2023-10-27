@@ -84,14 +84,14 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Chat chat = dataSnapshot.getValue(Chat.class);
+
+                    Chat chat = snapshot.getValue(Chat.class);
 
                     assert chat != null;
                     latestmessageStr = chat.getMessage();
 
 
-                }
+
 
 
 
@@ -103,7 +103,7 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
             }
         });
 
-        Toast.makeText(mContext, latestmessageStr, Toast.LENGTH_SHORT).show();
+
 
 
         textView.setText(latestmessageStr);

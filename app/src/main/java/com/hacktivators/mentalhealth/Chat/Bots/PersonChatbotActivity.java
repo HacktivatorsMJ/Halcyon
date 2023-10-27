@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.hacktivators.mentalhealth.CheerfulActivity;
 import com.hacktivators.mentalhealth.R;
-import com.hacktivators.mentalhealth.SarcasticActivity;
 
 public class PersonChatbotActivity extends AppCompatActivity {
 

@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Self-affirmation can boost mental health by enhancing self-esteem leading to improved resilience and well-being.."
+        android:text="Self-affirmation can boost mental health leading to improved resilience and well-being."
         android:textSize="15dp"
         android:fontFamily="@font/nunito_sans"
         android:layout_below="@+id/music"

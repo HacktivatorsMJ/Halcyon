@@ -20,11 +20,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A walk in nature can improve mental health by reducing stress and increasing a sense of well-being through the restorative qualities of natural environments.."
+        android:text="A walk in nature can improve mental health through the restorative qualities of nature."
         android:textSize="15dp"
+        android:layout_marginHorizontal="20dp"
         android:fontFamily="@font/nunito_sans"
         android:layout_below="@+id/music"
-        android:layout_marginLeft="15dp"
+
         android:textColor="@color/white"/>
 
 </RelativeLayout>

@@ -137,7 +137,6 @@ public class JournalAddActivity extends AppCompatActivity {
                     cancelQuestion.setVisibility(View.VISIBLE);
                     refreshQuestion.setVisibility(View.VISIBLE);
 
-                    Toast.makeText(getApplicationContext(),"New clicked",Toast.LENGTH_SHORT).show();
                     int index = randomGenerator.nextInt(Questions.size());
                     String question = Questions.get(index);
 
@@ -168,7 +167,6 @@ public class JournalAddActivity extends AppCompatActivity {
         cancelQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Cancel clicked",Toast.LENGTH_SHORT).show();
                 newQuestion.setVisibility(View.VISIBLE);
                 cancelQuestion.setVisibility(View.INVISIBLE);
                 refreshQuestion.setVisibility(View.INVISIBLE);
@@ -351,7 +349,7 @@ public class JournalAddActivity extends AppCompatActivity {
 
     private void refreshQuestionFunc() {
 
-        Toast.makeText(getApplicationContext(), "Refresh clicked", Toast.LENGTH_SHORT).show();
+
         int index = randomGenerator.nextInt(Questions.size());
         String question = Questions.get(index);
         if (generatedQuestion.getText().toString().equals(Question)){
@@ -367,12 +365,7 @@ public class JournalAddActivity extends AppCompatActivity {
         Date date = new Date();
 
         long date_ = date.getTime();
-
-
-
-
         JournalID = GenJournalID();
-
         FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         HashMap hashMap = new HashMap();
         hashMap.put("id",JournalID);

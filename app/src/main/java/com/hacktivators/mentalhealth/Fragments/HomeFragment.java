@@ -23,12 +23,17 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.Chat.Bots.ChatActivity;
+import com.hacktivators.mentalhealth.Chat.Bots.PersonChatbotActivity;
+import com.hacktivators.mentalhealth.Wellness.Deep_Breathing_Activity;
 import com.hacktivators.mentalhealth.Wellness.Journal.JournalViewActivity;
+import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.Wellness.MusicTherapyActivity;
 import com.hacktivators.mentalhealth.Tests.PHQ9Activity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.Tests.StressTestActivity;
 import com.hacktivators.mentalhealth.Tasks.TaskActivity;
+import com.hacktivators.mentalhealth.Wellness.NatureWalkActivity;
+import com.hacktivators.mentalhealth.Wellness.SleepReminderActivity;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -61,9 +66,9 @@ public class HomeFragment extends Fragment {
     RelativeLayout article,book,video,podcast;
 
 
-    LinearLayout morning,noon,night,tests;
+    LinearLayout morning,noon,night,tests,evening;
 
-    View tasks,depressionTest,stressTest;
+    View tasks,depressionTest,stressTest,morning_meditation,morning_nature_walk,morning_self,morning_tasks,noon_breathing,noon_nature_sounds,noon_tasks,evening_nature_walk,evening_multi,evening_art,night_sleep,night_breathing,night_journal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,14 +87,28 @@ public class HomeFragment extends Fragment {
 
         morning = view.findViewById(R.id.morning);
         noon = view.findViewById(R.id.noon);
+        evening = view.findViewById(R.id.evening);
         night = view.findViewById(R.id.night);
 
-        tasks = view.findViewById(R.id.tasks_night);
+
+        morning_meditation = view.findViewById(R.id.morning_meditation);
+        morning_nature_walk = view.findViewById(R.id.morning_nature_walk);
+        morning_self = view.findViewById(R.id.morning_self);
+        morning_tasks = view.findViewById(R.id.morning_tasks);
+
+        noon_breathing = view.findViewById(R.id.noon_breathing);
+        noon_nature_sounds = view.findViewById(R.id.noon_nature_sounds);
+        noon_tasks = view.findViewById(R.id.noon_tasks);
+
+        evening_nature_walk = view.findViewById(R.id.evening_nature_walk);
+        evening_art = view.findViewById(R.id.evening_art);
+        evening_multi = view.findViewById(R.id.evening_multi);
+
+        night_sleep = view.findViewById(R.id.night_sleep);
+        night_journal = view.findViewById(R.id.night_journal);
+        night_breathing = view.findViewById(R.id.night_breathing);
 
 
-        journal = view.findViewById(R.id.journal);
-        tasks_ = view.findViewById(R.id.tasks);
-        music = view.findViewById(R.id.music);
 
 
         article = view.findViewById(R.id.article_layout);
@@ -136,19 +155,29 @@ public class HomeFragment extends Fragment {
         if(hour < 6){
             night.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
+            evening.setVisibility(View.GONE);
             noon.setVisibility(View.GONE);
         }
         if (hour >= 6 && hour < 12) {
             morning.setVisibility(View.VISIBLE);
             noon.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
-        } else if (hour >= 12 && hour <= 21) {
+            evening.setVisibility(View.GONE);
+        } else if (hour >= 12 && hour < 17) {
             noon.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
-        } else if (hour >= 22) {
+            evening.setVisibility(View.GONE);
+        } else if (hour >= 17 && hour > 21) {
+            noon.setVisibility(View.GONE);
+            morning.setVisibility(View.GONE);
+            night.setVisibility(View.GONE);
+            evening.setVisibility(View.VISIBLE);
+
+        } else if (hour >= 21) {
             night.setVisibility(View.VISIBLE);
             morning.setVisibility(View.GONE);
+            evening.setVisibility(View.GONE);
             noon.setVisibility(View.GONE);
         }
 
@@ -164,26 +193,104 @@ public class HomeFragment extends Fragment {
 
 
 
-        journal.setOnClickListener(new View.OnClickListener() {
+
+        morning_meditation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), JournalViewActivity.class));
+                startActivity(new Intent(getActivity(), MeditationPageActivity.class));
             }
         });
 
-        tasks_.setOnClickListener(new View.OnClickListener() {
+        morning_nature_walk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), NatureWalkActivity.class));
+            }
+        });
+        morning_self.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(getActivity(),)); TODO
+            }
+        });
+        morning_tasks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), TaskActivity.class));
             }
         });
 
-        music.setOnClickListener(new View.OnClickListener() {
+        noon_breathing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        evening_multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PersonChatbotActivity.class));
+            }
+        });
+
+        evening_nature_walk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), NatureWalkActivity.class));
+            }
+        });
+
+        evening_art.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  startActivity(new Intent(getActivity(),)); TODO
+            }
+        });
+
+        noon_breathing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Deep_Breathing_Activity.class));
+            }
+        });
+
+        noon_tasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), TaskActivity.class));
+            }
+        });
+
+        noon_nature_sounds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), MusicTherapyActivity.class));
             }
         });
+
+        night_breathing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Deep_Breathing_Activity.class));
+            }
+        });
+
+        night_journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), JournalViewActivity.class));
+            }
+        });
+
+        night_sleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SleepReminderActivity.class));
+            }
+        });
+
+
 
 
         foryouTXT.setOnClickListener(new View.OnClickListener() {
@@ -230,12 +337,6 @@ public class HomeFragment extends Fragment {
 
         });
 
-        tasks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), TaskActivity.class));
-            }
-        });
 
         chat_block.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -244,6 +345,8 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+
 
         featuredTXT.setOnClickListener(new View.OnClickListener() {
             @Override

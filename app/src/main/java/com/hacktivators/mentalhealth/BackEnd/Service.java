@@ -23,6 +23,10 @@ public interface Service {
     @POST("/sarcastic")
     Call<ResponseBody> postSarcasticMessage(@Field("chatInput") String message);
 
+    @FormUrlEncoded
+    @POST("/nsfw")
+    Call<ResponseBody> checkNSFW(@Field("chatInput") String message);
+
 
 
 }

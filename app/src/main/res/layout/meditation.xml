@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Meditation"
         android:textSize="29dp"
+        android:textStyle="bold"
         android:fontFamily="@font/nunito_sans"
         android:textColor="@color/secondary"
         android:layout_marginLeft="15dp"

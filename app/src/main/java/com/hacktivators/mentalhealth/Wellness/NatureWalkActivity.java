@@ -54,6 +54,8 @@ public class NatureWalkActivity extends AppCompatActivity {
         locationManager = new MyLocationManager(this);
         locationManager.startLocationUpdates();
 
+        locationManager.setActivityReference(NatureWalkActivity.this);
+
 
 
         seekBar.setMax(7200);

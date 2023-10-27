@@ -1,4 +1,4 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Chat.Bots;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.hacktivators.mentalhealth.Adapter.MessageAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
 import com.hacktivators.mentalhealth.Model.Message;
+import com.hacktivators.mentalhealth.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,7 +91,7 @@ public class SarcasticActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.68.70:13000/sarcastic/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:13000/sarcastic/").client(client).build().create(Service.class);
 
 
         retrofit2.Call<ResponseBody> responseBodyCall = service.postSarcasticMessage(question);

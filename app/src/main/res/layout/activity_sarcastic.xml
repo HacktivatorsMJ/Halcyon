@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".SarcasticActivity">
+    tools:context=".Chat.Bots.SarcasticActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bot_lap"
+        android:src="@drawable/sarcastic_bot"
         android:alpha="0.1"/>
 
     <androidx.appcompat.widget.Toolbar
@@ -29,7 +29,7 @@
                 android:layout_height="45dp"
                 android:layout_centerVertical="true"
 
-                android:src="@drawable/bot_profile"/>
+                android:src="@drawable/sarcastic_bot"/>
 
             <TextView
                 android:id="@+id/name"
@@ -56,16 +56,16 @@
 
         android:layout_above="@id/editor_layout"
         />
+
     <TextView
+        android:id="@+id/welcome_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/welcome_text"
         android:layout_centerInParent="true"
-        android:text=""
-        android:gravity="center"
-        android:textSize="28dp"
         android:fontFamily="@font/nunito_sans"
-        />
+        android:gravity="center"
+        android:text=""
+        android:textSize="28dp" />
 
 
     <RelativeLayout

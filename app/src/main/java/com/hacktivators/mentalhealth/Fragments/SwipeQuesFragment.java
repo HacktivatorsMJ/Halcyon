@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
@@ -89,7 +90,8 @@ public class SwipeQuesFragment extends Fragment {
 
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chatlist").child(selectedStack.getId());
 
-                        HashMap<String,Object> hashMap1 = new HashMap<String,Object>();
+
+                        HashMap<String,Object> hashMap1 = new HashMap<>();
                         hashMap1.put("acceptedby",firebaseUser.getUid());
                         hashMap1.put("status",true);
                         reference.updateChildren(hashMap1);
@@ -106,6 +108,7 @@ public class SwipeQuesFragment extends Fragment {
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chatlist").child(selectedStack.getId());
 
                         HashMap<String,Object> hashMap1 = new HashMap<String,Object>();
+                        hashMap1.put("acceptedby",firebaseUser.getUid());
                         hashMap1.put("status",true);
                         reference.updateChildren(hashMap1);
 

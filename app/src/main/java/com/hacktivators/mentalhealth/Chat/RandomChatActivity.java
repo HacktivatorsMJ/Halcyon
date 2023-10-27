@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,13 +30,27 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hacktivators.mentalhealth.Adapter.ChatAdapter;
+import com.hacktivators.mentalhealth.BackEnd.Service;
 import com.hacktivators.mentalhealth.MainActivity;
 import com.hacktivators.mentalhealth.Model.Chat;
 import com.hacktivators.mentalhealth.Model.ChatItem;
 import com.hacktivators.mentalhealth.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 
 public class RandomChatActivity extends AppCompatActivity {
 
@@ -59,7 +74,14 @@ public class RandomChatActivity extends AppCompatActivity {
 
     ImageView endChat;
 
-    Dialog dialog;
+    Dialog dialog,nsfw_dialog;
+
+    Service service;
+
+    public static final MediaType JSON
+            = MediaType.get("application/json; charset=utf-8");
+
+    String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +115,7 @@ public class RandomChatActivity extends AppCompatActivity {
         Log.d("id",chatID);
 
         dialog = new Dialog(RandomChatActivity.this);
+        nsfw_dialog = new Dialog(RandomChatActivity.this);
 
         readChat();
 
@@ -100,14 +123,16 @@ public class RandomChatActivity extends AppCompatActivity {
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendMessage();
+                String message = messageBox.getText().toString();
+                callAI(message);
+
             }
         });
 
         endChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onMediaSelect();
+                onDeleteSelect();
 
             }
         });
@@ -154,17 +179,82 @@ public class RandomChatActivity extends AppCompatActivity {
 
     }
 
-    private void sendMessage() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatID).child("chats");
-        long currentTimeMillis = System.currentTimeMillis();
-        HashMap<String, Object> hashMap = new HashMap<String, Object>();
-        hashMap.put("message",messageBox.getText().toString());
-        hashMap.put("sentby",firebaseUser.getUid());
-        hashMap.put("timestamp",currentTimeMillis);
+    private void callAI(String question) {
 
-        databaseReference.push().updateChildren(hashMap);
 
-        messageBox.setText("");
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
+        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:13000/nsfw/").client(client).build().create(Service.class);
+
+        //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
+
+        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.checkNSFW(question);
+
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                String responseBody = null;
+                JSONObject jsonObject = null;
+                try {
+                    responseBody = response.body().string();
+                    jsonObject = new JSONObject(responseBody);
+                    String result = jsonObject.getString("NSFW");
+
+                    sendMessage(result);
+
+
+
+                } catch (IOException | JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
+
+            }
+
+
+
+
+        });
+
+
+
+
+    }
+
+
+    private void sendMessage(String result) {
+
+
+
+
+
+
+        if(result.equals("NSFW")){
+
+            Toast.makeText(getApplicationContext(),"NSFW",Toast.LENGTH_SHORT).show();
+            onNSFW();
+
+        }else {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatID).child("chats");
+            long currentTimeMillis = System.currentTimeMillis();
+            HashMap<String, Object> hashMap = new HashMap<String, Object>();
+            hashMap.put("message",messageBox.getText().toString());
+            hashMap.put("sentby",firebaseUser.getUid());
+            hashMap.put("timestamp",currentTimeMillis);
+
+            databaseReference.push().updateChildren(hashMap);
+
+            messageBox.setText("");
+        }
+
+
 
 
 
@@ -196,7 +286,7 @@ public class RandomChatActivity extends AppCompatActivity {
 
     }
 
-    private void onMediaSelect(){
+    private void onDeleteSelect(){
 
 
         AppCompatButton delete;
@@ -242,6 +332,51 @@ public class RandomChatActivity extends AppCompatActivity {
         dialog.getWindow().setGravity(Gravity.CENTER);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.show();
+    }
+
+    private void onNSFW(){
+
+
+        AppCompatButton delete;
+
+
+
+        nsfw_dialog.setContentView(R.layout.nsfw_dialog);
+
+        delete = nsfw_dialog.findViewById(R.id.delete);
+
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        Window window = nsfw_dialog.getWindow();
+        nsfw_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        lp.copyFrom(window.getAttributes());
+        //This makes the dialog take up the full width
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+
+
+        nsfw_dialog.setCancelable(true);
+
+
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               nsfw_dialog.dismiss();
+               messageBox.setText("");
+            }
+        });
+
+
+
+
+
+
+        nsfw_dialog.getWindow().setGravity(Gravity.CENTER);
+        nsfw_dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        nsfw_dialog.show();
     }
 
 }

@@ -299,6 +299,14 @@
                     android:layout_marginVertical="10dp"
                     />
 
+                <include layout="@layout/selfcompassionview"
+                    android:id="@+id/morning_self"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
                 <include layout="@layout/tasks_block"
                     android:id="@+id/morning_tasks"
                     android:layout_height="120dp"
@@ -316,13 +324,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
 
                 >
+
+                <include android:id="@+id/noon_breathing"
+                    layout="@layout/deepbreathing_block"
+                    android:layout_marginVertical="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"/>
 
                 <include android:id="@+id/noon_nature_sounds"
                     layout="@layout/nature_sounds_block"
@@ -358,8 +373,8 @@
 
                 >
 
-                <include android:id="@+id/noon_nature_sounds"
-                    layout="@layout/nature_sounds_block"
+                <include android:id="@+id/evening_nature_walk"
+                    layout="@layout/naturewalksview"
                     android:layout_marginVertical="10dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_height="120dp"
@@ -369,6 +384,16 @@
                 <include
                     android:id="@+id/evening_multi"
                     layout="@layout/multichat_item"
+                    android:layout_height="120dp"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    />
+
+
+                <include
+                    android:id="@+id/evening_art"
+                    layout="@layout/arttherapyview"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -394,13 +419,15 @@
                 >
 
                 <include layout="@layout/sleepreminder"
+                    android:id="@+id/night_sleep"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginVertical="10dp"
                     />
 
-                <include layout="@layout/nature_sounds_block"
+                <include layout="@layout/deepbreathing_block"
+                    android:id="@+id/night_breathing"
                     android:layout_height="120dp"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"

@@ -19,38 +19,13 @@ public class MyLocationManager {
     private LocationManager locationManager;
     private LocationListener locationListener;
 
+    private Activity activity;
+
     public MyLocationManager(Context context) {
         locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         initLocationListener();
     }
 
-    private void initLocationListener() {
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                double latitude = location.getLatitude();
-                double longitude = location.getLongitude();
-
-                // Now you can use latitude and longitude as the user's location
-                // For example, you can call a method to fetch nearby parks with this location
-            }
-
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-                // Handle status changes if needed
-            }
-
-            @Override
-            public void onProviderEnabled(String provider) {
-                // Handle provider enabled
-            }
-
-            @Override
-            public void onProviderDisabled(String provider) {
-                // Handle provider disabled
-            }
-        };
-    }
 
     public void setActivityReference(Activity activity) {
         this.activity = activity;

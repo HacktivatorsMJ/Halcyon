@@ -1,4 +1,4 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Chat.Bots;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.hacktivators.mentalhealth.Adapter.MessageAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
 import com.hacktivators.mentalhealth.Model.Message;
+import com.hacktivators.mentalhealth.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,7 +93,7 @@ public class CheerfulActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.68.70:13000/cheerful/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:13000/cheerful/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 
