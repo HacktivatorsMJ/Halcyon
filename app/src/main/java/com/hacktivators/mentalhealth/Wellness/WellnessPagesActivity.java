@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.hacktivators.mentalhealth.Progressive_View_Activity;
 import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.Wellness.Yoga.YogaViewActivity;
@@ -15,7 +16,7 @@ import com.hacktivators.mentalhealth.Wellness.Yoga.YogaViewActivity;
 public class WellnessPagesActivity extends AppCompatActivity {
 
 
-    RelativeLayout meditation_layout,deepBreathing,yoga,journal,music_layout,naturewalks;
+    RelativeLayout meditation_layout,deepBreathing,yoga,journal,music_layout,naturewalks,progrssive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,14 @@ public class WellnessPagesActivity extends AppCompatActivity {
         yoga = findViewById(R.id.yoga_layout);
 
 
-        journal = findViewById(R.id.journaling_layout);
+
 
         music_layout = findViewById(R.id.music_layout);
 
 
         naturewalks = findViewById(R.id.walks_layout);
 
+        progrssive = findViewById(R.id.progrssive);
 
 
 
@@ -65,6 +67,13 @@ public class WellnessPagesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WellnessPagesActivity.this, YogaViewActivity.class));
+            }
+        });
+
+        progrssive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WellnessPagesActivity.this, Progressive_View_Activity.class));
             }
         });
 

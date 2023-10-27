@@ -402,7 +402,6 @@ public class YogaPageActivity extends AppCompatActivity {
                     if (document.exists()) {
 
                         DOB = document.getString("age");
-                        Toast.makeText(getApplicationContext(),"Got the age",Toast.LENGTH_SHORT).show();
 
                     }
                 }

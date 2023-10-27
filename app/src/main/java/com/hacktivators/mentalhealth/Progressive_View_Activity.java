@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 public class Progressive_View_Activity extends AppCompatActivity {
 
     RelativeLayout session1;
+    RelativeLayout session2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class Progressive_View_Activity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout session2;
+
 
         session2 = findViewById(R.id.progressive3);
 

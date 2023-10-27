@@ -34,6 +34,7 @@ import com.hacktivators.mentalhealth.Fragments.ProfileFragment;
 import com.hacktivators.mentalhealth.Fragments.SwipeQuesFragment;
 import com.hacktivators.mentalhealth.Hamburger.AboutUsActivity;
 import com.hacktivators.mentalhealth.Hamburger.ProfessionalHelpActivity;
+import com.hacktivators.mentalhealth.Hamburger.SettingsActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -120,6 +121,7 @@ public class MainActivity extends FragmentActivity {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     // TO BE ADDED
                 }else if (itemId == R.id.settings){
+                    startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                     drawerLayout.closeDrawer(GravityCompat.START);
                 }
 
