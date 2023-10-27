@@ -29,6 +29,12 @@
             android:name=".Session1Activity"
             android:exported="false" />
         <activity
+            android:name=".Terms_Conditions_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Privacy_Policy_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Session2Activity"
             android:exported="false" />
         <activity
