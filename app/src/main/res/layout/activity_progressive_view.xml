@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Progressive_View_Activity"
+    android:background="@color/background"
+    android:id="@+id/progressive">
+
+    <TextView
+        android:id="@+id/progressive1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progressive Muscle Relaxation"
+        android:textSize="29dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textStyle="bold"
+        android:textColor="@color/secondary"
+        android:textAlignment="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/ques_back"
+        android:layout_below="@+id/progressive1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/progressive2">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session 1"
+            android:layout_centerVertical="true"
+            android:textColor="@color/secondary"
+            android:textSize="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/ques_back"
+        android:layout_below="@+id/progressive2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/progressive3">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session 2"
+            android:layout_centerVertical="true"
+            android:textColor="@color/secondary"
+            android:textSize="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/ques_back"
+        android:layout_below="@+id/progressive3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/progressive4">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session 3"
+            android:layout_centerVertical="true"
+            android:textColor="@color/secondary"
+            android:textSize="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

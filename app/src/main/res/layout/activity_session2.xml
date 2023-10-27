@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Session2Activity"
+    android:background="@color/background"
+    android:id="@+id/p">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/p1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Session 2"
+                android:textSize="29dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/p2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/p1"
+                android:text="Stress can make your anxiety more difficult to manage in the moment you’re experiencing it. By relieving the stress in your muscles, you can usually reduce your anxiety levels."
+                android:textSize="16dp"
+                android:lineHeight="23dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textColor="@color/secondary"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/p2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/p3">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Sit in a quiet and comfortable place. Close your eyes and focus on your breathing. Breathe slowly into your nose and out of your mouth.
+"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/p3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/p4">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Use your hand to make a tight fist. Squeeze your fist tightly.
+"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/p4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/p5">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Hold your squeezed fist for a few seconds. Notice all the tension you feel in your hand."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/p5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/p6">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. Slowly open your fingers and be aware of how you feel. You may notice a feeling of tension leaving your hand. Eventually, your hand will feel lighter and more relaxed."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/p6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/p7"
+                android:layout_marginBottom="20dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. Continue tensing and then releasing various muscle groups in your body, from your hands, legs, shoulders, or feet. You may want to work your way up and down your body tensing various muscle groups. Avoid tensing the muscles in any area of your body where you’re injured or in pain, as that may further aggravate your injury."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        
+    </ScrollView>
+
+</RelativeLayout>

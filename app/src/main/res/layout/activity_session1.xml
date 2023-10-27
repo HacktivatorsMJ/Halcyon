@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Session1Activity"
+    android:background="@color/background"
+    android:id="@+id/progress_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/progress1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Session 1"
+                android:textSize="29dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textStyle="bold"
+                android:textColor="@color/secondary"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/progress2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress1"
+                android:text="Improve your body awareness and promote a sense of relaxation and calm. Regular practice can also help people manage conditions like anxiety disorders, insomnia, and chronic pain."
+                android:textSize="16dp"
+                android:lineHeight="23dp"
+                android:fontFamily="@font/nunito_sans"
+                android:textColor="@color/secondary"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress3">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Find a quiet and comfortable place to sit or lie down."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress4">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Close your eyes and take a few deep breaths to relax."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress5">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Begin by focusing on a specific muscle group, usually starting with your toes or feet."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress6">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4. Tense the muscles in that group for about 5-10 seconds. Make sure the tension is deliberate but not to the point of pain."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress7">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. Release the tension suddenly and completely. Pay attention to the sensation of relaxation.
+"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress7"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress8">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6. Rest and breathe normally for about 20-30 seconds, allowing the muscles to relax fully."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress8"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress9">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7. Move on to the next muscle group, progressing through your body, typically moving upward, such as calves, thighs, abdomen, chest, arms, and so on."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress9"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress10">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8. Continue this process until you've gone through all the major muscle groups in your body."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress11">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9. Throughout the exercise, focus on the contrast between tension and relaxation, and concentrate on the sensations in your body."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ques_back"
+                android:layout_below="@+id/progress11"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress12">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10. Finish the session with a few deep breaths and open your eyes when you're ready."
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/secondary"
+                    android:textSize="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp">
+
+                </TextView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
