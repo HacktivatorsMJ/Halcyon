@@ -25,7 +25,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="40dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/secondary"/>
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/nunito_sans"/>
 
     <TextView
         android:id="@+id/desc"
@@ -38,7 +39,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/secondary"/>
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/delete"

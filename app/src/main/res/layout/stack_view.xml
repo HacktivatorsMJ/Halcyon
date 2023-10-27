@@ -16,6 +16,7 @@
         android:layout_marginTop="20dp"
         android:textSize="25sp"
         android:layout_marginHorizontal="20dp"
-        android:textColor="@color/background"/>
+        android:textColor="@color/background"
+        android:fontFamily="@font/nunito_sans"/>
 
 </RelativeLayout>

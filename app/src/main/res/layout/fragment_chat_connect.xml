@@ -15,7 +15,8 @@
         android:textColor="@color/secondary"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:fontFamily="@font/nunito_sans"/>
 
 
 
@@ -36,7 +37,8 @@
         android:textColor="@color/secondary"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view2"
