@@ -25,7 +25,8 @@
                 android:textSize="28dp"
                 android:textColor="@color/secondary"
                 android:layout_centerVertical="true"
-                android:textAlignment="center">
+                android:textAlignment="center"
+                android:fontFamily="@font/nunito_sans">
 
             </TextView>
 

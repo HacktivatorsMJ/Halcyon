@@ -38,12 +38,14 @@
                     android:textStyle="bold"
                     android:layout_toRightOf="@id/imagetxt"
                     android:layout_marginTop="30dp"
-                    android:textAlignment="center">
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nunito_sans">
                 </TextView>
 
             </RelativeLayout>
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
                 android:layout_below="@id/titletxt"
@@ -58,7 +60,8 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
                     android:textColor="@color/secondary"
-                    android:text="1. Find a Quiet Space: Choose a peaceful place.\n\n2. Comfortable Position: Sit or lie down comfortably.\n\n3. Focus on Breath: Pay attention to your breath going in and out.\n\n4. Acknowledge Thoughts: When thoughts come, notice them without judgment and return to your breath.\n\n5. Set a Time: Start with 5-10 minutes and increase gradually.\n\n6. Be Consistent: Practice regularly for the best results.">
+                    android:text="1. Find a Quiet Space: Choose a peaceful place.\n\n2. Comfortable Position: Sit or lie down comfortably.\n\n3. Focus on Breath: Pay attention to your breath going in and out.\n\n4. Acknowledge Thoughts: When thoughts come, notice them without judgment and return to your breath.\n\n5. Set a Time: Start with 5-10 minutes and increase gradually.\n\n6. Be Consistent: Practice regularly for the best results."
+                    android:fontFamily="@font/nunito_sans">
                 </TextView>
 
 

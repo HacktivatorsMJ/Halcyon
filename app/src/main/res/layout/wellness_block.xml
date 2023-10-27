@@ -16,7 +16,8 @@
         android:id="@+id/maintitle"
         android:layout_centerVertical="true"
         android:textSize="30dp"
-        android:textColor="@color/secondary">
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/nunito_sans">
     </TextView>
 
     <ImageView

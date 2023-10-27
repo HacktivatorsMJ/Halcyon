@@ -20,7 +20,8 @@
             android:text="Enter your statement"
             android:textColor="@color/secondary"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nunito_sans"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/inputStatement"

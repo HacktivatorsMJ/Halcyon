@@ -78,7 +78,8 @@
             android:ellipsize="end"
             android:text="Cant think of any? Add these questions!!"
             android:layout_centerVertical="true"
-            android:textColor="@color/secondary"/>
+            android:textColor="@color/secondary"
+            android:fontFamily="@font/nunito_sans"/>
 
 
     </RelativeLayout>

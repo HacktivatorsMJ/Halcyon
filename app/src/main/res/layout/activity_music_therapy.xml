@@ -30,7 +30,8 @@
             android:textAlignment="center"
             android:layout_centerVertical="true"
             android:textColor="@color/secondary"
-            android:layout_marginStart="20dp">
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nunito_sans">
         </TextView>
 
 
@@ -48,7 +49,8 @@
         android:textAlignment="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito_sans">
     </TextView>
 
 
@@ -80,7 +82,8 @@
                     android:layout_centerVertical="true"
                     android:textSize="25dp"
 
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nunito_sans"/>
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -125,7 +128,8 @@
                     android:textColor="@color/secondary"
                     android:layout_centerVertical="true"
                     android:textSize="25dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nunito_sans"/>
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -171,7 +175,8 @@
                     android:textColor="@color/secondary"
                     android:layout_centerVertical="true"
                     android:textSize="25dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nunito_sans"/>
 
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -216,7 +221,8 @@
                     android:textColor="@color/secondary"
                     android:layout_centerVertical="true"
                     android:textSize="25dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/nunito_sans"/>
 
 
                 <androidx.appcompat.widget.AppCompatButton

@@ -36,6 +36,7 @@
                 android:layout_marginStart="10dp"
                 android:textSize="23dp"
                 android:text="Anonymous"
+                android:fontFamily="@font/nunito_sans"
                 />
 
             <ImageView
@@ -70,6 +71,7 @@
         android:text=""
         android:gravity="center"
         android:textSize="28dp"
+        android:fontFamily="@font/nunito_sans"
         />
 
 
@@ -95,7 +97,8 @@
                 android:textColor="@color/secondary"
                 android:layout_centerHorizontal="true"
                 android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"/>
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/nunito_sans"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/delete_btn"

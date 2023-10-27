@@ -13,7 +13,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textSize="30dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/nunito_sans"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
