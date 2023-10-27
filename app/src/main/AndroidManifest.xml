@@ -31,12 +31,13 @@
         <activity
             android:name=".Progressive_View_Activity"
             android:exported="false" />
+        <activity android:name=".Chat.Bots.SarcasticActivity"
+            android:exported="false"/>
         <activity
-            android:name=".SarcasticActivity"
+            android:name=".Chat.Bots.CheerfulActivity"
             android:exported="false" />
-        <activity
-            android:name=".CheerfulActivity"
-            android:exported="false" />
+        <activity android:name=".Wellness.NatureWalkActivity"
+            android:exported="false"/>
         <activity
             android:name=".Chat.RandomChatActivity"
             android:exported="false" />
