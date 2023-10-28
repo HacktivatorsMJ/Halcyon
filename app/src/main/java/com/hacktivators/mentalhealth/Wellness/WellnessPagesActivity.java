@@ -2,21 +2,20 @@ package com.hacktivators.mentalhealth.Wellness;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.NativeActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.hacktivators.mentalhealth.Progressive_View_Activity;
 import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.Wellness.ProgressiveView.Progressive_View_Activity;
 import com.hacktivators.mentalhealth.Wellness.Yoga.YogaViewActivity;
 
 public class WellnessPagesActivity extends AppCompatActivity {
 
 
-    RelativeLayout meditation_layout,deepBreathing,yoga,journal,music_layout,naturewalks,progrssive;
+    RelativeLayout meditation_layout,deepBreathing,yoga,journal,music_layout,naturewalks,progrssive,music_therapy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +80,13 @@ public class WellnessPagesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WellnessPagesActivity.this, NatureWalkActivity.class));
+            }
+        });
+
+        music_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WellnessPagesActivity.this, MusicTherapyActivity.class));
             }
         });
     }

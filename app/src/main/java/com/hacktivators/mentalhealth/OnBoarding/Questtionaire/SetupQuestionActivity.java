@@ -70,22 +70,22 @@ public class SetupQuestionActivity extends AppCompatActivity {
 
         if(progress < 3){
 
-            imageView.setImageDrawable(getDrawable(R.drawable.exausted));
+            imageView.setImageDrawable(getDrawable(R.drawable.sleep3));
 
         }else if(progress >=3 && progress < 6){
 
-            imageView.setImageDrawable(getDrawable(R.drawable.not_normal));
+            imageView.setImageDrawable(getDrawable(R.drawable.sleep2));
 
         } else if (progress >= 6 && progress <= 8){
 
-            imageView.setImageDrawable(getDrawable(R.drawable.normal));
+            imageView.setImageDrawable(getDrawable(R.drawable.sleep1));
 
         }else if(progress > 8 && progress < 12){
 
-            imageView.setImageDrawable(getDrawable(R.drawable.not_normal));
+            imageView.setImageDrawable(getDrawable(R.drawable.sleep2));
 
         } else if (progress >= 12) {
-            imageView.setImageDrawable(getDrawable(R.drawable.exausted));
+            imageView.setImageDrawable(getDrawable(R.drawable.sleep3));
 
         }
         seekBar.setProgress(progress);

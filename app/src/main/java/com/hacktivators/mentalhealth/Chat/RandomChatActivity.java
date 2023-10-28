@@ -28,14 +28,22 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hacktivators.mentalhealth.Adapter.ChatAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
 import com.hacktivators.mentalhealth.MainActivity;
 import com.hacktivators.mentalhealth.Model.Chat;
 import com.hacktivators.mentalhealth.Model.ChatItem;
+import com.hacktivators.mentalhealth.Model.Data;
+import com.hacktivators.mentalhealth.Model.Sender;
+import com.hacktivators.mentalhealth.Model.Token;
+import com.hacktivators.mentalhealth.Notification.APIService;
+import com.hacktivators.mentalhealth.Notification.Client;
+import com.hacktivators.mentalhealth.Notification.MyResponse;
 import com.hacktivators.mentalhealth.R;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -78,10 +86,15 @@ public class RandomChatActivity extends AppCompatActivity {
 
     Service service;
 
+    String userid;
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
-    String message;
+
+
+    String statement;
+
+    APIService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +107,7 @@ public class RandomChatActivity extends AppCompatActivity {
 
         chatID = intent.getStringExtra("id");
 
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setStackFromEnd(true);
@@ -175,8 +189,39 @@ public class RandomChatActivity extends AppCompatActivity {
         });
 
 
+        getId();
+
+    }
+
+    private void getId() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("chatlist").child(chatID);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ChatItem chatItem = snapshot.getValue(ChatItem.class);
+
+                if(chatItem.getAcceptedby().equals(firebaseUser.getUid())){
+
+                    userid = chatItem.getCreatedby();
+                }else {
+                    userid = chatItem.getAcceptedby();
+                }
 
 
+                statement = chatItem.getStatement();
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void callAI(String question) {
@@ -251,6 +296,8 @@ public class RandomChatActivity extends AppCompatActivity {
 
             databaseReference.push().updateChildren(hashMap);
 
+            SendNoty(statement,chatID);
+
             messageBox.setText("");
         }
 
@@ -286,6 +333,54 @@ public class RandomChatActivity extends AppCompatActivity {
 
     }
 
+    private void SendNoty(String statement,String chatID){
+
+
+        DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
+        Query query = tokens.orderByKey().equalTo(userid);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    Token token = snapshot1.getValue(Token.class);
+                    Data data = new Data("Message in Halcyon", "New message in " + statement,chatID);
+                    assert token != null;
+                    Sender sender = new Sender(data, token.getToken());
+                    apiService.sendNotification(sender)
+                            .enqueue(new Callback<MyResponse>() {
+                                @Override
+                                public void onResponse(retrofit2.Call<MyResponse> call, retrofit2.Response<MyResponse> response) {
+                                    if (response.code() == 200) {
+                                        assert response.body() != null;
+                                        if (response.body().success != 1) {
+                                            Toast.makeText(RandomChatActivity.this, "Failed! Error code 0x08060101", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
+                                };
+
+                                @Override
+                                public void onFailure(retrofit2.Call<MyResponse> call, Throwable t) {
+
+                                }
+
+
+
+                            });
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+
+
+    }
     private void onDeleteSelect(){
 
 

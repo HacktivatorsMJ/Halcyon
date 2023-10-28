@@ -17,6 +17,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,7 +61,9 @@ public class InfoActivity extends AppCompatActivity {
     EditText username_,age_;
 
 
-    AppCompatButton submit;
+    AppCompatButton submit,birthday_btn;
+
+    TextView dateTxt;
 
     RadioButton male,female;
 
@@ -97,6 +100,8 @@ public class InfoActivity extends AppCompatActivity {
 
         submit = findViewById(R.id.submit);
 
+        dateTxt = findViewById(R.id.date);
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         dialog = new Dialog(this);
@@ -119,12 +124,11 @@ public class InfoActivity extends AppCompatActivity {
 
 
 
-        age_.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+        birthday_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    materialDatePicker.show(getSupportFragmentManager(),"Date of birth");
-                }
+            public void onClick(View v) {
+                materialDatePicker.show(getSupportFragmentManager(),"Date of birth");
             }
         });
 
@@ -136,7 +140,7 @@ public class InfoActivity extends AppCompatActivity {
                 SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
                 String formattedDate = df.format(date);
 
-                age_.setText(formattedDate);
+                dateTxt.setText(formattedDate);
             }
         });
 
@@ -356,7 +360,7 @@ public class InfoActivity extends AppCompatActivity {
 
         Map<Object, Object> user = new HashMap<>();
         user.put("username", username_.getText().toString());
-        user.put("age",age_.getText().toString());
+        user.put("age",dateTxt.getText().toString());
         user.put("gender",gender);
         user.put("imageURL",mUri);
         user.put("email",firebaseUser.getEmail());

@@ -33,8 +33,10 @@ import com.hacktivators.mentalhealth.Fragments.HomeFragment;
 import com.hacktivators.mentalhealth.Fragments.ProfileFragment;
 import com.hacktivators.mentalhealth.Fragments.SwipeQuesFragment;
 import com.hacktivators.mentalhealth.Hamburger.AboutUsActivity;
+import com.hacktivators.mentalhealth.Hamburger.Privacy_Policy_Activity;
 import com.hacktivators.mentalhealth.Hamburger.ProfessionalHelpActivity;
 import com.hacktivators.mentalhealth.Hamburger.SettingsActivity;
+import com.hacktivators.mentalhealth.Hamburger.Terms_Conditions_Activity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -116,9 +118,11 @@ public class MainActivity extends FragmentActivity {
                     startActivity(new Intent(MainActivity.this, ProfessionalHelpActivity.class));
                 } else if (itemId == R.id.t_c) {
                     drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity(new Intent(MainActivity.this, Terms_Conditions_Activity.class));
                     // TO BE ADDED
                 } else if (itemId == R.id.p_p) {
                     drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity(new Intent(MainActivity.this, Privacy_Policy_Activity.class));
                     // TO BE ADDED
                 }else if (itemId == R.id.settings){
                     startActivity(new Intent(MainActivity.this, SettingsActivity.class));

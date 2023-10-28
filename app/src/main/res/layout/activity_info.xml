@@ -32,7 +32,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                tools:src="@drawable/model"
+                android:src="@drawable/baseline_account_circle_24"
+
                 android:id="@+id/profile_image_"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp" >
@@ -80,33 +81,67 @@
                 android:hint="Name"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+
+        <LinearLayout
+            android:id="@+id/date_layout"
             android:layout_width="match_parent"
-            android:id="@+id/age_item"
-            android:layout_below="@+id/username_item"
-            android:layout_height="90dp"
-            app:counterEnabled="false"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/username_item">
 
-            app:boxBackgroundMode="outline"
-            android:layout_marginHorizontal="35dp"
-            android:layout_marginTop="35dp"
+            <LinearLayout
+                android:id="@+id/dateTxt"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            app:counterMaxLength="30"
-            >
+                <TextView
+                    android:id="@+id/date_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Birthday"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="@color/secondary"
+                    android:textSize="25dp"
+                    />
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Date"
+                    android:layout_below="@+id/date_title"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="@color/secondary"
+                    android:textSize="18dp"
+                    />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/age"
-                android:layout_width="match_parent"
-                android:maxLength="30"
-                android:inputType="number"
-                android:background="@drawable/edit_text"
-                android:layout_height="60dp"
-                android:hint="Date of Birth"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:background="@drawable/primary_btn"
+                android:text="Choose Date"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/accent"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/secondary"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                />
+
+
+
+
+
+        </LinearLayout>
 
         <!--
         <com.google.android.material.textfield.TextInputLayout
@@ -168,7 +203,7 @@
 
         <TextView
             android:id="@+id/title__"
-            android:layout_below="@+id/age_item"
+            android:layout_below="@+id/date_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select your Gender"

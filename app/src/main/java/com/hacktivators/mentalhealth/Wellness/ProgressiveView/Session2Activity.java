@@ -1,8 +1,10 @@
-package com.hacktivators.mentalhealth;
+package com.hacktivators.mentalhealth.Wellness.ProgressiveView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.hacktivators.mentalhealth.R;
 
 public class Session2Activity extends AppCompatActivity {
 

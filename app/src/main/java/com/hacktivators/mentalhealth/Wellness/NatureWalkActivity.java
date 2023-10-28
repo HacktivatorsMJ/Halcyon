@@ -1,5 +1,8 @@
 package com.hacktivators.mentalhealth.Wellness;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
+import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -8,17 +11,36 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSeekBar;
 
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.model.PlaceLikelihood;
+import com.google.android.libraries.places.api.model.RectangularBounds;
+import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
+import com.google.android.libraries.places.api.net.PlacesClient;
 import com.hacktivators.mentalhealth.BackEnd.MyLocationManager;
 import com.hacktivators.mentalhealth.R;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class NatureWalkActivity extends AppCompatActivity {
 
 
+
+
+    private FusedLocationProviderClient fusedLocationProviderClient;
     SeekBar seekBar;
 
     TextView timerTxt;
@@ -31,6 +53,13 @@ public class NatureWalkActivity extends AppCompatActivity {
 
     private MyLocationManager locationManager;
 
+    double latitude;
+    double longitude;
+
+    int radius =3000;
+
+    PlacesClient placesClient;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +71,9 @@ public class NatureWalkActivity extends AppCompatActivity {
         start = findViewById(R.id.start_btn);
 
         timerTxt.setText("30:00");
+
+        Places.initialize(getApplicationContext(), "AIzaSyBh9xshULCTEnWr9XCktcegaJLfusvCaio");
+        placesClient = Places.createClient(this);
 
 
         start.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +123,39 @@ public class NatureWalkActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("MissingPermission")
     private void loadData() {
+
+        String placeType = "park";
+
+        List<Place.Field> placeFields = Arrays.asList(Place.Field.NAME, Place.Field.LAT_LNG, Place.Field.TYPES);
+
+        // Create a request object
+        FindCurrentPlaceRequest request = FindCurrentPlaceRequest.newInstance(placeFields);
+
+        // Use the placesClient to send the request
+        placesClient.findCurrentPlace(request).addOnSuccessListener((response) -> {
+            for (PlaceLikelihood placeLikelihood : response.getPlaceLikelihoods()) {
+                Place place = placeLikelihood.getPlace();
+
+                double likelihood = placeLikelihood.getLikelihood();
+
+
+                    List<Place.Type> placeTypes = place.getTypes();
+                    Log.i(TAG, "Place: " + place.getName() + ", Likelihood: " + likelihood + ", Types: " + place.getId());
+
+                    // Process the places as needed
+
+            }
+        }).addOnFailureListener((exception) -> {
+            if (exception instanceof ApiException) {
+                ApiException apiException = (ApiException) exception;
+                Log.e(TAG, "Place not found: " + apiException.getStatusCode() + ", " + apiException.getStatusMessage());
+            }
+        });
+
+
+
 
 
     }
@@ -127,9 +191,21 @@ public class NatureWalkActivity extends AppCompatActivity {
     }
 
 
-    public void handleLocationUpdate(double latitude, double longitude) {
+    private boolean containsPark(List<Place.Type> placeTypes) {
+        for (Place.Type type : placeTypes) {
+            if (type.toString().equalsIgnoreCase("PARK")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void handleLocationUpdate(double latitude_, double longitude_) {
         // Log the latitude and longitude
-        Log.d("LocationUpdate", "Latitude: " + latitude + ", Longitude: " + longitude);
+        Log.d("LocationUpdate", "Latitude: " + latitude_ + ", Longitude: " + longitude_);
+        latitude = latitude_;
+        longitude = longitude_;
     }
 
 

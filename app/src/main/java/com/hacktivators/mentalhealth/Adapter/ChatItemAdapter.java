@@ -70,7 +70,12 @@ public class ChatItemAdapter extends RecyclerView.Adapter<ChatItemAdapter.ViewHo
 
 
 
-        latestMessage(chatItem.getId(),holder.latestmessage);
+        if(chatItem.isStatus()){
+            holder.latestmessage.setText("Connected");
+        }else {
+            holder.latestmessage.setText("Waiting for reply");
+        }
+
 
 
     }
