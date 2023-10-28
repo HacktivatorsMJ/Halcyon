@@ -204,7 +204,7 @@ public class HomeFragment extends Fragment {
         morning_nature_walk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), NatureWalkActivity.class));
+                startActivity(new Intent(getActivity(), MusicTherapyActivity.class));
             }
         });
         morning_self.setOnClickListener(new View.OnClickListener() {
