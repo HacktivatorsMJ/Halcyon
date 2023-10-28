@@ -93,7 +93,7 @@ public class CheerfulActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.1.11:13000/cheerful/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://192.168.68.62:13000/cheerful/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 
