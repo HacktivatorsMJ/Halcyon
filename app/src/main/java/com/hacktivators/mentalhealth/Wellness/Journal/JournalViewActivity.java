@@ -41,12 +41,8 @@ public class JournalViewActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
 
-    CardView red,blue,green,purple,yellow;
-    ImageView redCheck,blueCheck,greenCheck,purpleCheck,yellowCheck;
 
-    String ColorSelected = "null";
 
-    boolean color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +52,7 @@ public class JournalViewActivity extends AppCompatActivity {
 
         journalAdd = findViewById(R.id.journalAdd);
         firebaseFirestore = FirebaseFirestore.getInstance();
-        journalArrayList = new ArrayList<Journal>();
+        journalArrayList = new ArrayList<>();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         recyclerView = findViewById(R.id.recycler_view);
 
@@ -66,17 +62,6 @@ public class JournalViewActivity extends AppCompatActivity {
         journalViewAdapter = new JournalViewAdapter(journalArrayList,JournalViewActivity.this);
         recyclerView.setAdapter(journalViewAdapter);
 
-        red = findViewById(R.id.red);
-        blue = findViewById(R.id.blue);
-        green = findViewById(R.id.green);
-        purple = findViewById(R.id.purple);
-        yellow = findViewById(R.id.yellow);
-
-        redCheck = findViewById(R.id.red_check);
-        blueCheck = findViewById(R.id.blue_check);
-        greenCheck = findViewById(R.id.green_check);
-        purpleCheck = findViewById(R.id.purple_check);
-        yellowCheck = findViewById(R.id.yellow_check);
 
         journalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,166 +70,20 @@ public class JournalViewActivity extends AppCompatActivity {
             }
         });
 
-        red.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ColorSelected.equals("red")) {
-                    redCheck.setVisibility(View.GONE);
-                    color = false;
-                    ColorSelected = "null";
-                    loadData(false);
-                }else {
-                    redCheck.setVisibility(View.VISIBLE);
-                    blueCheck.setVisibility(View.GONE);
-                    greenCheck.setVisibility(View.GONE);
-                    purpleCheck.setVisibility(View.GONE);
-                    yellowCheck.setVisibility(View.GONE);
 
 
-
-                    color = true;
-                    ColorSelected = "red";
-                    loadData(true);
-                }
-
-
-
-
-
-
-            }
-        });
-
-        blue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(ColorSelected.equals("blue")) {
-                    blueCheck.setVisibility(View.GONE);
-                    color = false;
-                    ColorSelected = "null";
-                    loadData(false);
-
-                }else {
-                    redCheck.setVisibility(View.GONE);
-                    blueCheck.setVisibility(View.VISIBLE);
-                    greenCheck.setVisibility(View.GONE);
-                    purpleCheck.setVisibility(View.GONE);
-                    yellowCheck.setVisibility(View.GONE);
-
-
-
-                    color = true;
-                    ColorSelected = "blue";
-                    loadData(true);
-
-                }
-
-
-
-
-
-
-            }
-        });
-
-        green.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                if(ColorSelected.equals("green")) {
-                    greenCheck.setVisibility(View.GONE);
-                    color = false;
-                    ColorSelected = "null";
-                    loadData(false);
-                }else {
-                    redCheck.setVisibility(View.GONE);
-                    blueCheck.setVisibility(View.GONE);
-                    greenCheck.setVisibility(View.VISIBLE);
-                    purpleCheck.setVisibility(View.GONE);
-                    yellowCheck.setVisibility(View.GONE);
-
-
-
-                    color = true;
-                    ColorSelected = "green";
-                    loadData(true);
-                }
-
-
-
-
-
-            }
-        });
-
-        purple.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ColorSelected.equals("purple")) {
-                    purpleCheck.setVisibility(View.GONE);
-                    color = false;
-                    ColorSelected = "null";
-                    loadData(false);
-                }else {
-                    redCheck.setVisibility(View.GONE);
-                    blueCheck.setVisibility(View.GONE);
-                    greenCheck.setVisibility(View.GONE);
-                    purpleCheck.setVisibility(View.VISIBLE);
-                    yellowCheck.setVisibility(View.GONE);
-
-
-
-                    color = true;
-                    ColorSelected = "purple";
-                    loadData(true);
-                }
-
-
-
-
-
-
-            }
-        });
-
-        yellow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ColorSelected.equals("yellow")) {
-                    yellowCheck.setVisibility(View.GONE);
-                    color = false;
-                    ColorSelected = "null";
-                    loadData(false);
-                }else {
-                    redCheck.setVisibility(View.GONE);
-                    blueCheck.setVisibility(View.GONE);
-                    greenCheck.setVisibility(View.GONE);
-                    purpleCheck.setVisibility(View.GONE);
-                    yellowCheck.setVisibility(View.VISIBLE);
-
-                    color = true;
-                    ColorSelected = "yellow";
-                    loadData(true);
-
-                }
-
-            }
-        });
-
-
-        loadData(color);
+        loadData();
     }
 
-    private void loadData(boolean color) {
+    private void loadData() {
 
-        if(color){
-            firebaseFirestore.collection("users").document(firebaseUser.getUid()).collection("journals").whereEqualTo("colorTxt",ColorSelected).addSnapshotListener(new EventListener<QuerySnapshot>() {
+
+            firebaseFirestore.collection("users").document(firebaseUser.getUid()).collection("journals").addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @SuppressLint("NotifyDataSetChanged")
                 @Override
                 public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                     journalArrayList.clear();
+                    assert value != null;
                     for(DocumentChange documentChange : value.getDocumentChanges()){
                         if(documentChange.getType() == DocumentChange.Type.ADDED){
                             journalArrayList.add(documentChange.getDocument().toObject(Journal.class));
@@ -257,24 +96,7 @@ public class JournalViewActivity extends AppCompatActivity {
                     }
                 }
             });
-        }else {
-            firebaseFirestore.collection("users").document(firebaseUser.getUid()).collection("journals").addSnapshotListener(new EventListener<QuerySnapshot>() {
-                @Override
-                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                    journalArrayList.clear();
-                    for(DocumentChange documentChange : value.getDocumentChanges()){
-                        if(documentChange.getType() == DocumentChange.Type.ADDED){
-                            journalArrayList.add(documentChange.getDocument().toObject(Journal.class));
-                        }
 
-                        journalViewAdapter.notifyDataSetChanged();
-
-
-
-                    }
-                }
-            });
-        }
 
 
     }

@@ -21,6 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.hacktivators.mentalhealth.Adapter.YogaViewAdapter;
 import com.hacktivators.mentalhealth.Model.Yoga;
 import com.hacktivators.mentalhealth.R;
+import com.hacktivators.mentalhealth.Wellness.WellnessPagesActivity;
 
 import java.util.ArrayList;
 
@@ -95,5 +96,11 @@ public class YogaViewActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(YogaViewActivity.this, WellnessPagesActivity.class));
     }
 }

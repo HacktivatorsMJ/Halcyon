@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hacktivators.mentalhealth.Constants;
 import com.hacktivators.mentalhealth.R;
 
 import org.json.JSONArray;
@@ -65,7 +66,7 @@ public class YogaPageActivity extends AppCompatActivity {
 
     RelativeLayout questionsLayout,loadingLayout,resultsLayout;
 
-    boolean done = false;
+    Constants constants;
 
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
@@ -92,6 +93,8 @@ public class YogaPageActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseFirestore = FirebaseFirestore.getInstance();
         output = findViewById(R.id.output);
+
+        constants = new Constants();
         getFromBirthday();
 
         // Define the date format
@@ -318,7 +321,7 @@ public class YogaPageActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer " + constants.APIKEY)
                 .post(body)
                 .build();
 

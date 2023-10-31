@@ -279,6 +279,7 @@
                 android:layout_below="@id/walks_layout"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/ques_back"
                 android:id="@+id/music_layout">
@@ -313,48 +314,8 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_below="@id/music_layout"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/ques_back">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Self-Compassion \npractices "
-                        android:textSize="28dp"
-                        android:textColor="@color/secondary"
-                        android:layout_marginStart="15dp"
-                        android:layout_toLeftOf="@+id/icon1"
-                        android:layout_marginEnd="20dp"
-                       android:layout_centerVertical="true"
-                        android:fontFamily="@font/nunito_sans">
-                    </TextView>
-
-                    <ImageView
-                        android:id="@+id/icon1"
-                        android:layout_width="100dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/compassion"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="20dp">
-
-                    </ImageView>
 
 
-                </RelativeLayout>
-
-            </RelativeLayout>
 
         </RelativeLayout>
 

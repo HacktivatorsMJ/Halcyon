@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.hacktivators.mentalhealth.Adapter.MessageAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
+import com.hacktivators.mentalhealth.Constants;
 import com.hacktivators.mentalhealth.Model.Message;
 import com.hacktivators.mentalhealth.R;
 
@@ -52,6 +53,8 @@ public class SarcasticActivity extends AppCompatActivity {
 
     Service service;
 
+    Constants constants;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +66,8 @@ public class SarcasticActivity extends AppCompatActivity {
         welcomeTextView = findViewById(R.id.welcome_text);
         messageEditText = findViewById(R.id.message_edit_text);
         sendButton = findViewById(R.id.send_btn);
+
+        constants = new Constants();
 
         //setup recycler view
         messageAdapter = new MessageAdapter(messageList);
@@ -91,7 +96,7 @@ public class SarcasticActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.68.62:13000/sarcastic/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://"+constants.URL+"/sarcastic/").client(client).build().create(Service.class);
 
 
         retrofit2.Call<ResponseBody> responseBodyCall = service.postSarcasticMessage(question);

@@ -33,6 +33,8 @@
         <activity
             android:name=".Hamburger.Privacy_Policy_Activity"
             android:exported="false" />
+        <activity android:name=".Wellness.NatureWalkActivity"
+            android:exported="false"/>
         <activity
             android:name=".Wellness.ProgressiveView.Session2Activity"
             android:exported="false" />

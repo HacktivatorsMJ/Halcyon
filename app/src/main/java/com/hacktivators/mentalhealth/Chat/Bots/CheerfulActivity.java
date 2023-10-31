@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.hacktivators.mentalhealth.Adapter.MessageAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
+import com.hacktivators.mentalhealth.Constants;
 import com.hacktivators.mentalhealth.Model.Message;
 import com.hacktivators.mentalhealth.R;
 
@@ -52,6 +53,8 @@ public class CheerfulActivity extends AppCompatActivity {
             .readTimeout(5, TimeUnit.MINUTES) // read timeout
             .build();
 
+    Constants constants;
+
     Service service;
 
     @Override
@@ -60,6 +63,8 @@ public class CheerfulActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cheerful);
 
         messageList = new ArrayList<>();
+
+        constants = new Constants();
 
         recyclerView = findViewById(R.id.recycler_view);
         welcomeTextView = findViewById(R.id.welcome_text);
@@ -93,7 +98,7 @@ public class CheerfulActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.68.62:13000/cheerful/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://"+constants.URL+"/cheerful/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 

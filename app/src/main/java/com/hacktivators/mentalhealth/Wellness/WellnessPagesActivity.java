@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.hacktivators.mentalhealth.MainActivity;
 import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.R;
 import com.hacktivators.mentalhealth.Wellness.ProgressiveView.Progressive_View_Activity;
@@ -89,5 +90,12 @@ public class WellnessPagesActivity extends AppCompatActivity {
                 startActivity(new Intent(WellnessPagesActivity.this, MusicTherapyActivity.class));
             }
         });
+
+
+    }
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(WellnessPagesActivity.this, MainActivity.class));
     }
 }

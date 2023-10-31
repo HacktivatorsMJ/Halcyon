@@ -34,6 +34,7 @@
         android:fontFamily="@font/nunito_sans"
         android:layout_below="@+id/sleep"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/white"/>
 
 

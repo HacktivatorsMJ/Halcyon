@@ -32,6 +32,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hacktivators.mentalhealth.Adapter.ChatAdapter;
 import com.hacktivators.mentalhealth.BackEnd.Service;
+import com.hacktivators.mentalhealth.Constants;
 import com.hacktivators.mentalhealth.MainActivity;
 import com.hacktivators.mentalhealth.Model.Chat;
 import com.hacktivators.mentalhealth.Model.ChatItem;
@@ -87,6 +88,8 @@ public class RandomChatActivity extends AppCompatActivity {
     Service service;
 
     String userid;
+
+    Constants constants;
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
@@ -96,6 +99,8 @@ public class RandomChatActivity extends AppCompatActivity {
 
     APIService apiService;
 
+    TextView disclaimer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +108,9 @@ public class RandomChatActivity extends AppCompatActivity {
 
         intent = getIntent();
 
+        constants = new Constants();
         mChatArrayList = new ArrayList<>();
+        disclaimer = findViewById(R.id.disclaimer);
 
         chatID = intent.getStringExtra("id");
 
@@ -138,7 +145,11 @@ public class RandomChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String message = messageBox.getText().toString();
-                callAI(message);
+
+                if(!messageBox.getText().toString().equals("")){
+                    callAI(message);
+                }
+
 
             }
         });
@@ -232,7 +243,7 @@ public class RandomChatActivity extends AppCompatActivity {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        service = new Retrofit.Builder().baseUrl("http://192.168.68.62:13000/nsfw/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl("http://"+constants.URL+"/nsfw/").client(client).build().create(Service.class);
 
         //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
 
@@ -323,6 +334,10 @@ public class RandomChatActivity extends AppCompatActivity {
 
                 chatAdapter = new ChatAdapter(RandomChatActivity.this,mChatArrayList,firebaseUser);
                 recyclerView.setAdapter(chatAdapter);
+                recyclerView.smoothScrollToPosition(chatAdapter.getItemCount());
+                if(!mChatArrayList.isEmpty()){
+                    disclaimer.setVisibility(View.GONE);
+                }
             }
 
             @Override

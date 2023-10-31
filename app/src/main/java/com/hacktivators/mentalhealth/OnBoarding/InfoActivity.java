@@ -96,7 +96,9 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         username_ = findViewById(R.id.username);
-        age_ = findViewById(R.id.age);
+       // age_ = findViewById(R.id.age);
+
+        birthday_btn = findViewById(R.id.age);
 
         submit = findViewById(R.id.submit);
 
