@@ -168,7 +168,7 @@ public class HomeFragment extends Fragment {
             morning.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
             evening.setVisibility(View.GONE);
-        } else if (hour >= 17 && hour > 21) {
+        } else if (hour >= 17 && hour < 21) {
             noon.setVisibility(View.GONE);
             morning.setVisibility(View.GONE);
             night.setVisibility(View.GONE);
