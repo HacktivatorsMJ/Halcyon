@@ -18,15 +18,15 @@
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How many hours of sleep do you get usually?"
-        android:textSize="26dp"
-        android:textColor="@color/secondary"
-        android:textAlignment="center"
-        android:textStyle="bold"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"/>
+        android:fontFamily="@font/nunito_sans"
+        android:text="How many hours of sleep do you get usually?"
+        android:textAlignment="center"
+        android:textColor="@color/secondary"
+        android:textSize="26dp"
+        android:textStyle="bold" />
 
 
     <TextView
