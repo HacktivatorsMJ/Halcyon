@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.hacktivators.mentalhealth'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.hacktivators.mentalhealth"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -63,6 +63,7 @@ dependencies {
    
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.4.0'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:3.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -100,6 +101,13 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:3.2.0'
     implementation 'com.google.android.gms:play-services-maps:18.2.0'
     implementation 'com.android.volley:volley:1.2.1'
+    implementation("com.google.ai.client.generativeai:generativeai:0.6.0")
+
+    implementation("com.google.guava:guava:31.0.1-android")
+
+    implementation("org.reactivestreams:reactive-streams:1.0.4")
+    implementation "androidx.concurrent:concurrent-futures:1.1.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.6.0"
 
 
 }

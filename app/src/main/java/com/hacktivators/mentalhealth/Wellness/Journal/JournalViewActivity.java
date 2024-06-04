@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.hacktivators.mentalhealth.Chat.Bots.Gemini;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,6 +29,8 @@ import com.hacktivators.mentalhealth.R;
 import java.util.ArrayList;
 
 public class JournalViewActivity extends AppCompatActivity {
+
+    Button gemini_btn;
 
 
     FloatingActionButton journalAdd;
@@ -61,7 +64,14 @@ public class JournalViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         journalViewAdapter = new JournalViewAdapter(journalArrayList,JournalViewActivity.this);
         recyclerView.setAdapter(journalViewAdapter);
-
+        gemini_btn = findViewById(R.id.gemini);
+        Gemini gemini = new Gemini();
+        gemini_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gemini.runGemini();
+            }
+        });
 
         journalAdd.setOnClickListener(new View.OnClickListener() {
             @Override
