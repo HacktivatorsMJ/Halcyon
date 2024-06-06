@@ -18,27 +18,26 @@ import com.hacktivators.mentalhealth.R
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
-class SarcasticActivity : AppCompatActivity() {
+class CheerfulActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
-    var chat = null
     var welcomeTextView: TextView? = null
     var messageEditText: EditText? = null
     var sendButton: ImageView? = null
     var messageList: MutableList<Message>? = null
     var messageAdapter: MessageAdapter? = null
-    var service: Service? = null
     var constants: Constants? = null
+    var service: Service? = null
     private val mainThreadScope = MainScope()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sarcastic)
+        setContentView(R.layout.activity_cheerful)
         messageList = ArrayList()
+        constants = Constants()
         recyclerView = findViewById(R.id.recycler_view)
         welcomeTextView = findViewById(R.id.welcome_text)
         messageEditText = findViewById(R.id.message_edit_text)
         sendButton = findViewById(R.id.send_btn)
-        constants = Constants()
 
         //setup recycler view
         messageAdapter = MessageAdapter(messageList)
@@ -63,12 +62,12 @@ class SarcasticActivity : AppCompatActivity() {
             modelName = "gemini-1.5-flash",
             // Access your API key as a Build Configuration variable (see "Set up your API key" above)
             apiKey = "AIzaSyDFJKIK3lLXQkX5KVSrkYu-vS3_ejHpYv8",
-            systemInstruction = content { text("This model will be used as a sarcastic chatbot to relieve stress in a mental-healthcare app.Be sarcastic without being mean.") }
+            systemInstruction = content { text("This model will be used as a cheerful chatbot in a mental- healthcare app to relieve stress.") }
         )
         val chat = generativeModel.startChat(
             history = listOf(
-                content(role = "user") { text("hey") },
-                content(role = "model") { text("Oh, hey there. Just taking a break from my intense schedule of existential pondering and existential dread. You know, the usual. What brings you to my corner of the internet? Did you just get out of bed or are you a professional at procrastination?") }
+                content(role = "user") { text("Hey") },
+                content(role = "model") { text("Hey there! \uD83D\uDC4B What's on your mind today? \uD83D\uDE0A") }
             )
         )
         val response = chat.sendMessage(question)
