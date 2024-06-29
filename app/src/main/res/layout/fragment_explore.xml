@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,34 +24,189 @@
             android:paddingBottom="30dp"
             >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Talk to bots"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/secondary"
+                android:textSize="25dp"
+                android:layout_marginTop="10dp"/>
 
 
-            <include android:id="@+id/chat" android:layout_marginVertical="10dp"  layout="@layout/multichat_item"
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"/>
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/halcyon"
+                        android:layout_width="210dp"
+                        android:layout_height="140dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ques_back"
+                        >
+
+                        <TextView
+                            android:id="@+id/halcyon_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Halcyon"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/secondary"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/nunito_sans"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Talk all about feelings and let it go"
+                            android:textSize="18sp"
+                            android:layout_below="@+id/halcyon_title"
+                            android:textColor="@color/secondary"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/nunito_sans"/>
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/merry"
+                        android:layout_width="210dp"
+                        android:layout_height="140dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ques_back"
+                        >
+
+                        <TextView
+                            android:id="@+id/merry_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Merry"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/secondary"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/nunito_sans"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="If sarcasm your thing then merry is the one"
+                            android:textSize="18sp"
+                            android:layout_below="@+id/merry_title"
+                            android:textColor="@color/secondary"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/nunito_sans"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/joy"
+                        android:layout_width="210dp"
+                        android:layout_height="140dp"
+                        android:background="@drawable/ques_back"
+                        >
+
+                        <TextView
+                            android:id="@+id/joy_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Joy"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/secondary"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/nunito_sans"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enter the tasks you want to do today..."
+                            android:textSize="18sp"
+                            android:layout_below="@+id/joy_title"
+                            android:textColor="@color/secondary"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/nunito_sans"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Space"
+                android:textColor="@color/secondary"
+                android:textSize="25dp"
+                android:fontFamily="@font/nunito"
+                android:layout_marginTop="30dp"/>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <include android:id="@+id/meditation" android:layout_marginVertical="10dp"  layout="@layout/meditation"
+                        android:layout_width="210dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="140dp"/>
+
+                    <include android:id="@+id/journal"
+                        layout="@layout/journal_block" android:layout_marginVertical="10dp"
+                        android:layout_width="210dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="140dp"/>
+
+                    <include android:id="@+id/tasks"
+                        layout="@layout/tasks_block" android:layout_marginVertical="10dp"
+                        android:layout_width="210dp"
+                        android:layout_height="140dp"
+                        android:layout_marginEnd="10dp"/>
+
+
+
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
 
             <include android:id="@+id/wellness" layout="@layout/wellness_block"
-                android:layout_marginVertical="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"/>
-
-            <include android:id="@+id/journal"
-                layout="@layout/journal_block" android:layout_marginVertical="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"/>
-
-            <include android:id="@+id/tasks"
-                layout="@layout/tasks_block" android:layout_marginVertical="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"/>
-
-            <include android:id="@+id/meditation" android:layout_marginVertical="10dp"  layout="@layout/meditation"
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"/>
 
 
-            <include android:id="@+id/dst" android:layout_marginVertical="10dp"  layout="@layout/depressiontestblock"
+
+
+            <include android:id="@+id/dst" android:layout_marginBottom="10dp"  layout="@layout/depressiontestblock"
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_height="120dp"/>
 
             <include android:id="@+id/sst" android:layout_marginVertical="10dp"  layout="@layout/stresstestblock"

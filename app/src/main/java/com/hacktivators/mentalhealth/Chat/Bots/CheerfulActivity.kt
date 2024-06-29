@@ -61,7 +61,7 @@ class CheerfulActivity : AppCompatActivity() {
             // The Gemini 1.5 models are versatile and work with most use cases
             modelName = "gemini-1.5-flash",
             // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-            apiKey = "AIzaSyDFJKIK3lLXQkX5KVSrkYu-vS3_ejHpYv8",
+            apiKey = "AIzaSyA-sqrqk1_HXl8P8rHMkHe2KKJP2XW8qXM",
             systemInstruction = content { text("This model will be used as a cheerful chatbot in a mental- healthcare app to relieve stress.") }
         )
         val chat = generativeModel.startChat(

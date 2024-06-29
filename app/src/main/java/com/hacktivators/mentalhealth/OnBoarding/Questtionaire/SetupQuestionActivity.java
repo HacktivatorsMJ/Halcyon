@@ -11,7 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSeekBar;
 
+import com.hacktivators.mentalhealth.Model.User;
+import com.hacktivators.mentalhealth.OnBoarding.CreateUserLoaderActivity;
+import com.hacktivators.mentalhealth.OnBoarding.LonelyActivity;
 import com.hacktivators.mentalhealth.R;
+
+import java.util.Objects;
 
 public class SetupQuestionActivity extends AppCompatActivity {
 
@@ -21,6 +26,12 @@ public class SetupQuestionActivity extends AppCompatActivity {
     AppCompatButton next;
 
     ImageView imageView;
+
+    User user;
+
+    Integer score = 8;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setupq);
@@ -32,6 +43,8 @@ public class SetupQuestionActivity extends AppCompatActivity {
         seekBar.setProgress(8);
 
         imageView = findViewById(R.id.imageView);
+
+//        user = (User) Objects.requireNonNull(getIntent().getExtras()).getSerializable("user");
 
         seekBar.setOnSeekBarChangeListener(new AppCompatSeekBar.OnSeekBarChangeListener() {
 
@@ -57,7 +70,12 @@ public class SetupQuestionActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SetupQuestionActivity.this, SetupQuestion1Activity.class));
+                user.setSleep_score(score);
+//                Intent intent = new Intent(SetupQuestionActivity.this,CreateUserLoaderActivity.class);
+//                intent.putExtra("user", user);
+//                startActivity(intent);
+
+                    startActivity(new Intent(SetupQuestionActivity.this, SetupQuestion1Activity.class));
             }
         });
 
@@ -67,6 +85,8 @@ public class SetupQuestionActivity extends AppCompatActivity {
     private void update(int progress) {
 
         // Update the SeekBar and TextView
+
+        score = progress;
 
         if(progress < 3){
 

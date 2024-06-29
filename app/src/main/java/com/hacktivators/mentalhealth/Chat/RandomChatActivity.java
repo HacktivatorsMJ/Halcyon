@@ -147,7 +147,7 @@ public class RandomChatActivity extends AppCompatActivity {
                 String message = messageBox.getText().toString();
 
                 if(!messageBox.getText().toString().equals("")){
-                    callAI(message);
+                   sendMessage("false");
                 }
 
 
@@ -235,54 +235,54 @@ public class RandomChatActivity extends AppCompatActivity {
         });
     }
 
-    private void callAI(String question) {
-
-
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-
-        service = new Retrofit.Builder().baseUrl("http://"+constants.URL+"/nsfw/").client(client).build().create(Service.class);
-
-        //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
-
-        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.checkNSFW(question);
-
-        responseBodyCall.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                String responseBody = null;
-                JSONObject jsonObject = null;
-                try {
-                    responseBody = response.body().string();
-                    jsonObject = new JSONObject(responseBody);
-                    String result = jsonObject.getString("NSFW");
-
-                    sendMessage(result);
-
-
-
-                } catch (IOException | JSONException e) {
-                    throw new RuntimeException(e);
-                }
-
-            }
-
-            @Override
-            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
-
-            }
-
-
-
-
-        });
-
-
-
-
-    }
+//    private void callAI(String question) {
+//
+//
+//
+//        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+//        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+//        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+//
+//        service = new Retrofit.Builder().baseUrl("http://"+constants.URL+"/nsfw/").client(client).build().create(Service.class);
+//
+//        //RequestBody message = RequestBody.create(MediaType.parse("text/plain"), question);
+//
+//        retrofit2.Call<okhttp3.ResponseBody> responseBodyCall = service.checkNSFW(question);
+//
+//        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+//                String responseBody = null;
+//                JSONObject jsonObject = null;
+//                try {
+//                    responseBody = response.body().string();
+//                    jsonObject = new JSONObject(responseBody);
+//                    String result = jsonObject.getString("NSFW");
+//
+//                    sendMessage(result);
+//
+//
+//
+//                } catch (IOException | JSONException e) {
+//                    throw new RuntimeException(e);
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
+//
+//            }
+//
+//
+//
+//
+//        });
+//
+//
+//
+//
+//    }
 
 
     private void sendMessage(String result) {
