@@ -55,6 +55,7 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -71,7 +72,7 @@ public class InfoActivity extends AppCompatActivity {
 
     ProgressDialog loadingBar;
 
-    String mUri;
+    String mUri = "default";
 
     private static final int RC_PHOTO_PICKER =  105;
 
@@ -107,6 +108,8 @@ public class InfoActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         dialog = new Dialog(this);
+
+//        user = (User) Objects.requireNonNull(getIntent().getExtras()).getSerializable("user");
 
 
 
@@ -166,7 +169,7 @@ public class InfoActivity extends AppCompatActivity {
         });
 
 
-        loadData();
+        //loadData();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,6 +179,8 @@ public class InfoActivity extends AppCompatActivity {
                 submit_Data();
             }
         });
+
+        loadData();
     }
 
     private void loadData() {
@@ -358,6 +363,15 @@ public class InfoActivity extends AppCompatActivity {
 
     private void submit_Data() {
 
+
+//        user.setGender(gender);
+//        user.setUsername(username_.getText().toString());
+//        user.setImageurl(mUri);
+//        user.setDepression_score(0);
+//        user.setStress_score(0);
+//        user.setAge(dateTxt.getText().toString());
+
+
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         Map<Object, Object> user = new HashMap<>();
@@ -369,7 +383,10 @@ public class InfoActivity extends AppCompatActivity {
         user.put("depression_score",0);
         user.put("stress_score",0);
 
-
+//        Intent intent = new Intent(InfoActivity.this,LonelyActivity.class);
+//        intent.putExtra("user", user);
+//        startActivity(intent);
+//
         assert firebaseUser != null;
         db.collection("users").document(firebaseUser.getUid())
                 .set(user)

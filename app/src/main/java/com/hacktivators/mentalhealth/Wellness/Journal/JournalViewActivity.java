@@ -64,14 +64,7 @@ public class JournalViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         journalViewAdapter = new JournalViewAdapter(journalArrayList,JournalViewActivity.this);
         recyclerView.setAdapter(journalViewAdapter);
-        gemini_btn = findViewById(R.id.gemini);
-        Gemini gemini = new Gemini();
-        gemini_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gemini.runGemini();
-            }
-        });
+
 
         journalAdd.setOnClickListener(new View.OnClickListener() {
             @Override

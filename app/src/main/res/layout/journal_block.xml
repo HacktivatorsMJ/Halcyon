@@ -13,23 +13,23 @@
         android:textSize="24dp"
         android:textStyle="bold"
         android:textColor="@color/secondary"
-        android:layout_marginLeft="15dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/nunito_sans"/>
+        android:fontFamily="@font/nunito"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your personal space for recording your thoughts"
+        android:text="Space for recording your thoughts"
         android:textSize="18dp"
-        android:textStyle="bold"
+
         android:textColor="@color/secondary"
         android:layout_below="@+id/title"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/nunito"
         />
 
 </RelativeLayout>

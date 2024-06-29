@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/ques_back">
 
     <TextView
@@ -9,20 +9,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Meditation"
-        android:textSize="29dp"
+        android:textSize="24dp"
         android:textStyle="bold"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/nunito"
         android:textColor="@color/secondary"
-        android:layout_marginLeft="15dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Try meditation to reduce stress and enhance your mental well-bieng.."
-        android:textSize="15dp"
+        android:text="Meditate to improve mental well being.."
+        android:textSize="18sp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_sans"
+        android:fontFamily="@font/nunito"
         android:layout_below="@+id/meditation"
         android:layout_marginLeft="15dp"
         android:textColor="@color/secondary"/>

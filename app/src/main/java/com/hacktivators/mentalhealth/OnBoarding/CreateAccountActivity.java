@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hacktivators.mentalhealth.MainActivity;
+import com.hacktivators.mentalhealth.Model.User;
 import com.hacktivators.mentalhealth.R;
 
 import org.jetbrains.annotations.Nullable;
@@ -55,12 +57,14 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     SignInButton signInButton;
 
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
+        user = new User();
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -95,6 +99,9 @@ public class CreateAccountActivity extends AppCompatActivity {
                 }else if(TextUtils.isEmpty(password.getText().toString())){
                     Toast.makeText(getApplicationContext(),"Please enter password",Toast.LENGTH_LONG).show();
                 }else {
+
+                    user.setEmail(email.getText().toString());
+
                     firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@androidx.annotation.NonNull Task<AuthResult> task) {
@@ -105,12 +112,22 @@ public class CreateAccountActivity extends AppCompatActivity {
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(CreateAccountActivity.this, "Authentication failed" + Objects.requireNonNull(task.getException()).toString(),
-                                        Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(CreateAccountActivity.this, "Authentication failed" + Objects.requireNonNull(task.getException()).toString(),
+//                                        Toast.LENGTH_SHORT).show();
+
+
+                                user.setId("uniqueone");
+                                Intent intent = new Intent(CreateAccountActivity.this,InfoActivity.class);
+                                intent.putExtra("user", user);
+                                startActivity(intent);
 
                             }
                         }
                     });
+
+
+
+
 
                 }
             }

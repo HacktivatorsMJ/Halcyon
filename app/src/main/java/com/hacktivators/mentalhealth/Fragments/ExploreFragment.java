@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.hacktivators.mentalhealth.Chat.Bots.ChatActivity;
+import com.hacktivators.mentalhealth.Chat.Bots.CheerfulActivity;
 import com.hacktivators.mentalhealth.Chat.Bots.PersonChatbotActivity;
+import com.hacktivators.mentalhealth.Chat.Bots.SarcasticActivity;
 import com.hacktivators.mentalhealth.Wellness.Journal.JournalViewActivity;
 import com.hacktivators.mentalhealth.Wellness.Meditation.MeditationPageActivity;
 import com.hacktivators.mentalhealth.Wellness.MusicTherapyActivity;
@@ -27,6 +30,8 @@ public class ExploreFragment extends Fragment {
 
     View journal,wellness,chat,meditation,dst,sst,tasks,sleep,music;
 
+    RelativeLayout halcyon,joy,merry;
+
 
 
 
@@ -41,7 +46,7 @@ public class ExploreFragment extends Fragment {
 
         journal = view.findViewById(R.id.journal);
         wellness = view.findViewById(R.id.wellness);
-        chat = view.findViewById(R.id.chat);
+//        chat = view.findViewById(R.id.chat);
         meditation = view.findViewById(R.id.meditation);
         dst = view.findViewById(R.id.dst);
         sst = view.findViewById(R.id.sst);
@@ -49,13 +54,38 @@ public class ExploreFragment extends Fragment {
         sleep = view.findViewById(R.id.sleep);
         music = view.findViewById(R.id.music);
 
+        halcyon = view.findViewById(R.id.halcyon);
+        merry = view.findViewById(R.id.merry);
+        joy = view.findViewById(R.id.joy);
 
-        chat.setOnClickListener(new View.OnClickListener() {
+        halcyon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), PersonChatbotActivity.class));
+                startActivity(new Intent(getActivity(),ChatActivity.class));
             }
         });
+
+        merry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SarcasticActivity.class));
+            }
+        });
+
+        joy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CheerfulActivity.class));
+            }
+        });
+
+
+//        chat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getActivity(), PersonChatbotActivity.class));
+//            }
+//        });
 
         journal.setOnClickListener(new View.OnClickListener() {
             @Override
